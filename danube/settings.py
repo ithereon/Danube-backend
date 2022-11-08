@@ -21,7 +21,8 @@ SECRET_KEY = "abcdefgh"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+# ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = ["*"]
 SITE_URL = "https://live-production-backend.herokuapp.com"
 # Application definition
 

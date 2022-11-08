@@ -102,11 +102,19 @@ DATABASES = {
         # "USER": os.environ.get("DB_USER"),
         # "PASSWORD": os.environ.get("DB_PASSWORD"),
         # "HOST": os.environ.get("DB_HOST"),
+        
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'danube',
+        # 'USER': 'danube',
+        # 'PASSWORD': 'postgres',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '5432',
+
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'danube',
-        'USER': 'danube',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
+        'NAME': 'dbrfuiafp9vn8c',
+        'USER': 'cfgetzqfccsfbg',
+        'PASSWORD': 'e3ecd0e5876d100a3e38192e8fd358d4d8dedc87e1c650fd92d9c7fd6829e040',
+        'HOST': 'ec2-3-209-39-2.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }

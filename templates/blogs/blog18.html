@@ -1,0 +1,1138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Billntrade</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-141253078-2');
+    </script>
+
+
+    <!--support working-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+    <!-- IcoFonts -->
+    <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+    <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+        <a href="{% url 'home' %}"><img src="{% static '/img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static 'img/electrician_working.jpg' %}" class="responsive" alt="image electrician working on electrical equipment"> 
+                    <div class="post-content">
+                        <h1>How to find a reliable Electrician</h1>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Tom Cakebread</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">13 September 2021</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+
+                        <h2>Electricians are trained and experts in electrical engineering, so you don't have to be.</h2>
+
+                        <h4>Can you imagine doing your own home electrical repairs? Even with many hours of research and long tutorials, the risks are not worth taking. You might get electrocuted if you mistakenly touch live wires, 
+                            or you might start an electrical fire. Worse still, you might put your whole property and family at risk of an electrical related incident or accident. The risks are just not worth taking.</h4>
+                            
+                        <h4>Changing your light bulbs and lifting a tripped circuit breaker should be the furthest you should go. 
+                            Otherwise, if you experience electrical problems, you need to find a reliable electrician.</h4>
+
+                        <h4>This guide will walk you through the main considerations and activities to undertake, when you are looking to find and hire a reliable electrician.</h4>
+
+                        <h3>When do I need an electrician?</h3>
+
+                        <h4>Yes, while it might be tempting to save money by doing your electrical repairs yourself, it is better to have a qualified electrician do the 
+                            job for you and for the the following important reasons:</h4>
+
+                        <h3>Troubleshooting</h3>
+
+                        <h4>Sometimes, a single electrical issue might indicate a bigger underlying or dependent problem. A qualified electrician can troubleshoot your electrical system, identifying more electrical issues and repairing them. It is also somehting a qualified electrician can do. 
+                            However, if you decide to correct the electrical problem yourself, you might end up not finding the root cause of the issue as well as creating a more dangerous electrical setup. You may also not find and deternine the exact cause itself and this can be frustrating.
+                            All thses are reasons support getting a qualified and experienced electrician to undertake the job or project.</h4>
+
+                        <h3>To avoid costly repairs</h3>
+
+                        <h4>If you want to avoid expensive repair costs then we would strongly recommend you get a qualified electrcian. You might know how to change a burnt-out light buld, or lift a tripped circuit breaker. 
+                            But the testing, repairing, fixing, wiring and securing of electrical circuits and panels, is far more complicated and should not be undertaken without
+                            the correct knowledge, training, qualification and experience.</h4>
+                            
+                        <h4>If you insist on doing it, you might destroy your electrical system, and this will be very costing to you, to get the repairs for the damage you casued and the original 
+                            fault you tried to fix. If you hire an electrician when you have electrical problems, the job will be done right and in a dafe way.</h4>
+
+                        <h3>To ensure your family’s safety</h3>
+
+                        <h4>You wouldn't drive down the motorway at 70 miles per hour, with your family, with brakes that you fitted and not a nechanic.</h4>
+
+                        <h4>So whoy would you take the same risk by doing electrical wiring or re-wiring yourself. Especially if you are introducing your family or loved ones to 
+                            live in the same unsafe setup.</h4>
+                            
+                        <h4>Deciding to do a DIY project for your electrical issues is a common oversight in that 
+                            people opt to do the work themselves, as they want to save money, or think it is easy,
+                            but this is extremely dangerous and can put you, your family and others at risk. 
+                            If you have not got the essential skills, you are not qualified, you are not aware of the safety precautions to take. 
+                            It is very likely that you can cause an electrical related incident such as a fire or expose the live wires, which can cause someone to 
+                            get an electric shock if they come into contact with the live wires.</h4>
+                            
+                        <h4>However, you can protect your family and others, by hiring a professional electrician trained in safety procedures, technical skills,
+                            and is guranteed to use the right equipment, resources and correct protective gear, to solve the electrical project or issue. </h4>
+
+                        <h3>Complying with any building regualation, covenants and codes</h3>
+
+                        <h4>Hiring an electrician fulfills the building codes that govern who meets the criteria to do certian 
+                            work and that work be self approved and valid, in case of any issues. Only trained and licenced electricians 
+                            should do electrical repairs. If you decide to do your electrical repairs, you might receive bills for damage 
+                            to your or other properties, you might invalidate any insurances and warranties, or 
+                            be in violation of regulation concerned with development, alteration or expansion.
+                            All this to save a bit of money, would not be worth the risk.</h4>
+                        
+                        <h3>Most common electrical problems at home</h3>
+
+                        <h4>Are you experiencing electrical problems in your home? Do you know how to find an electrician? If left unsolved, electrical problems might damage your electrical appliances and wiring or cause an electrical fire. Therefore, to avoid safety hazards, 
+                            call your electrician once you notice an electrical problem.</h4>
+                        
+                        <h4>Read on and learn about the most common electrical problem you are likely to experience, this is a list of the common problems,
+                            so is not exhaustive.
+                        </h4>
+
+                        <h3>Recurring electrical surges</h3>
+
+                        <h4>An electrical surge happens when there is an oversupply of power in the power line to your home. A power surge can destroy or damage your powerline, wiring and even appliances. Lightning strikes and errors from the power 
+                            companies can cause recurrent electrical surges. </h4>
+                        
+                        <h4>Power surges or 'transients' as they are known, can be described as a brief overload of voltage in 
+                            a circuit, or wiring infrastructrue or loom. They are registered on the power wave graph, as a distubance,
+                            and will usually have a temporary, but abnormally high amplitude when compared to the normal shape of a wave modulation graph 
+                            at a given intercept on the wave graph.
+                        </h4>
+
+                        <h4>These 'surges' can damage, errode, or even destroy electronic equipment in the home. It is important to note that 
+                            'transients' can reach amplitudes of thousands of volts, which is extremely dangerous, although they tend to last 
+                            only micro-seconds in terms of unit of measure of time. Transients freqeucy of occurrences are usually very low, but this is due,
+                            to the destructive damage they causes after their first occurence. They prevent the system or circuit from supporting 
+                            the conduction required to preserve the continutiry of electrical power flow.
+                        </h4>
+
+                        <h3>We know a bit about surges but how do they occur</h3>
+
+                        <h4>Equipment in the design of a circuit is recommended to operate a (nominal) voltage, i.e. A voltage that 
+                            does not naturally cause a surge. Nominal voltages typically are based on an alteranting current or directional reverse 
+                            of current, at regualar intervals for designated power supplies.
+                        </h4>
+
+                        <h4>We can see that any change outside the nominal in power will cause an electrical power surge.  This change happens, when for example, we 
+                            switch an appliance on or off. The surge is the overwhelming distribution of elecrtical energy, that exceeds the needs of the nominal requirment.
+                            There are different contributors to surges and we will cover this below:
+                        </h4>
+
+                        <h3>Internal</h3>
+
+                        <h4>This is the normal operation that is undertaken when connecting to the electrical grid. The surge is not 
+                            always apparent based on the fail safes in the curcuit i.e. fuses and circuit breakers are the main devices. 
+                        </h4>
+
+                        <h4>Switching on and off a system demands uncertain electrical loads from the grid system this uncertainty is managed by 
+                            the systems inbetween. Collective systems or mistakes in circuit design, and/or bad luck, can all result in  an overlaod or short circuti and
+                            other problems which can damage the circuit and the appliance.
+                        </h4>
+
+                        <h3>factors that cause surges</h3>
+
+                        <h3>Load management</h3>
+
+                        <h4>All electrcial systems are part of a design schema. These schemas are subject to inherent surge risk and there are a number of these to consider, 
+                            we have presented some below:
+                        </h4>
+
+
+                        <h4>1. Ground / earth connecting faults</h4>
+                        <h4>2. Rapid switching on and off of switches</h4>
+                        <h4>3. Fault clearing and failure to resolve secondary issues in the circuit</h4>
+                        <h4>4. Power system switch or backup recovery from an outage</h4>
+                        <h4>5. Fault during arc initiation, gradual attenuation failure by not managing the initiation programme correctly</h4>
+                        <h4>6. Loose connections</h4>
+                        <h4>7. Dischrage of devices that are inductive, to offload surplass energy</h4>
+
+
+                        <h3>Magnets and inductive coupling</h3>
+
+                        <h4>Electricity flow in a system creates a magnetic field, see Ampere's theory on magnetic field generation.
+                            When an elcetric field is formed, the volume of space and change in energy, causes atoms to behave in a certain way, 
+                            although this is out of scope for this blog, it does bear considering.</h4>
+
+                        <h4>Appliances like HVAC and fridges operate on these principles</h4>
+
+                        <h3>Static electricity</h3>
+
+                        <h4>An electrostatic dischage, operates over a range of conditions, recurrences, and hertz ranges. Typically 
+                            the volatage on the human body can vary widely but most of us have experienced static shock from firction driven
+                            activity, coupled with the right conductive material.
+                        </h4>
+
+                        <h3>External sources</h3>
+
+                        <h4>This is more difficult as there are more factors. Lightining can cause the biggest of issues, but some other factors 
+                            include damage through reperation, expansion, or development of the infratrusture. Other consideration are more localised lightining strikes, 
+                            vandalisim and poor equipment setup. It is important to know that this is a cost weighted factor, a lighting strike cam flow into 
+                            the homem and cause an overload to appliances and or devices from local or further out sources.
+                        </h4>
+
+                        <h4>If you notice frequent power surges, look through your home for connected electronic devices and disconnect them from your home grid. 
+                            You can also use a power surge protector to detect and protect your appliances and electrical devices.</h4>
+
+                        <h4>If you still experience a frequent power surge, call a certified electrician to inspect, 
+                            identify and correct the problem.</h4>
+
+                        <h3>Frequent power sags and deeps</h3>
+
+                        <h4>Power sags and deeps occur when the power voltage to your home grid is reduced slightly, this can cause your light to dim for a short time. It happens when you use substandard or faulty electronic devices. Also, sags and deeps occur because of 
+                            faulty and old wiring in the property, or when multiple appliances consume a lot of electricity this exerts a load on the system, at the same time and causes the sag to occur as it cannot support a continous demand for power by the systme.</h4>
+
+                        <h3>Causes of power sags</h3>
+
+                        <h4>Here are a few things that can cause sags, this list is not exhaustive:</h4>
+
+                        <h4>-If the grounding line is faulty, this will cause a voltage sag until the fuse or the circuit breaker used in the system is repaired</h4>
+                        <h4>-Spontaneous changes in the load in the grid or in the circuit</h4>
+                        <h4>-In homes they occur when heavy duty appliances like fridges, air-conditioner etc start up</h4>
+
+                        <h4>Power sags and deeps might affect your heating and cooling system. The drop in power voltage forces the system to work harder to maintain the ideal temperature in your home, this raises your electricity requirement and cost, 
+                            resulting in higher bills. To prevent power sags and deeps, try unplugging appliances you are not using. If this does not work, hire an electrician to 
+                            investigate the cause of the sag and to fix the problem. </h4>
+
+                        <h3>Circuit breakers tripping often</h3>
+
+                        <h4>Tripping happens if too many devices with high wattage, draw electricity from the same socket. The circuit breaker interrupts the power flow to prevent damage. An overloaded power board or 
+                            loose wiring can also cause tripping.</h4>
+
+                        <h4>If your circuit breakers keep tripping, you can lose power to some areas in your home. 
+                            This type of regular tripping of the breaker, could also indicate a more complex electrical problem.</h4>
+
+                        <h4>You can prevent tripping by using low settings on devices connected to the electricity. You can also reduce the electricity used in a single circuit, especially while using high voltage devices, like blow dryers and microwaves. 
+                            If the circuit breakers still trip, you need to find and hire a qualified electrician.</h4>
+
+                        <h3>Extremely dim or bright lights</h3>
+
+                        <h4>Have you noticed that the lights in your home are too bright or too dim? It mostly happens when the power voltage fluctuates 
+                            and the resulting higher voltage brightens the, reverse is also the same the lights while lower voltage dims them.</h4>
+
+                        <h4>Your light brightness might fluctuate if you use light bulbs with different voltages you should ensure you use the right voltage or wattage 
+                            light for the room. Other problems that can cause irregular light dimming or brightening, are problems with the electrical grid, circuit overloads, faulty wiring 
+                            and bad or open neutral connections.</h4>
+
+                        <h4>Extremely bright or dim lights can cause arcing (an electrcal current jumps a gap in the circuit) this is 
+                            very dangerous as it can short circuit and damage the system and wiring, and/or blow the fuse. Worse (but equally likely)
+                            is a spark can start a fire in your home. Therefore, it is important to address the cause of the problem in the right way 
+                            urgently.</h4>
+
+                        <h4>If you notice that your lights fluctuate between very bright and dim, you should ensure the bulbs in your home have similar wattage 
+                            and the holders are screwed correctly. If nothing changes find a reliable electrician to fix the problem.</h4>
+
+                        <h3>Light bulbs which burn out quickly</h3>
+
+                        <h4>Are your light bulbs burning out quickly? A newly replaced bulb of good quality should serve you 900 hours for normal light and an 
+                            average (although it varies) of 50,000 hours for an LED light. Lights burn out faster than normal due to bad circuitry, poor wiring and high voltage. 
+                            If you buy a faulty batch of lights this could also cause a similar quick burnout problem.</h4>
+
+                        <h4>If your lights are burning out quickly, your home might be experiencing a power surge which can cause damage to your lightbulbs, electrical components and appliances.</h4>
+
+                        <h4>Trying another brand of light bulbs, might help to reduce quick burnout. However, if the problem persists, hire a licenced electrician to check the electrical supply 
+                            in your home and fix the problem.</h4>
+
+                        <h3>Light switches are not working correctly</h3>
+
+                        <h4>Have you tried switching the lights, but they are not turning on? You might have circuit or wiring problems. 
+                            Substandard material or poor installation might also affect the usefulness of your switches.</h4>
+
+                        <h4>If your switches are not working correctly because of loose wiring, switching them on will not help, this
+                            could just increase the time to failiure.</h4>
+
+                        <h4>To fix the problem, ensure that your circuit breaker hasn't tripped. You can also fix your bulb in another light fixture to ensure it's working. 
+                            If the switch still doesn’t work, call an electrician.</h4>
+
+                        <h3>Overloaded circuit</h3>
+
+                        <h4>Have you ever plugged a device into a socket, and it tripped your circuit breaker? If yes, your circuit could be overloaded or you need to inspect for faulty wiring. 
+                            An overload happens when a device or an appliance uses more electricity than the circuit can safely handle. It can occur when using many devices or appliances in a single circuit. 
+                            An overload also happens when you have a faulty fuse or few circuits 
+                            controlling many devices in your home.</h4>
+
+                        <h4>It is important to fix overloaded circuits immediately. If electricity passing through your circuit is more than the circuit can handle, the temperature of the conductive wire will increase as it heats up.
+                            The higher temperatures of the conductive material, will exceed the melting point of the insulating jacket or compund, thus melting the insulation. The wires will be exposed and this might cause a spark, 
+                            leading to an electrical fire.</h4>
+
+                        <h4>You can reduce circuit overload by ensuring that devices connected to the circuit use electricity limiter or are consistent with what your circuit is designed to handle. 
+                            You can also disconnect devices that are not in use. If your circuits are still overload, hire a qualified electrician to inspect your electrical 
+                            connection and fix the problem.</h4>
+
+                        <h3>Frequent electrical shocks</h3>
+
+                        <h4>Electrical shocks happen when an electrical current travels through your body. They occur as a mild shock when you plug in or turn on a device. Shocks happen due to faulty wiring or faulty appliances. 
+                            If you live in an older home, poor insulation might be causing these shocks.</h4>
+
+                        <h4>It would help if you found a solution to a potential electrical shock situation, because it is dangerous and can cause severe burns, brain injuries, 
+                            loss of limbs and even death.</h4>
+
+                        <h4>To avoid electrical shocks, unplug all devices when they are not in use and call a certified electrician to fix the problem for you.</h4>
+
+                        <h3>High electricity bills</h3>
+
+                        <h4>It is unusual to get electricity bills higher than your average bills when you don’t have a new electronic device and haven’t changed how you use your electricity. If your bills increase, one of your appliances might be using a lot of energy,
+                            or you have faulty circuits and wiring, it could be energy provider has increased prices, or there is money owing so check that also.</h4>
+
+                        <h4>High electricity bills might be the result of damaged circuits and wiring, which are consuming more electricity than standard, but they are also dangerous. 
+                            Fixing them not only reduces your electricity bills, but also ensures you have a safe setup.</h4>
+
+                        <h4>You can try reducing your electricity bills by unplugging all devices that are not in use. However, hiring an electrician helps identify the cause of the power surge and 
+                            and they can also provide you with options and costs for repair.</h4>
+
+                        <h3>Flickering lights</h3>
+
+                        <h4>Your lights flicker because of quick changes in their brightness. It happens if the light bulbs or the wiring are loose or when there is a current overload.</h4>
+
+                        <h4>When the lights in your home flicker, you have a problem within your electrical systems which requires urgent inspection. 
+                            Getting these inspected and fixed will help you to avoid potentially being electrocution or causing an electrical fires.</h4>
+
+                        <h4>Before calling your electrician, you can check and ensure that the bulbs, plugs are fixed and fitted correctly (i.e. not fully screwed in or plugged in). 
+                            However, you should contact an electrician to identify and fix the problem if flickering continues after you have verified everything.</h4>
+
+                        <h2>Why you should hire a local electrician</h2>
+
+                        <h3>It is easier to trust a local electrician</h3>
+
+                        <h4>Hiring a local electrician gives you more benefits and better services. It is easier to trust a local electrician than a non-local as they can be reached more 
+                            easily as well as can be referenced more easily. If you search for an electrician near me on Google, it gives you more information about your local electrician and their reviews. 
+                            You can easily confirm if the reviews are genuine by asking other homeowners who have previously hired them. </h4>
+
+                        <h4>Also, local electricians treasure their reputation among the local clients. Therefore, they provide the best customer service and run the best business to attract more clients. 
+                            Hiring a local electrician can help you get to electricians who can provide the best services.</h4>
+
+                        <h3>Use BillnTrades' platform</h3>
+
+                        <h4>You can also use platforms that help you get local electricians such as BillnTrade. Using the BillnTrade platform is easier since electricians are not charged to send you a quote. 
+                            They also do not limit the number of services that a electical engineering technician offers per location, ensuring 
+                            that you can actually work with a generalist or specialist for your electrical problems.</h4>
+                            
+                        <h4>Also, the lead to quote conversion time is reduced, on Billntrade, as you 
+                            are working online and so leads are more easily accessible, there is nothing like Billntrade to improve the relationship management process, explore conversions opportunities and improve service.
+                            As well as manage your lead to invoice pipeline, improve cash-flow, revenue and profit, all at a lower cost than the competition.</h4>
+
+                        <h3>Electricians quickly respond to your emergencies</h3>
+
+                        <h4>Your local electrician can also help you during emergencies. Some electrical emergencies for example like electrical fires or excess power surges, require immediate attention. 
+                            Therefore, if you are in the same area as your electrician, it does not take them long to arrange a booking at get to you at your home. Additionally, if you have a big or small job
+                            they can quote and advise on the best way to do this, while also being able to inspect the opportunity at your home to assess the work.</h4>
+
+                        <h3>Local area knowledge</h3>
+
+                        <h4>Googling for an electrician near me gives you results for electricians in your city. However, select the one closest to you. They know and understand the electrical regulations and the must follow rules. 
+                            They are also aware of the local electrical standards and codes of practice. Therefore, they ensure that installations and repairs 
+                            in your home meet the required standards. They are also well connected, they tend to undestand common problems within a specific post code, 
+                            so can come somewhat prepared with ideas, analystical tools, diagnostic equipment etc, they can also source replacement or essential equipment and devices
+                            quickly, these are all important charecteristics that can really make a difference in an emergency which requires 
+                            a qualified electrician to respond to.</h4>
+
+                        <h3>They make service calls faster</h3>
+
+                        <h4>When you hire a local electrician, they take less time to respond. Since they are already familiar with your location, all they need to do is pick up their tools and drive to your home. Additionally, 
+                            a local electrician knows where to get electrical parts from trade depots or specialist electrical parts retailers. if you
+                            need components for your repair such as light fixtures, wires, or outlets, they quickly pick up the correct components and bring them to your home.</h4>
+                        
+                        <h3>You promote the growth of your local economy</h3>
+
+                        <h4>Hiring your local electrician can also help to promote the growth of your local economy. When you hire an electrician in your area, you create jobs. It also helps the growth of your local economy since more money circulates in your local area, 
+                            promoting growth and development in your town.</h4>
+
+                        <h2>What to look for in an electrician</h2>
+
+                        <h3>Qualifications</h3>
+
+                        <h3>Apprentice</h3>
+
+                        <h4>This is a complex area as the sector is innovating and expanding with new solutions, governanace, infra-structrues etc. 
+                            But an electrotechnical qualification, is a pre-requiste requirement.</h4>
+
+                        <h4>This is a route whereby the student becomes an associate of the electrotechnical industry, by way of an apprenticeship.
+                            and the courses and modules they undertake is a mix of study, practical and on-job experience, and include learning about the installation, repair 
+                            and maintenance of electrotechnical systems.</h4>
+                            
+                        <h4>Once the course is completed the student should be able to demonstrate a level of competency 
+                            as required by the GUILD or course Body regulator. The course is aimed at level 3 students, who would be looking 
+                            to pursue a career in the electrotechnical sector. Depending on the course, is approx £1445 for NVQ, and there is 
+                            ANE2 which is over 3 days and costs an additional £700. (n.b. these costs are as of Mar-22).</h4>
+
+                        <h4>- Domestic Electrical Course (L2 Diploma)</h4>
+                        <h4>- City and Guilds 2365 Level Diploma (Step 2)</h4>
+                        <h4>- City and Guilds 2365 Level 3 Diploma</h4>
+                        <h4>- City and Guilds NVQ Level 3 Electrical Installation and Maintenance</h4>
+
+                        <h3>Experience</h3>
+
+                        <h4>Ensure that the electrician you want to hire has the relevant experience with the type of service you need, and trainied following an approved apprenticeship route.
+                            These routes include, apprentice, apprentice-mate, electrician-mate they are beneficial as they include supervised learning and on the job training for the apprentice
+                            on their journy to becoming a qualified electrician.</h4>
+
+                        <h4>You should confirm that your electrician knows what they are doing. It is easier for an experienced electrician to identify the cause of your electrical problem, than someone 
+                            without experience, and also, they may hbe skilling and training the next generation of apprentice so real on the job
+                            training is something that can benefit the future of the trade, an apprentice and the knowledge transfer. Also, electricians 
+                            tknow how the electrical system works and are likely to give accurate solutions.</h4>
+
+                        <h3>Value for money</h3>
+
+                        <h4>While hiring an electrician, select the one who provides you with value for your money. Your chosen electrician should provide you with high-quality services, and you should get the expected services. 
+                            You can determine the electrician who gives value for money by comparing quotes for the same or similar service.</h4>
+
+                        <h4>As you go through the quotes, look for those with an itemized list. Compare the itemized list with what you wish to spend and choose the electrician whose 
+                            prices are closer to your budget, and clear. Billntrade provides itemised quoting options in a digital format. Remember, value for money doesn’t always 
+                            mean the cheapest option, but if the quote is organsied this is an indication of a professional approach to work.</h4>
+
+                        <h3>Accessibility and reliability</h3>
+
+                        <h4>When looking for an electrician, select those that are easy to contact, also prepare for your electrical repairs or installation with questions. 
+                            Questions help to evaluate some level of competency and reliability so don't be afraid to ask. If you can easily contact your electrician, it is easier to get clarification on issues. 
+                            Your electrician should also return your calls and respond to your emails on time. </h4>
+
+                        <h3>Recommendations</h3>
+
+                        <h4>While hiring an electrician, recommendations from neighbours and people you trust are helpful. Knowing that other homeowners received the best services from the electrician you want to hire guarantees that you’ll also receive the best. 
+                            Before you hire an electrician, request a list of references from the electrician, call them and make sure they are real. </h4>
+
+                        <h3>Attitude and communication</h3>
+
+                        <h4>Before hiring an electrician, check their attitude and the way they communicate. You can pick up on their attitude and whether they have good communication skills
+                            when they bring the quotes. For example, if they are late, do they call before to inform you that they might run in late? Do they contact you to clarify some issues? Are they excited to start the project, 
+                            or is it just another job?</h4>
+
+                         <h4>Choose an electrician who has a good attitude and good communication skills.</h4>
+
+                         <h3>Reviews</h3>
+
+                         <h4>Check reviews of their work on any review website, as well as where they direct you. See how many 
+                             reviews, stars, sentiments in the reviews and recommendations they have, it's not always volume, 
+                             but repeat reviews and glowing reviews and ratings. This should factor in your considerations
+                             particularly when hiring an electrician for the first time.</h4>
+
+                        <h3>The average cost of hiring an electrician</h3>
+
+                        <h4>If you want to hire an electrical technician to fix your electrical problems, you can either pay an hourly rate, a day rate, or a fixed fee for a specific job. 
+                            The average hourly rate for an electrician is £40. The rate can reduce or increase depending on your location. If you decide to pay your electrician per day, 
+                            the average cost is £320. But, depending on your contractor’s rate and your location, the price may be lower or higher.</h4>
+
+                        <h4>If you are paying per specific job, the price depends on whether the job is complex or simple. For a simple job like repairing a light switch, the average cost is £85. However, if you require more intensive electrical repairs 
+                            like rewiring your whole house, it costs more. The average price for rewiring a one-bedroom home is £1900, 
+                            while you can spend £6500 on a five-bedroomed house. </h4>
+
+                        <h3>The process of hiring an electrician</h3>
+
+                        <h4>Hiring an electrician is about getting the best services at affordable prices. If your electrical issue is not an emergency, you need to take your time researching to find the best electrician. Follow the 
+                            steps below while looking to hire an electrician, for the best outcomes:</h4>
+
+                        <h4>•	Identify four to five electrical contractors so that you can have options.</h4>
+                        <h4>•	Go through their website, read reviews, and learn about their services. You can also ask for referrals or testimonials also.</h4>
+                        <h4>•	Contact the contractor, explain your electrical problems, and ask for their quotes.</h4>
+                        <h4>•	Compare quotes from the different contractors and choose two to three.</h4>
+                        <h4>•	Make sure that the contractor has insurance and a licence.</h4>
+                        <h4>•	Sign a contract with your preferred first choice electrical contractor.</h4>
+
+                        <h3>Questions to ask a technician before hiring them</h3>
+
+                        <h4>Whether you are hiring an electrician for a simple fixture issue or a more complex wiring issue, you should ask the following 
+                            questions to ensure you have the best person for the job.</h4>
+
+                        <h4>•	Can you show me proof that you are insured and licenced?</h4>
+                        <h4>•	How long have you been an electrician?</h4>
+                        <h4>•	Can you share some of your references?</h4>
+                        <h4>•	Do my repairs require any regulatory submission and approvals?</h4>
+                        <h4>•	Can you provide a detailed quote for the repairs</h4>
+                        <h4>•	Is there warranty on parts and work done</h4>
+
+                        <h3>How to deal with quotes and estimates from electricians</h3>
+
+                        <h4>The quotes you receive from the electrical contractors have the estimated cost of your repairs. The number of quotes you request depends on the type of service you need. 
+                            If you need to rewire your entire house, don't be surprised if the costs are high. Therefore, you should ask for quotes from five contractors to compare with, 
+                            and have better or more choices to benchmark. If you only need minimal electrical repairs, you can request quotes from 2 or 3 companies. </h4>
+
+                        <h4>After getting quotes from multiple businesses, you should take your time and go through them carefully. 
+                            Identifying the contractor who meets your requirements takes time. You should start by comparing the quotes for the repair costs and select those that fit your budget. 
+                            Be careful of the very low quotes because the services you get, might disappoint you. </h4>
+
+                        <h4>You should also select quotes with an itemized price list for the service. Itemized pricing shows all costs on the quote, 
+                            and you won’t be surprised by hidden expenses. If you find several quotes in line with your requirements, 
+                            you can do more research to help you decide on the best one.</h4>
+
+                        <h3>What to expect from your electrcian?</h3>
+
+                        <h4>After hiring your suitable contractor, there are qualities that you expect your electrician to have:</h4>
+
+                        <h3>Keep an open line of communication</h3>
+
+                        <h4>The electrician should understand your needs and do all activities included in your contract. As they go on with the repairs, 
+                            they should keep an open line of communication with you. </h4>
+
+                        <h4>For example, they should take time to explain other problems they have found in your electrical system and give you a way forward. Additionally, they should also present you with solutions and alternatives for the issues. 
+                            Open communication allows you to know the progress of the repairs.</h4>
+
+                        <h3>Good time management</h3>
+
+                        <h4>Your electrician should also have good time management skills. They should complete the repairs in time as indicated in their quote unless there are unavoidable 
+                            issues that might delay the repairs.</h4>
+
+                        <h3>Ensure safety</h3>
+
+                        <h4>The electrician should exercise safety at all times. Safety should be a priority. Even if experienced and trained, the electrician should not leave bare live wires lying around exposed. Throughout the repairs, they should protect your family and themselves by 
+                            following the right safety protocols and letting people know what they need in order to keep them safe and od the work safely. </h4>
+
+                        <h3>Have the proper knowledge and the right tools</h3>
+
+                        <h4>You have already provided details of the electrical problems to repair. You should expect your electrician to come prepared with the right tools (well maintained work not withstanding) and knowledge. 
+                            Your contractor should also understand the importance of using the right tools. Also, since technology has led to better tools and equipment, your electrician should have tools that make their work easier, and enables them to work more efficiently.</h4>
+
+                        <h3>Provide consistent services</h3>
+
+                        <h4>Your electrician should be consistent. The work and services provided throughout your project should have the same quality. Consistency shows the skills and experience of your electrician.</h4>
+
+                        <h3>Pays attention to the details</h3>
+
+                        <h4>The electrician should be very attentive while working on your electrical system. Any distraction might cause your electrician to forget necessary steps that might cost you money and make the area unsafe. Also, the electrician 
+                            should be orderly while working to ensure that every detail in your electrical 
+                            system receives attention. </h4>
+                        
+                        <h3>Other opportunities</h3>
+
+                        <h4>Sign up at <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> to start connecting with skilled and resourcefull
+                        electricians.</h4>
+
+                        <h4>If you liked this guide, do check out our other articles <a href="{% url 'blog14' %}">How to find a builder</a>
+                            to guide you through the builder selction process, as hiring is just one part of the process and finding the right builder is just as crucial.</h4>
+
+                        <ul class="list-inline share-buttons">
+                                <li class="list-inline-item">Share Post:</li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                                            <hr class="mb40">
+                                            <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                                            <div class="media mb40">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font700">Tom Cakebread</h5> Hi, I'm Tom
+                                                    I enjoy writing about the trades, and supporting tradespeople
+                                                    and customers
+                                                    where I
+                                                    can as an independent consultant.
+                                                </div>
+                                    </div>
+                        </form>
+                </div>
+            </article>
+            <!-- post article-->
+
+        </div>
+        <div class="col-md-3 mb30">
+            <div class="mb30">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..."
+                            aria-describedby="basic-addon2">
+                        <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                    </div>
+                </form>
+            </div>
+            <div>
+                <h4 class="sidebar-title">Other blogs</h4>
+                <ul class="list-unstyled">
+                    <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                    successfully deal with mould in your home</a></h5> Apr, 2021
+                        </div>
+                    </li>
+                    <li class="media my-4">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                    plumber</a></h5> Jul, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog6' %}">The 12 step essential guide to protecting your home from cold weather damage</a></h5> Sep, 2021
+                                </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog8' %}">Your essential 18 point guide to organising a home move</a></h5> Oct, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog10' %}">17 essential tips to help you with hydroponic gardening</a></h5> Nov, 2021
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog11' %}">6 points to consider in a garange conversion</a></h5> Nov, 2021
+            </div>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog12' %}">13 steps to de-clutter a storage room and make money</a></h5> Dec, 2021
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog13' %}">12 quick tips to reduce the risk of a burglary at your home</a></h5> Jan, 2022
+        </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog14' %}">How to Find a builder</a></h5> Feb, 2022
+    </div>
+</li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog17' %}">Electrical safety dos and donts for homeowners</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog19' %}">Plumbing dos and donts for home and property owners</a></h5> Apr, 2022
+        </div>
+        </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6 text-lg-left text-center">
+                <div class="copyright">
+                    <strong>&copy; Copyright 2021 -
+                        <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>
+                        , Billntrade
+                        Ltd</strong>. All Rights Reserved
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                    <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                    <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                    <a href="{% url 'cookies' %}">Cookies</a>
+                    <a href="{% url 'blogs' %}">Blogs</a>
+                    <a href="{% url 'about-us' %}">About us</a>
+                    <a href="{% url 'sitemap' %}">Sitemap</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<style>
+    .brand {
+        width: 14rem;
+        margin-left: 2rem;
+        /* border: 2px solid lime; */
+    }
+</style>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/counterup/counterup.min.js"></script>
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/venobox/venobox.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        feather.replace();
+
+        $('button').click(function () {
+            $('.alert').html('<i data-feather="activity"></i>');
+            feather.replace();
+        });
+
+    });
+</script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+
+
+<script>
+body{
+    margin - top: 20px;
+}
+/*
+Blog post entries
+*/
+
+.entry - card {
+    -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.entry - content {
+    background - color: #fff;
+    padding: 36px 36px 36px 36px;
+    border - bottom - left - radius: 6px;
+    border - bottom - right - radius: 6px;
+}
+
+.entry - content.entry - title a {
+    color: #333;
+}
+
+.entry - content.entry - title a: hover {
+    color: #4782d3;
+}
+
+.entry - content.entry - meta span {
+    font - size: 12px;
+}
+
+.entry - title {
+    font - size: .95rem;
+    font - weight: 500;
+    margin - bottom: 15px;
+}
+
+.entry - thumb {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border - top - left - radius: 6px;
+    border - top - right - radius: 6px;
+}
+
+.entry - thumb img {
+    border - top - left - radius: 6px;
+    border - top - right - radius: 6px;
+}
+
+.entry - thumb.thumb - hover {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(71, 130, 211, 0.85);
+    display: block;
+    top: 50 %;
+    left: 50 %;
+    color: #fff;
+    font - size: 40px;
+    line - height: 100px;
+    border - radius: 50 %;
+    margin - top: -50px;
+    margin - left: -50px;
+    text - align: center;
+    transform: scale(0);
+    -webkit - transform: scale(0);
+    opacity: 0;
+    transition: all .3s ease -in -out;
+    -webkit - transition: all .3s ease -in -out;
+}
+
+.entry - thumb: hover.thumb - hover {
+    opacity: 1;
+    transform: scale(1);
+    -webkit - transform: scale(1);
+}
+
+.article - post {
+    border - bottom: 1px solid #eee;
+    padding - bottom: 70px;
+}
+
+.article - post.post - thumb {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.article - post.post - thumb.post - overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100 %;
+    height: 100 %;
+    background - color: rgba(0, 0, 0, 0.6);
+    transition: all .3s;
+    -webkit - transition: all .3s;
+    opacity: 0;
+}
+
+.article - post.post - thumb.post - overlay span {
+    width: 100 %;
+    display: block;
+    vertical - align: middle;
+    text - align: center;
+    transform: translateY(70 %);
+    -webkit - transform: translateY(70 %);
+    transition: all .3s;
+    -webkit - transition: all .3s;
+    height: 100 %;
+    color: #fff;
+}
+
+.article - post.post - thumb: hover.post - overlay {
+    opacity: 1;
+}
+
+.article - post.post - thumb: hover.post - overlay span {
+    transform: translateY(50 %);
+    -webkit - transform: translateY(50 %);
+}
+
+.post - content.post - title {
+    font - weight: 500;
+}
+
+.post - meta {
+    padding - top: 15px;
+    margin - bottom: 20px;
+}
+
+.post - meta li: not(: last - child) {
+    margin - right: 10px;
+}
+
+.post - meta li a {
+    color: #999;
+    font - size: 13px;
+}
+
+.post - meta li a: hover {
+    color: #4782d3;
+}
+
+.post - meta li i {
+    margin - right: 5px;
+}
+
+.post - meta li: after {
+    margin - top: -5px;
+    content: "/";
+    margin - left: 10px;
+}
+
+.post - meta li: last - child: after {
+    display: none;
+}
+
+.post - masonry.masonry - title {
+    font - weight: 500;
+}
+
+.share - buttons li {
+    vertical - align: middle;
+}
+
+.share - buttons li a {
+    margin - right: 0px;
+}
+
+.post - content.fa {
+    color: #ddd;
+}
+
+.post - content a h2 {
+    font - size: 1.5rem;
+    color: #333;
+    margin - bottom: 0px;
+}
+
+.article - post.owl - carousel {
+    margin - bottom: 20px!important;
+}
+
+.post - masonry h4 {
+    text - transform: capitalize;
+    font - size: 1rem;
+    font - weight: 700;
+}
+.mb40 {
+    margin - bottom: 40px!important;
+}
+.mb30 {
+    margin - bottom: 30px!important;
+}
+.media - body h5 a {
+    color: #555;
+}
+.categories li a: before {
+    content: "\f0da";
+    font - family: 'FontAwesome';
+    margin - right: 5px;
+}
+/*
+Template sidebar
+*/
+
+.sidebar - title {
+    margin - bottom: 1rem;
+    font - size: 1.1rem;
+}
+
+.categories li {
+    vertical - align: middle;
+}
+
+.categories li > ul {
+    padding - left: 15px;
+}
+
+.categories li > ul > li > a {
+    font - weight: 300;
+}
+
+.categories li a {
+    color: #999;
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+    border - bottom: 1px solid #eee;
+}
+
+.categories li a: before {
+    content: "\f0da";
+    font - family: 'FontAwesome';
+    margin - right: 5px;
+}
+
+.categories li a: hover {
+    color: #444;
+    background - color: #f5f5f5;
+}
+
+.categories > li.active > a {
+    font - weight: 600;
+    color: #444;
+}
+
+.media - body h5 {
+    font - size: 15px;
+    letter - spacing: 0px;
+    line - height: 20px;
+    font - weight: 400;
+}
+
+.media - body h5 a {
+    color: #555;
+}
+
+.media - body h5 a: hover {
+    color: #4782d3;
+}
+
+</script>
+
+<style>
+.responsive {
+  width: 100%;
+  height: auto;
+}
+</style>

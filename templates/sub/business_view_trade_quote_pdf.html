@@ -1,0 +1,128 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1>REQUEST FOR QUOTE</h1> 
+      RFQ ID:
+      <br><strong>{{values.Quoteid}}</strong>
+      <br><span class="float-right"> <strong>Status:</strong>{{values.Status}} </span>
+      <hr>
+
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-sm-6">
+          <h6 class="mb-3">From:</h6>
+          <div>
+            <strong>{{values.Title}} {{values.Firstname}}
+              {{values.Surname}} </strong>
+          </div>
+          <div>{{values.Address1}}, {{values.Address2}}, {{values.Town}},
+            {{values.City}}, {{values.County}}, {{values.Postcode}}</div>
+        </div>
+        <div class="col-sm-6">
+          <h6 class="mb-3">To:</h6>
+          <strong>{{values.Emp_title}} {{values.Emp_firstname}}
+            {{values.Emp_surname}} </strong>
+          <div>{{values.Emp_business_name}}</div>
+          <div>{{values.Emp_address_1}}, {{values.Emp_address_2}}, {{values.Emp_town}},
+            {{values.Emp_city}}, {{values.Emp_county}}, {{values.Emp_postcode}}</div>
+        </div>
+        <div>Mobile: {{values.Emp_mobile}}</div>
+        <div>Email: {{values.Emp_email}}</div>
+      </div>
+      <div class="col-sm-6">
+        <h6 class="mb-3">Dates:</h6>
+        <div>
+            <strong>RFQ created date:</strong>
+        </div>
+        <div>{{values.Datecreated}}</div>
+    </div>
+      <br>
+      <div>
+        <strong>This is an RFQ from the customer as named above, and as such does not represent any commitment to buy.
+          You may express interest in the RFQ, (Request For Quote) and respond to the customer.
+        </strong>
+      </div>
+      <hr>
+    </div>
+    <h6 class="mb-3">Quote details:</h6>
+    <div>
+
+      <div class="table-responsive-sm">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td class="left"><strong>#</strong></td>
+              <td class="center"><strong>item</strong></td>
+              <td class="center"><strong>Description</strong></td>
+            </tr>
+          </thead>
+          <td>
+            <tbody>
+              <tr>
+                <td class="left">1</td>
+                <td class="left">Area of work</td>
+                <td class="left">{{values.Areaofwork}}</td>
+              </tr>
+              <tr>
+                <td class="center"></td>
+              </tr>
+              <tr>
+                <td class="center"></td>
+                <td class="left">Brief description:</td>
+                <td class="left" colspan="3">{{values.Briefdescription}}</td>
+              </tr>
+              <tr>
+                <td class="center"></td>
+              </tr>
+              <td class="center"></td>
+              <td class="left">Detailed description:</td>
+              <td class="left" colspan="3">{{values.Detaileddescription}}
+              <td>
+                </tr>
+                <tr>
+                  <td class="center"></td>
+                </tr>
+              <td class="center"></td>
+              <td class="left">Comments:</td>
+              <td class="left" colspan="3">{{values.Comments}}
+              <td>
+                </tr>
+                <tr>
+                  <td class="center"></td>
+                </tr>
+              <td class="center"></td>
+            </tbody>
+        </table>
+        <hr>
+        <div>
+          <strong>NOTES: If necessary, print this RFQ off and take it along to the job appraisal make any notes below this section.
+          </strong>
+        </div>
+        <tr>
+          <td class="center"></td>
+        </tr>
+      </div>
+    </div>
+  </div>
+</div>
+
+</html>

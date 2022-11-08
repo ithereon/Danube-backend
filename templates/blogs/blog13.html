@@ -1,0 +1,810 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+
+  <!-- <link rel="icon" type="image/png" href="{% static '/img/Favicon.png' %}"/> -->
+
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!--support working-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- IcoFonts -->
+  <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+    <a href="{% url 'home' %}"><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static 'img/burglar.jpg' %}" class="responsive" alt="picture of hodded individual in the dark, a type of burglarr"> 
+                    <div class="post-content">
+                        <h3>12 quick tips to reduce the risk of a burglary at your home</h3>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Sarah Tring</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">15 January 2022</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+                        <h5></h5>
+
+                        <h2>Burglaries are not just opportunistic crimes</h2>
+
+                        <h3>1.    What does the home burglary threat look like</b></h3>
+
+                        <h4>Our home is our castle, as with any castle we should make it as safe as we can for us and our loved ones, the number one 
+                            reported concern for homeowners when talking about feeling protected and being safe in their home, was the risk of burglary. 
+                            The Office for National Statistics provided a report into various types of crime for The Crime in England and Wales Commission. 
+                            The report stated that the number of reported residential burglaries in 2019 stood at 417,416, which is represents a relative 4% drop year on year. 
+                        </h4>
+                        
+                        <h4>From a reporting and analytics standpoint this may seem ok, but the reality is there are victims in every one of these individual cases who have suffered loss, 
+                            as well as mental and potential physical harm and life changing experiences, these experience may require insurances, loss of irreplaceable items, special treatment, 
+                            rehabilitation and even surgery. This represents the direct impact that being burgled can have on victim’s lives. Whilst we can’t ever stop the 
+                            evolution of residential burglaries reports suggest the group responsible for largest share of burglaries are a small amount of career or serial burglars, 
+                            representing the next category of burglars, and a small than the above, are opportunistic burglars and burglary thrill seekers, fewer domestic burglaries are by 
+                            organised criminal gangs who tend to operating more sophisticated burglary practices on businesses with high value assets. What are the kinds of things a homeowner 
+                            can do to reduce the risk of being burgled. Well the list is not exhaustive, from high-end private security personnel covertly or overtly protecting your home, 
+                            to a security fortress setup like Fort Knox. In this blog we will try to focus on some of the more practical homeowner care, safety methods, security practices and 
+                            products that can help to improve your home’s safety, your safety and that of your families and loved ones. </h4>
+
+                        <h3>Number of police recorded burglary offences in England and Wales from 2002/03 to 2020/21</h3>
+                        <br>
+
+                        <img src="{% static 'img/statistaburg.png' %}" class="responsive" alt="graph showing evolution of burglaries 2002 to 2020 Engalnd and Wales"> 
+
+                        <br>
+                        <h5>source statista fig. 1.0</h5>
+                        <br>
+
+                        <h3>2.   Responsible security product brands have a history of reliability, use them</h3>
+
+                        <h4>The first one should be no surprise, choose a reliable home safety system; some manufacturers and suppliers, 
+                            like ADT and YALE are well known in the marketplace for providing comprehensive home and private security technology. 
+                            With the advancement of technology, the market has not only been opened up to new players; but also allowed existing 
+                            players to offer more technologically integrated solutions and expand their product portfolios</h4>
+                        
+                        <h3>3.   Digital visual technology</h3>
+
+                        <br>
+
+                        <img src="{% static 'img/cctv.jpg' %}" class="responsive" alt="picture of several similar cctv cameras"> 
+
+                        <h4>It can be noted that burglary as a crime has decline overtime in the England and wales, based on the graph
+                            this is due t a combination of things. This includes, but is not limited to a combination of activites by law abiding actors:</h4>
+
+                        <h4>- More policing focused on burglary as a targeted and opportunistic crime</h4>
+                        <h4>- Police cracked down on the trade of stolen goods and networks that facilitate this<h4>
+                        <h4>- Career burglars and reoffenders, are given rehabilitation support to reduce the risk of them re-offending</h4>
+                        <h4>- Tougher sentencing has been implemented depending on the severity of the burglary, associated method, victim(s) impact and the accused mental state and expanation</h4>
+                        <h4>- Police have made community policing more visual, with community patrols and officers on the beat, ensuring communities know they are being protected with local policing.</h4>
+                        <h4>- Police are using ,ore technology i.e. CCTV, AI, central monitoring, tracking of offenders, etc to ensure that crimes are predicted and prevented, or rapidly respnded to in real time</h4>
+                        <h4>- Use of DNA testing has increased the rate of identifying a perpetrator through indelidable evidence, collected from the scene and supporting a conviction</h4>
+                        <h4>- Technology companies are offering survellance equipment for the home connected to real time support and analysis, mobiles or tablets, this helps identification and prevention of crime</h4>
+                        <h4>- Technology companies are making high value digital products useless once stolen, with security protocals that are initiated in certain scenarios, or pre-empted as a mandate or both. This makes theft 
+                              less appealing as the resulting product is useless to the theif or anyone else, other than the legitimate owner</h4>            
+
+                        <h4>Hi definition CCTV for perimeter and internal monitoring. Connecting to doorbell monitoring solutions, that connect 
+                            to your phone creates additional security moniyoting and burglary prevnetion and real time monitoring and alert solutions. 
+                            Additionally this technology can connect to an infrastructure, linked to Home wireless burglar alarms which are digitally connected (depending on spend) 
+                            they can include a response team in the event the situation calls for it, the system can alert first responders, or personal protection resources. </h4>
+                        
+                        <h4>Smart home video doorbells (like RING) these are automatically triggered when movement occurs at the door and are connected to a homeowners smartphone device, 
+                            and accessible anywhere so homeowners can see who is outside their home at any time as well as communicate with them via their phone from almost any location. 
+                            Added features include recording and data storage of any events that take place. All these products and connected solutions are a huge deterrent to any type of burglar 
+                            given they can be identified and authorities alerted within a short space of time. It’s best to have a tradesperson sales consultant from one of the main firms to draw up a proposal, 
+                            which matches your budget and needs before proceeding to contract and installation. If you really are on a tight budget, then consider a DIY solution, they are more affordable.</h4>
+                        
+                        <h3>4.   Access monitoring</h3>
+
+                        <h4>Products like a home window alarms, which will activate in the event of a breaking or forced entry, 
+                            alerting neighbours and eventually authorities.</h4>
+
+                        <h3>5.   Kite marques</h3>
+
+                        <h4>Yale also provides smart lock handle products in the form of their Conexis range, these use wireless technology 
+                            and are linked to the homeowner smartphone app, they act as a digital key, which when scanned on the handle retina, 
+                            providing the key matches the security protocol, the handle can be levered to allow entry, this is emerging technology 
+                            so it may well be best to get a serious review and some kind of guarantee from the professional tradesperson or trade supplier 
+                            offering digital locks, just in case there is the risk the technology fails.</h4>
+
+                        <h3>6.   Keep medicines out of view</h3>
+    
+                        <h4>Some of the less known deterrents include storing medicines i.e. prescription opioids, painkillers etc. In a place that you can access, 
+                            but also, not to discuss these in public or around people you don’t know, burglars are looking for particular prescribed medication as 
+                            they can turn it into cash easily, these medicines then makes their way to addicts or can be used as agents in creating illegal drugs, 
+                            fuelling the illegal drug economy in the UK.</h4>
+
+                        <h3>7.   Limit your social publications</h3>
+
+                        <h4>Another important aspect is to be careful what you share on social media, don’t share anything that can compromise you or your family. 
+                            This includes your movements e.g. announcing when and where you are going on vacation and for how long. </h4>
+ 
+                        <h3>8.   Office alerts</h3>
+
+                        <h4>If you put office alerts on keep them simple, I am out of the office returning date. Do not include the word vacation as a spammer can send an email, and if the word vacation appears you can be a prospect for a burglary, 
+                            as the immediate assumption is you are on holiday and not at home.</h4>
+                        
+                        <h3>9.   Geo-tagging may not always be your friend</h3>
+                    
+                        <h4>Turn geo-tagging or any tracking apps off. Particularly for peer-to-peer buying platforms like eBay, gumtree etc., burglars can identify your location through apps sharing information with the platform and making this visible, not to mention 
+                            the item you are selling, making you a prospective mark for burglary.</h4>
+
+                        <h3>10.   Security walks at every key moment</h3>
+
+                        <h4>Make sure you include a routine of locking the windows and doors, every night; or when leaving your property. Setting alarms and checking systems 
+                            are functioning correctly. </h4>
+
+                        <h3>11.   Have a security procedure for when you are on vacation</h3>
+
+                        <h4>If you are on vacation, have a trusted neighbour or family member pop over occasionally just to check on your property, but with technology at your fingertips this makes for double the risk prevention. 
+                            If you see someone acting suspicious at your front door, or on the perimeter CCTV, alert the police particularly if they are doing something they shouldn’t 
+                            or in a place they shouldn’t around your property also see point 7. don't publish vacations details until you return.</h4>
+
+                        <h4>Talking of property you can have lights and devices activated at home, simulating occupancy in the home. Ensure the technology is reliable and the process has a 
+                            human feel to it.</h4>
+
+                        <h3>12.    Ordering for delivery from E-commerce businesses</h3>
+
+                        <h4>Do not order any amazon, or any other web delivery products while you are away, as deliveries can be stolen from outside 
+                            your property or a stored place on your property, if product deliveries build up in a stored place this is a big indication 
+                            that as a homewoner you are not their, and increase the risk of burglary. </h4>
+                                          
+                        <h3>Summary</h3>
+
+                        <h4>In summary, we may not be able to stop burglars from being in our areas, but there are significant technological products, 
+                            preventative measures and processes homeowners can undertake that will significantly reduce the risk of being burgled and essentially 
+                            burglar proof your home</h5>
+    
+                            <h4>We hope these tips can help you with your projects and help you on your way to securing your property. You may also want to read our blogs,
+                                    <a href="{% url 'blog14' %}">How to find a builder</a> which guides you through finding a builder and <a href="{% url 'blog15' %}">Hire a builder</a>
+                                    which helps you understand how to hire a builder with technology, but also in the traditional way.</h4>
+    
+                                <ul class="list-inline share-buttons">
+                                        <li class="list-inline-item">Share Post:</li>
+                                        <li class="list-inline-item">
+                                            <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                            <hr class="mb40">
+                            <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                            <div class="media mb40">
+                                <div class="media-body">
+                                    <h5 class="mt-0 font700">Tom Cakebread</h5> Hi, I'm Tom
+                                    I enjoy writing about the trades, and supporting tradespeople and customers where I
+                                    can as an independent consultant.
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </article>
+                    <!-- post article-->
+                </div>
+                <div class="col-md-3 mb30">
+                    <div class="mb30">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search..."
+                                    aria-describedby="basic-addon2">
+                                <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <h4 class="sidebar-title">Other blogs</h4>
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                            successfully deal with mould in your home</a></h5> Apr, 2021
+                                </div>
+                            </li>
+                            <li class="media my-4">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                            plumber</a></h5> Jul, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                                    </d>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                    </div>
+                            </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                        </div>
+                                </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                                <h5 class="mt-0 mb-1"><a href="{% url 'blog6' %}">The 12 step essential guide to protecting your home from cold weather damage</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                                    </div>
+                                </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog8' %}">Your essential 18 point guide to organising a home move</a></h5> Oct, 2021
+                                </div>
+                            </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                        </div>
+                    </li>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog10' %}">17 essential tips to help you with hydroponic gardening</a></h5> Nov, 2021
+                </div>
+            </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog11' %}">6 points to consider in a garange conversion</a></h5> Dec, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog12' %}">13 steps to de-clutter a storage room and make money</a></h5> Jan, 2022
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog14' %}">How to Find a builder</a></h5> Feb, 2022
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog16' %}">Hire a plumber</a></h5> Mar, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog17' %}">Electrical safety dos and donts for homeowners</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog18' %}">How to find a reliable Electrician</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog19' %}">Plumbing dos and donts for home and property owners</a></h5> Apr, 2022
+        </div>
+        </li>
+                     </ul>
+                 </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6 text-lg-left text-center">
+                        <div class="copyright">
+                            <strong>&copy; Copyright 2021 -
+                                <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>, Billntrade
+                                Ltd</strong>. All Rights Reserved
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                            <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                            <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                            <a href="{% url 'cookies' %}">Cookies</a>
+                            <a href="{% url 'blogs' %}">Blogs</a>
+                            <a href="{% url 'about-us' %}">About us</a>
+                            <a href="{% url 'sitemap' %}">Sitemap</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+    
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    
+        <style>
+            .brand {
+                width: 14rem;
+                margin-left: 2rem;
+                /* border: 2px solid lime; */
+            }
+        </style>
+    
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+        <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+        <script src="assets/vendor/counterup/counterup.min.js"></script>
+        <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/venobox/venobox.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    
+        <script>
+            $(document).ready(function () {
+                feather.replace();
+    
+                $('button').click(function () {
+                    $('.alert').html('<i data-feather="activity"></i>');
+                    feather.replace();
+                });
+    
+            });
+        </script>
+    
+        <!-- Template Main JS File -->
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+    
+    </html>
+    
+    
+    <script>
+        body{
+            margin - top: 20px;
+        }
+    /*
+    Blog post entries
+    */
+    
+    .entry - card {
+            -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+            -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+            box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        }
+    
+    .entry - content {
+            background - color: #fff;
+            padding: 36px 36px 36px 36px;
+            border - bottom - left - radius: 6px;
+            border - bottom - right - radius: 6px;
+        }
+    
+    .entry - content.entry - title a {
+            color: #333;
+        }
+    
+    .entry - content.entry - title a: hover {
+            color: #4782d3;
+        }
+    
+    .entry - content.entry - meta span {
+            font - size: 12px;
+        }
+    
+    .entry - title {
+            font - size: .95rem;
+            font - weight: 500;
+            margin - bottom: 15px;
+        }
+    
+    .entry - thumb {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border - top - left - radius: 6px;
+            border - top - right - radius: 6px;
+        }
+    
+    .entry - thumb img {
+            border - top - left - radius: 6px;
+            border - top - right - radius: 6px;
+        }
+    
+    .entry - thumb.thumb - hover {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(71, 130, 211, 0.85);
+            display: block;
+            top: 50 %;
+            left: 50 %;
+            color: #fff;
+            font - size: 40px;
+            line - height: 100px;
+            border - radius: 50 %;
+            margin - top: -50px;
+            margin - left: -50px;
+            text - align: center;
+            transform: scale(0);
+            -webkit - transform: scale(0);
+            opacity: 0;
+            transition: all .3s ease -in -out;
+            -webkit - transition: all .3s ease -in -out;
+        }
+    
+    .entry - thumb: hover.thumb - hover {
+            opacity: 1;
+            transform: scale(1);
+            -webkit - transform: scale(1);
+        }
+    
+    .article - post {
+            border - bottom: 1px solid #eee;
+            padding - bottom: 70px;
+        }
+    
+    .article - post.post - thumb {
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+    
+    .article - post.post - thumb.post - overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100 %;
+            height: 100 %;
+            background - color: rgba(0, 0, 0, 0.6);
+            transition: all .3s;
+            -webkit - transition: all .3s;
+            opacity: 0;
+        }
+    
+    .article - post.post - thumb.post - overlay span {
+            width: 100 %;
+            display: block;
+            vertical - align: middle;
+            text - align: center;
+            transform: translateY(70 %);
+            -webkit - transform: translateY(70 %);
+            transition: all .3s;
+            -webkit - transition: all .3s;
+            height: 100 %;
+            color: #fff;
+        }
+    
+    .article - post.post - thumb: hover.post - overlay {
+            opacity: 1;
+        }
+    
+    .article - post.post - thumb: hover.post - overlay span {
+            transform: translateY(50 %);
+            -webkit - transform: translateY(50 %);
+        }
+    
+    .post - content.post - title {
+            font - weight: 500;
+        }
+    
+    .post - meta {
+            padding - top: 15px;
+            margin - bottom: 20px;
+        }
+    
+    .post - meta li: not(: last - child) {
+            margin - right: 10px;
+        }
+    
+    .post - meta li a {
+            color: #999;
+            font - size: 13px;
+        }
+    
+    .post - meta li a: hover {
+            color: #4782d3;
+        }
+    
+    .post - meta li i {
+            margin - right: 5px;
+        }
+    
+    .post - meta li: after {
+            margin - top: -5px;
+            content: "/";
+            margin - left: 10px;
+        }
+    
+    .post - meta li: last - child: after {
+            display: none;
+        }
+    
+    .post - masonry.masonry - title {
+            font - weight: 500;
+        }
+    
+    .share - buttons li {
+            vertical - align: middle;
+        }
+    
+    .share - buttons li a {
+            margin - right: 0px;
+        }
+    
+    .post - content.fa {
+            color: #ddd;
+        }
+    
+    .post - content a h2 {
+            font - size: 1.5rem;
+            color: #333;
+            margin - bottom: 0px;
+        }
+    
+    .article - post.owl - carousel {
+            margin - bottom: 20px!important;
+        }
+    
+    .post - masonry h4 {
+            text - transform: capitalize;
+            font - size: 1rem;
+            font - weight: 700;
+        }
+    .mb40 {
+            margin - bottom: 40px!important;
+        }
+    .mb30 {
+            margin - bottom: 30px!important;
+        }
+    .media - body h5 a {
+            color: #555;
+        }
+    .categories li a: before {
+            content: "\f0da";
+            font - family: 'FontAwesome';
+            margin - right: 5px;
+        }
+    /*
+    Template sidebar
+    */
+    
+    .sidebar - title {
+            margin - bottom: 1rem;
+            font - size: 1.1rem;
+        }
+    
+    .categories li {
+            vertical - align: middle;
+        }
+    
+    .categories li > ul {
+            padding - left: 15px;
+        }
+    
+    .categories li > ul > li > a {
+            font - weight: 300;
+        }
+    
+    .categories li a {
+            color: #999;
+            position: relative;
+            display: block;
+            padding: 5px 10px;
+            border - bottom: 1px solid #eee;
+        }
+    
+    .categories li a: before {
+            content: "\f0da";
+            font - family: 'FontAwesome';
+            margin - right: 5px;
+        }
+    
+    .categories li a: hover {
+            color: #444;
+            background - color: #f5f5f5;
+        }
+    
+    .categories > li.active > a {
+            font - weight: 600;
+            color: #444;
+        }
+    
+    .media - body h5 {
+            font - size: 15px;
+            letter - spacing: 0px;
+            line - height: 20px;
+            font - weight: 400;
+        }
+    
+    .media - body h5 a {
+            color: #555;
+        }
+    
+    .media - body h5 a: hover {
+            color: #4782d3;
+        }
+    
+    </script>
+
+<style>
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+</style>

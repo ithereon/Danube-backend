@@ -1,0 +1,187 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  {% block title %}
+
+  {% endblock %}
+  </title>
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light py-0 class">
+    <a href=""><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex ml-auto">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        </ul>
+        <ul class="navbar-nav ml-auto mr-5">
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="{% url 'logout-view' %}">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      {% include 'partials/_bus_details.html' %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="col-auto mt-3">
+        </div>
+        {% block content %}
+        {% include 'partials/_messages.html' %}
+        <div class="col-md-8"></div>
+        <div class="col-auto md-2 my-2">
+          <form class="form-inline" action="{% url 'manage-business' %}">
+            <div class="card mt-3 style=width: 18rem;"></div>
+            {% csrf_token %}
+            <div class="col-md-8"></div>
+            <input name="q" value="{{query}}" class="form-control mr-sm-2" id="searchField" type="search"
+              placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+
+        {% if business.count %}
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style="text-align:left">Business name</th>
+              <th style="text-align:left">Postcode</th>
+              <th style="text-align:left">Business ID</th>
+              <th style="text-align:center">Edit business</th>
+              <th style="text-align:center">Delete business</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for business in paginated_results %}
+            <tr>
+              <td class="align-middle">{{business.Businessname}}</td>
+              <td class="align-middle">{{business.Postcode}}</td>
+              <td class="align-middle">{{business.Businessid}}</td>
+              <td style="text-align:center"><a type="nav-link" style="color: black" value=submit href="{% url 'edit-business' business.id %}"
+                  class="btn btn-outline-secondary">Edit</a></td>
+              <td style="text-align:center"><a type="nav-link" style="color: black" value=submit href="{% url 'delete-business' business.id %}"
+                  class="btn btn-outline-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="container-fluid">
+          <ul class="pagination pagination-sm justify-content-end">
+            {% if paginated_results.has_previous %}
+            <li class="page-item">
+              <span class="page-link">
+                <a href="?page=1">&laquo; first</a>
+              </span>
+            </li>
+            <li class="page-item">
+              <span class="page-link">
+                <a href="?page={{ paginated_results.previous_page_number }}">previous</a>
+              </span>
+            </li>
+            {% endif %}
+
+            {% if paginated_results.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ paginated_results.next_page_number }}">Next</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="?page={{ paginated_results.paginator.num_pages }}">Last &raquo;</a>
+            </li>
+            {% endif %}
+            <li class="page-item active">
+              <span class="page-link">
+                Page {{ paginated_results.number }} of {{ paginated_results.paginator.num_pages }}
+              </span>
+            </li>
+          </ul>
+        </div>
+        {% endif %}
+      </main>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/bootstrap.feather.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  <script src="{% static 'js/min.js' %}"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="{% static 'js/function.js' %}"></script>
+  <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+      feather.replace();
+
+      $('button').click(function () {
+        $('.alert').html('<i data-feather="activity"></i>');
+        feather.replace();
+      });
+      var searchField = $("#searchField").val()
+      if (searchField === "None") {
+        $("#searchField").val("");
+      }
+
+    });
+</script>
+
+<style>
+    .brand {
+        height: auto;
+        width: auto;
+        max-height: 72px;
+        max-width: 250px;
+    }
+  </style>
+  
+      </body>
+{% endblock %}
+</html>

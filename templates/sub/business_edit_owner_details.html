@@ -1,0 +1,184 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+    {% block title %}
+
+    {% endblock %}
+    </title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href='static/img/favicon-32x32.png'>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light py-0 class">
+        <a href=""><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                </ul>
+                <ul class="navbar-nav ml-auto mr-5">
+                    <li class="nav-item dropdown ml-auto">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
+
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="{% url 'logout-view' %}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% include 'partials/_bus_owner_details.html' %}
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                {% block content %}
+
+                <div class="card mt-3 style=width: 18rem;">
+
+                    <div class="card">
+                        <div class="col-auto mt-3">
+                            <h6>Edit contact details</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="{% url 'business-edit-owner-profile' profile.id %}" method="POST">
+
+                                {% include 'partials/_messages.html' %}
+                                {% csrf_token %}
+
+                                <div class="form-row my-3">
+                                    <div class="form-group col-md-4">
+                                        <label for="Title">Title:</label>
+                                        <input type="text" class="form-control" name="title" id="titleField"
+                                            value="{{values.Title}}">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="Firstname">Firstname:</label>
+                                        <input type="text" class="form-control" name="firstname" id="firstnameField"
+                                            value="{{values.Firstname}}">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="Surname">Surname:</label>
+                                        <input type="text" class="form-control" name="surname" id="surnameField"
+                                            value="{{values.Surname}}">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="Mobile">Mobile:</label>
+                                        <input type="integer" class="form-control" name="mobile" id="mobileField"
+                                            value="{{values.Mobile}}">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="Email">Email:</label>
+                                        <input type="email" class="form-control" name="email" id="emailField"
+                                            value="{{values.Email}}">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="Date">Date created:</label>
+                                        <input type="text" class="form-control" name="datecreated" id="dateField"
+                                            value="{{values.Datecreated}}" readonly>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="ProfileID">Profile ID:</label>
+                                        <input type="text" class="form-control" name="profilefield" id="profileField"
+                                            value="{{values.Profilefield}}" readonly>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-auto my-1">
+                                            <button type="submit" value="submit" style="color: black"  class="btn btn-outline-primary">Update
+                                                details</button>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+                    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <script src="{% static 'js/bootstrap.feather.js' %}"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+                <script src="{% static 'js/min.js' %}"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous"></script>
+                <script src="{% static 'js/main.js' %}"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="{% static 'js/function.js' %}"></script>
+                <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+                <script>
+                    $(document).ready(function () {
+                        feather.replace();
+
+                        $('button').click(function () {
+                            $('.alert').html('<i data-feather="activity"></i>');
+                            feather.replace();
+                        });
+
+                    });
+                    document.getElementById('mobileField').addEventListener('keydown', function(e) {
+                            var key   = e.keyCode ? e.keyCode : e.which;
+
+                            if (!( [8, 9, 13, 27, 46, 110, 190].indexOf(key) !== -1 ||
+                                (key == 65 && ( e.ctrlKey || e.metaKey  ) ) || 
+                                (key >= 35 && key <= 40) ||
+                                (key >= 48 && key <= 57 && !(e.shiftKey || e.altKey)) ||
+                                (key >= 96 && key <= 105)
+                            )) e.preventDefault();
+                        });
+                        $('#mobileField').prop('minLength', 11);
+                        $('#mobileField').prop('maxLength', 11);
+
+
+                </script>
+
+<style>
+        .brand {
+            height: auto;
+            width: auto;
+            max-height: 72px;
+            max-width: 250px;
+        }
+      </style>
+
+</body>
+
+{% endblock %}
+
+</html>

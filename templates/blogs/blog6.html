@@ -1,0 +1,753 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Billntrade</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-141253078-2');
+    </script>
+
+
+    <!--support working-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+    <!-- IcoFonts -->
+    <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+    <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+        <a href="{% url 'home' %}"><img src="{% static '/img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static '/img/snow.jpg' %}" class="responsive" alt="aftermath of snowstorm on house"> 
+                    <div class="post-content">
+                        <h1>The 12 step essential guide to protecting your home from cold weather damage</h1>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Tom Cakebread</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">13 September 2021</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+
+                        <h2>Protecting your home from the elements is an important activity</h2>
+
+                        <h3>Winter brings with it cold challenges</h3>
+
+                        <h4>Winter brings with it much colder weather, and with it the need to consider how to best keep your 
+                            home damage or disaster free, during the periods of freezing weather. There are more challenges for homeowners and their homes. 
+                            With freezing weather being just one. The damage that freezing weather can cause 
+                            to a property can costs thousands to repair, demand huge resources and time, disrupt routine life for the 
+                            homeowner and their families and certainly reduce the value of the property at resale. We have put together
+                            this 12 step essential guide, to reduce the risk of damage to your home, during the colder months.
+                         </h4>
+
+                        <h3>1.    Draft prevention</h3>
+
+                        <h4>Protect from drafts, by having your loft insulated, nearly a quarter of the heat in your home can be lost through 
+                            convection via the loft, use draught blockers for pipes, loft-hatches, skirting, windows, external and internal doors.
+                        </h4>
+
+                        <h3>2.    Service appliances</h3>
+                            
+                        <h4>Close the doors to rooms that are not being heated, ensure your appliances are serviced as per the operating 
+                            manual scheudule, ensure a certified trade professional e.g. a British gas engineer for water heaters, 
+                            boilers and radiators for bleeding does the work and provides the certification document.</h4>
+
+                        <h3>3.    Radiators</h3>
+
+                        <h4>Do not block radiators with furniture, as this will reduce their effectiveness at heating rooms.</h4>
+
+                        <h3>4.    Thermal jacketing</h3>
+                                    
+                        <h4>Check thermal jacketing around the hot water storage tank (if appropriate) and piping connected to the tank; 
+                            it should be at least 75mm thick.</h4>
+                        
+                        <h3>5.    Ventilation</h3>
+
+                        <h4>Do not block ventilation grills and airbricks, as they are required to be un-obstructed in order to manage the 
+                            energy performance of the property.</h4>
+
+                        <h3>6.    Guttering</h3>
+
+                        <h4>Check your gutters, clear leaves and any debris from them in the warmer months, 
+                            if snow or icy conditions hit water will not flow through them as the water freezes it 
+                            forms extra mass and density, putting strain on the structural integrity of the property. I
+                            f in any doubt contact a qualified tradesperson in clearing gutters, through https://billntrade.com 
+                            they will be able to do it for you. Do not risk doing it yourself.</h4>
+
+                        <h3>7.    External insulation</h3>
+                        
+                        <h4>Insulate pipes in garages, annexes, or any external building.</h4>
+
+                        <h3>8.    External water facilities</h3>
+
+                        <h4>If there are any internal valves running external water facilities, 
+                            turn them off and then open the external water tap and let the residual water run out.</h4>
+
+                        <h3>9.    Central heating</h3>
+
+                        <h4>If you are away for any period of time, set the central heating to come on for a short window of time every day, 
+                            this will prevent pipes from freezing.</h4>
+
+                        <h3>10.    Freezing pipe detection</h3>
+
+                        <h4>Regularly check piping and taps in your home, if little or no water flows this may be a sign that 
+                            water is frozen in the pipe. Locate the mains water stopcock, make sure it turns on and off easily, 
+                            if your pipes do freeze turn off the stopcock and thaw them out with either hot water bottles, a 
+                            hair dryer or hot towels. Do not use a heat gun or blowtorch.</h4>
+                        
+                        <h3>11.    Fireplaces and chimneys</h3>
+
+                        <h4>If you are fortunate enough to have a fireplace and chimney in your home, 
+                            arrange for a qualified tradesperson chimney sweep to remove soot, blockages, bird’s nests and creosote. 
+                            This will ensure the room is well ventilated.</h4>
+
+                        <h3>12.    Carbon monoxide detection</b></h3>
+
+                        <h4>Check carbon monoxide detectors are also working, change batteries every 12 months and replace 
+                            the device every 10 years. </h4>
+                        
+                        <h4>It is important that you take the necessary preventative steps to protect your home form cold weather damage. At <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> find different
+                            tradesmans like plumbers, builders, insulators, gutter cleaners etc, to help with your property protection from cold, activities. <a href="{% url 'blog2' %}">10 Essential tips to help you choose a plumber</a>
+                            which supports helping, you find a plumber that can help with protecting your watersystem from cold weather damage.</h4>
+
+                                                                   
+                            <ul class="list-inline share-buttons">
+                                    <li class="list-inline-item">Share Post:</li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                                <hr class="mb40">
+                                                <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                                                <div class="media mb40">
+                                                    <div class="media-body">
+                                                        <h5 class="mt-0 font700">Tom Cakebread</h5> Hi, I'm Tom
+                                                        I enjoy writing about the trades, and supporting tradespeople
+                                                        and customers
+                                                        where I
+                                                        can as an independent consultant.
+                                                    </div>
+                                        </div>
+                            </form>
+                    </div>
+                </article>
+                <!-- post article-->
+
+            </div>
+            <div class="col-md-3 mb30">
+                <div class="mb30">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..."
+                                aria-describedby="basic-addon2">
+                            <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="sidebar-title">Other blogs</h4>
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                        successfully deal with mould in your home</a></h5> Apr, 2021
+                            </div>
+                        </li>
+                        <li class="media my-4">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                        plumber</a></h5> Jul, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                </div>
+                        </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                                    </div>
+                                </li>
+                        <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                                <h5 class="mt-0 mb-1"><a href="{% url 'blog8' %}">Your essential 18 point guide to organising a home move</a></h5> Oct, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog10' %}">17 essential tips to help you with hydroponic gardening</a></h5> Nov, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog11' %}">6 points to consider in a garange conversion</a></h5> Nov, 2021
+                    </div>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog12' %}">13 steps to de-clutter a storage room and make money</a></h5> Dec, 2021
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog13' %}">12 quick tips to reduce the risk of a burglary at your home</a></h5> Jan, 2022
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog14' %}">How to Find a builder</a></h5> Feb, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+        </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog16' %}">Hire a plumber</a></h5> Mar, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog17' %}">Electrical safety dos and donts for homeowners</a></h5> Apr, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog18' %}">How to find a reliable Electrician</a></h5> Apr, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog19' %}">Plumbing dos and donts for home and property owners</a></h5> Apr, 2022
+    </div>
+    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 text-lg-left text-center">
+                    <div class="copyright">
+                        <strong>&copy; Copyright 2021 -
+                            <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>
+                            , Billntrade
+                            Ltd</strong>. All Rights Reserved
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                        <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                        <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                        <a href="{% url 'cookies' %}">Cookies</a>
+                        <a href="{% url 'blogs' %}">Blogs</a>
+                        <a href="{% url 'about-us' %}">About us</a>
+                        <a href="{% url 'sitemap' %}">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <style>
+        .brand {
+            width: 14rem;
+            margin-left: 2rem;
+            /* border: 2px solid lime; */
+        }
+    </style>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            feather.replace();
+
+            $('button').click(function () {
+                $('.alert').html('<i data-feather="activity"></i>');
+                feather.replace();
+            });
+
+        });
+    </script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+
+
+<script>
+    body{
+        margin - top: 20px;
+    }
+/*
+Blog post entries
+*/
+
+.entry - card {
+        -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+.entry - content {
+        background - color: #fff;
+        padding: 36px 36px 36px 36px;
+        border - bottom - left - radius: 6px;
+        border - bottom - right - radius: 6px;
+    }
+
+.entry - content.entry - title a {
+        color: #333;
+    }
+
+.entry - content.entry - title a: hover {
+        color: #4782d3;
+    }
+
+.entry - content.entry - meta span {
+        font - size: 12px;
+    }
+
+.entry - title {
+        font - size: .95rem;
+        font - weight: 500;
+        margin - bottom: 15px;
+    }
+
+.entry - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb img {
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb.thumb - hover {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: rgba(71, 130, 211, 0.85);
+        display: block;
+        top: 50 %;
+        left: 50 %;
+        color: #fff;
+        font - size: 40px;
+        line - height: 100px;
+        border - radius: 50 %;
+        margin - top: -50px;
+        margin - left: -50px;
+        text - align: center;
+        transform: scale(0);
+        -webkit - transform: scale(0);
+        opacity: 0;
+        transition: all .3s ease -in -out;
+        -webkit - transition: all .3s ease -in -out;
+    }
+
+.entry - thumb: hover.thumb - hover {
+        opacity: 1;
+        transform: scale(1);
+        -webkit - transform: scale(1);
+    }
+
+.article - post {
+        border - bottom: 1px solid #eee;
+        padding - bottom: 70px;
+    }
+
+.article - post.post - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+
+.article - post.post - thumb.post - overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100 %;
+        height: 100 %;
+        background - color: rgba(0, 0, 0, 0.6);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        opacity: 0;
+    }
+
+.article - post.post - thumb.post - overlay span {
+        width: 100 %;
+        display: block;
+        vertical - align: middle;
+        text - align: center;
+        transform: translateY(70 %);
+        -webkit - transform: translateY(70 %);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        height: 100 %;
+        color: #fff;
+    }
+
+.article - post.post - thumb: hover.post - overlay {
+        opacity: 1;
+    }
+
+.article - post.post - thumb: hover.post - overlay span {
+        transform: translateY(50 %);
+        -webkit - transform: translateY(50 %);
+    }
+
+.post - content.post - title {
+        font - weight: 500;
+    }
+
+.post - meta {
+        padding - top: 15px;
+        margin - bottom: 20px;
+    }
+
+.post - meta li: not(: last - child) {
+        margin - right: 10px;
+    }
+
+.post - meta li a {
+        color: #999;
+        font - size: 13px;
+    }
+
+.post - meta li a: hover {
+        color: #4782d3;
+    }
+
+.post - meta li i {
+        margin - right: 5px;
+    }
+
+.post - meta li: after {
+        margin - top: -5px;
+        content: "/";
+        margin - left: 10px;
+    }
+
+.post - meta li: last - child: after {
+        display: none;
+    }
+
+.post - masonry.masonry - title {
+        font - weight: 500;
+    }
+
+.share - buttons li {
+        vertical - align: middle;
+    }
+
+.share - buttons li a {
+        margin - right: 0px;
+    }
+
+.post - content.fa {
+        color: #ddd;
+    }
+
+.post - content a h2 {
+        font - size: 1.5rem;
+        color: #333;
+        margin - bottom: 0px;
+    }
+
+.article - post.owl - carousel {
+        margin - bottom: 20px!important;
+    }
+
+.post - masonry h4 {
+        text - transform: capitalize;
+        font - size: 1rem;
+        font - weight: 700;
+    }
+.mb40 {
+        margin - bottom: 40px!important;
+    }
+.mb30 {
+        margin - bottom: 30px!important;
+    }
+.media - body h5 a {
+        color: #555;
+    }
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+/*
+Template sidebar
+*/
+
+.sidebar - title {
+        margin - bottom: 1rem;
+        font - size: 1.1rem;
+    }
+
+.categories li {
+        vertical - align: middle;
+    }
+
+.categories li > ul {
+        padding - left: 15px;
+    }
+
+.categories li > ul > li > a {
+        font - weight: 300;
+    }
+
+.categories li a {
+        color: #999;
+        position: relative;
+        display: block;
+        padding: 5px 10px;
+        border - bottom: 1px solid #eee;
+    }
+
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+
+.categories li a: hover {
+        color: #444;
+        background - color: #f5f5f5;
+    }
+
+.categories > li.active > a {
+        font - weight: 600;
+        color: #444;
+    }
+
+.media - body h5 {
+        font - size: 15px;
+        letter - spacing: 0px;
+        line - height: 20px;
+        font - weight: 400;
+    }
+
+.media - body h5 a {
+        color: #555;
+    }
+
+.media - body h5 a: hover {
+        color: #4782d3;
+    }
+
+</script>
+
+<style>
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+</style>

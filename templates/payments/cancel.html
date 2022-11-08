@@ -1,0 +1,19 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+    <div class="container w-50 mx-auto pt-5 pb-5 mt-5 shadow">
+        <div>
+            <h6 class="text-center text-warning">Payment Cancelled!</h6>
+        </div>
+        <div>
+            <p class="text-center">
+                Your payment was cancelled successfully, press here
+                <a href="{% url 'business-payments' %}">payments menu</a>  
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

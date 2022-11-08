@@ -1,0 +1,86 @@
+{% load static %}
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="sidebar-sticky pt-3">
+    <ul class="nav flex-column">
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Menu</span>
+            <a class="collapsible" href="#" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'customer-properties' %}">
+          <span data-feather="file"></span>
+          Customer information
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link quotes-click " href="{% url 'customer-quote' %}">
+          <span data-feather="book-open"></span>
+          Quotes
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customer-open-invoice-overview' %}">
+          <span data-feather="sidebar"></span>
+          Invoices
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'search-suppliers' %}">
+          <span data-feather="list"></span>
+         Traders
+        </a>
+      </li>
+    </ul>
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+      <span>Saved reports</span>
+      <a class="collapsible" href="#" aria-label="Add a new report">
+        <span data-feather="plus-circle"></span>
+      </a>
+    </h6>
+    <ul class="nav flex-column mb-2">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customer-report-quotes-open' %}">
+          <span data-feather="download"></span>
+          Open quotes
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customer-report-quotes-completed' %}">
+          <span data-feather="download"></span>
+          Completed quotes
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customer-report-invoices-open' %}">
+          <span data-feather="download"></span>
+          Open invoices
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customer-report-invoices-paid' %}">
+          <span data-feather="download"></span>
+          Paid invoices
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  } 
+</script>

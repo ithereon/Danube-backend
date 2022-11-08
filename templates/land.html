@@ -1,0 +1,487 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+
+
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="icon" type="image/png" href='static/img/favicon-32x32.png'>
+
+  <!--support working-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+
+  <!-- IcoFonts -->
+  <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+<body>
+  
+
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-0 class">
+    <a href=""><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex ml-auto">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Customer Register</a>   
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+  <!-- ======= End header Section ======= -->
+  <!-- ======= Billntrade Section ======= -->
+
+  
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 style="color: rgb(95, 110, 241)">Connecting customers and tradespeople</h1>
+          <h2 style="color: rgb(58, 124, 52)">Opportunity, connect, deliver.</h2>
+        </div>
+        <div class="col-lg-6 order-2 order-lg-1 hero-img" data-aos="fade-left" data-aos-delay="200">
+          <img src="{% static '/img/why-us.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+  </section><!-- End Billntrade Section-->
+
+  <main id="main">
+
+    <!-- ======= Counts Section ======= -->
+
+    <!-- End Counts Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Testimonials</h2>
+        </div>
+
+        <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <h3>Dale Matthews</h3>
+              <h4>Builder</h4>
+              <p style="color: rgb(14, 10, 236)">
+                'I struggled with other online sites, but Billntrade.com's site is the best for a sole trade business
+                like mine. I signed up in less than 5 mim and was able to find work, connect through the marketplace or direct request.
+                Not only is it simple and easy to use, but it's cheaper when compared to the other sites prices and the
+                amount of work i've got from using it. In fact, after one job, it more than paid for itself and my bottom line
+                has grown 10%, with less spent on marketing.'
+              </p>
+              <span style="color: green" data-feather="feather"></span>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <h3>Alex Douglas</h3>
+              <h4>Plumber</h4>
+              <p style="color: rgb(14, 10, 236)">
+                'I wasn't expecting much from Billntrade.com, but was surprised at both how it helped me manage work, and
+                how easy it was to use. I signed up in 5 min, and was able to raise my profile, with customers I already knew. 
+                I've only used it for regular customers and now, I can't imagine working without
+                Billntrade, Well done to the team at Billntrade.'
+              </p>
+              <span style="color: green" data-feather="feather"></span>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <h3>Joe Parsons</h3>
+              <h4>Plasterer</h4>
+              <p style="color: rgb(14, 10, 236)">
+                'I learn't to use it overnight and was really impressed by how easy and user friendly it was. My wife
+                helps out with the job processing and we really like the way we talk using the communication feature,
+                it just helped us understand what our customers wanted and made sure we delivered what they needed through 
+                digital communication on https://billntrade.com, I can't rate it highly enough.'
+              </p>
+              <span style="color: green" data-feather="feather"></span>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <h3>Matt Fraser</h3>
+              <h4>landscape artist</h4>
+              <p style="color: rgb(14, 10, 236)">
+                'Why do I like Bilntrade.com? I've used other sites, but if i'm honest, Billntrade.com have done their
+                homework. They really have got something good here,
+                whilst being well priced. I like how they setup the direct contact, I get more offers for work this way, in
+                fact more that I can deal with, when I turn work away, I am able to refer work to friends in the trade via the interest response, 
+                they can then get an outreach (if they are registered), and get opportunities for some work also. A real game-changer for the trade.'
+              </p>
+              <span style="color: green" data-feather="feather"></span>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <h3>Darren Harper</h3>
+              <h4>Builder and property developer</h4>
+              <p style="color: rgb(14, 10, 236)">
+                'I think Billntrade.com are listening to the trade and are genuinely trying to use tech to help the trade. I'm a glass is half full
+                guy! but when I used Billntrade.com's system,
+                I was blown away by how simple it was to use. One of the many things I like is   how I can see how my
+                business is doing in the dashboard.
+                This is really important for cashflow if you run a small business. Billntrade.com is 'now' an essential
+                tool for my staff, my business, my customers, my partners and me.'
+              </p>
+              <span style="color: green" data-feather="feather"></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Why should you use Billntrade.com, as a professional tradesperson?</h4>
+          </div>
+          <div class="col-lg-7">
+                  
+              <strong><p><u>No product currently exists like ours, for the trade.</u></p></strong>
+          
+              <p>Our product is uniquely designed to help tradespeople manage work at a lower cost.</p>
+
+              <p>(1) We don't charge for any expressions of interest in (RFQ) leads.</p>
+
+              <p>(2) We don't charge for operating in different trade categories.</p> 
+
+              <p>(3) We remove middleman bottlenecks and costs for lead generation.</p>
+
+              <p>(4) Our product supports how you manage your business and support your customers.</p>  
+              
+          </div>
+        </div><!-- End F.A.Q Item-->
+       
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Why should you use Billntrade.com, as a customer looking for a professional tradesperson?</h4>
+          </div>
+          <div class="col-lg-7">
+          
+              <strong><p><u>We are the first to offer a new way to find tradespeople and match them to you.</u></p></strong>
+
+              <p>(1) Once setup, the whole process is simple, just the click of a few buttons.</p>
+
+              <p>(2) You can select preferred tradespeople that you feel should quote for jobs you have, and reassuringly,   send requests directly to them.</p>
+
+              <p>(3) If you don't have preferred tradespeople, no problem! post your requests to the marketplace, we can help by matching tradespeople with your request.</p>
+
+              <p>(4) Problem solved, now track your job and deliverables, in a simple and uniquely visual way. </p>
+
+              <p>(5) We understand it's your money, so! your job, your way, your say.</p>
+              
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>How much does it cost?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Our services are <strong>free for customers to use</strong>, for professional trade service businesses, after your <strong>14 day free</strong> trial period ends, our subscription prices start from as little as 
+              67 pence per day, per system user +
+              VAT.
+            </p>
+            <p>Contact us for pricing, if you are a medium or large customer, or if you are a medium or large professional trade service business.</p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Who can use the product?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>Professional sole tradespeople, small independent contract trade businesses, homeowners and private landlords.</p>
+            <p>Use your desktop, laptop or tablet for the best customer experience.</p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Is my data secure?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Yes. Our priority is protecting customers data. To do this, our technology stack
+              includes data encryption protocals, security layering and authentication protocals. We have also integrated 
+              cloud based data security measures from a leading global PCI compliant, software service provider.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+      </div>
+      </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="col">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-about">
+              <p>Billntrade.com is the trading name for Billntrade Ltd. Registered in England No 12074484.</p>
+              <div class="social-links">
+                <a href="https://www.facebook.com/billntrade" class="fa fa-facebook" target="_blank" rel="noreferrer noopener"></a>
+                <a href="https://www.linkedin.com/company/billntrade-com/about" class="fa fa-linkedin" target="_blank" rel="noreferrer noopener"></a>
+                <a href="https://twitter.com/billntrade" class="fa fa-twitter" target="_blank" rel="noreferrer noopener"></a>
+                <a href="https://www.instagram.com/billntrade_support_saas_1" class='fa fa-instagram' target="_blank" rel="noreferrer noopener"></a>
+              </div>
+            </div>
+          </div>
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="info">
+              <div>
+              </div>
+              <div>
+                <i class="ri-mail-send-line"></i>
+                <p></p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <form action="{% url 'contact-us' %}" method="post" id='contact-form' role="form" class="php-email-form">
+              {% csrf_token %}
+              <div class="form-group">
+                <input required type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                  data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input required type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                  data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input required type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea required class="form-control" name="message" rows="5" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                {% include 'partials/_messages.html' %}   
+                  <div class="sent-message" id='contact-message' style='display: none'> </div>           
+                </div>
+              <div class="g-recaptcha" data-sitekey="6LfQgbsdAAAAAOpU8mhGTYHjIcOp0KKhak3fA5Gy"></div>
+              <div class="mt-2 text-center"><button type="submit" style="color: black">Send Message</button></div>
+            </form>
+          </div>
+  </div>
+</div>
+      
+
+    </section><!-- End Contact Section -->
+
+      
+  </main> 
+
+      <!-- ======= Footer ======= -->
+      <footer id="footer">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-6 text-lg-left text-center">
+                <div class="copyright">
+                    <strong>&copy; Copyright 2021 -
+                        <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>, Billntrade
+                        Ltd</strong>. All Rights Reserved
+                    </nav>
+                </div>
+            </div>
+            <div class="col-lg-6">
+              <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                <a href="{% url 'cookies' %}">Cookies</a>
+                <a href="{% url 'blogs' %}">Blogs</a>
+                <a href="{% url 'about-us' %}">About us</a>
+                <a href="{% url 'sitemap' %}">Sitemap</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <style>
+      .brand {
+          height: auto; 
+          width: auto;
+          max-height: 72px;
+          max-width: 250px;
+      }
+    </style>
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script> 
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+      <!-- Template Main JS File -->
+
+
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script>
+    $(document).ready(function () {
+      feather.replace();
+
+      $('button').click(function () {
+        $('.alert').html('<i data-feather="activity"></i>');
+        feather.replace();
+      });
+
+    });
+  </script>
+  
+
+<style type="text/css">
+  @media screen and (max-height: 767px){
+      #rc-imageselect, .g-recaptcha {
+              transform:scale(0.77);
+              -webkit-transform:scale(0.77);
+              transform-origin:0 0;
+              -webkit-transform-origin:0 0;
+          }
+      }
+  </style>
+  
+  <style>
+  footer 
+  {
+    position: relative;
+    bottom: 0;
+  }
+  </style>
+
+</body>
+
+
+
+</html>
+
+

@@ -1,0 +1,24 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+    <div class="container w-50 mx-auto pt-5 pb-5 mt-5 shadow">
+        <div>
+            <h5 class="text-center text-warning">Account Activation Failed!</h5>
+        </div>
+        <div>
+            <p class="text-center">
+                Sorry! This link is either broken or has already been used.
+            </p>
+        </div>
+        <div class="d-flex justify-content-center mt-3 mb-2">
+            <p class="text-center">
+                If you have forgotten your password?
+                <a href="{% url 'customer-password-reset' %}">Reset Password Here.</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

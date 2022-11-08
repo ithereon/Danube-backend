@@ -1,0 +1,739 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+
+  <!-- <link rel="icon" type="image/png" href="{% static '/img/Favicon.png' %}"/> -->
+
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!--support working-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- IcoFonts -->
+  <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+    <a href="{% url 'home' %}"><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static 'img/garage.jpg' %}" class="responsive" alt="picture of classic car in dark garage"> 
+                    <div class="post-content">
+                        <h1>6 points to consider in a garage conversion</h1>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Sarah Tring</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">09 November 2021</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+                        
+                        <h2>Garage conversions add value to your property</h2>
+
+                        <h3>1.   Financial opportunity</h3>
+
+                        <h4>Garage conversions are starting to trend, not only do they offer an opportunity to create a unique functional space, 
+                        it is one of the few spaces where your design is only limited by your budget and you imagination. A small development project can cost as 
+                        little as £10,000 or £500 to £700 per square metre. According to a report by Nationwide Building Society, a well executed conversion 
+                        can add 20% more to the value of the property, so the financial cost of a project to convert a garage, can be more than justified.</h4>
+
+                        <h3>2.   What should you consider</h3>
+
+                        <h4>Structural engineers - can assist in the creative and engineering requirements to convert or create the space</h4>
+
+                        <h4>Architects - work alongside engineers to document and realise the build from a plan, they can be expensive so fees are a consideration</h4>
+                        
+                        <h4>Planning applications - Required by law to be sought with any build, redevelopment or rennovation, if in doubt ask, costs vary by project and regulatory requirements.</h4>
+
+                        <h4>Foundations and the build - work with engineers and builders to determine the best foundation to support your project, also, 
+                        consider environmental impact and sustainability</h4>
+
+                        <h4>Interior design - again consider the purpose of the space, and how the space will be outfitted, sustainability and 
+                            environmental considerations should be weighed in also.</h4>
+    
+                        <h4>Space saving is another benefit, given the medium the plants are immersed in. Also, the roots don’t need to spread out as much to get the nutrients they need, the oxygenated nutrient 
+                            rich water, which makes up an essential part of hydroponics, allows the plants to be packed together more closely creating a smaller footprint. This is a huge space saving benefit meaning you can put more 
+                            indoor plants together and grow them in a smaller space. For urban homeowners who are looking to grow a variety of plants in a small space, this represent a viable solution.</h4>
+                        
+                        <h3>3.    Consider a project manager and or architect</h4>
+
+                        <h4>A project manager and an architect can both endure that the conversion is structurally sound, the design is realistic and acheivable 
+                            given the budget and the build falls within regulation and planning permissiona that cna be secured.</h4>
+                    
+                        <h3>4.     Expand on regulation</h3>
+
+                        <h4>A conversion garage project will need to adhere to any building regulations as if you fail to comply with your regulations, 
+                            you may have to undo some or all of the work undertaken, which can be expensive, a waste of money and of time. Regulations to consider are:</h4>
+
+                        <h4>- Ventilating the conversion</h4>
+
+                        <h4>- Fire, Health and Safety</h4>
+
+                        <h4>- Acoustic performance</h4>
+
+                        <h4>- Thermal and enegy performance</h4>
+
+                        <h4>There is also a requirement to submit a notice or planning application to your local building control department. They will register the conversion carry out 
+                            inspections for the duration of the project and issue a final certificate of completion. If your existing garage foundations are not sufficient for the conversion, 
+                            a 1 metre footing wall will need to be dug and fortified with concrete. Or a 140mm x 100mm concrete lintel will need to be nested in the wall, below ground level on 
+                            either side; you can the construct an infill wall on top.</h4>
+                    
+                        <h3>5.     Insurance</h4>
+
+                        <h4>Getting the right insurance is also something you will require. Conversion insurance excludes loss or damage whilst the property is being developed, this should be the case 
+                            if you are undertaking the project on your own, or you have contracted tradespeople undertaking the work. This is because if anything goes wrong in either scenario and a fallback 
+                            plan or other type of protection from loss or damage is not forthcoming, you can then exercise your policy rights. Conversion insurance covers the existing state of the property 
+                            (garage) being converted as well as all the new conversion work that goes on with the property (garage). 
+                            It also covers the main property (house) so if this is damaged during the works then the site policy 
+                            can be used to cover the damage and rectification. You will need to speak with your Home insurance policy 
+                            provider to understand the nature and validity of your conversion policy running concurrent to any home insurance policy.</h5>
+                        
+                        <h3>6.    Final points</h3>
+
+                        <h4>A garage conversion can be a workshop, office, games room, or something else all together.
+                            We hope these ideas help you with a potential garage conversion project. If you enjoyed this short article, check 
+                            out our other articles <a href="{% url 'blog14' %}">How to find a builder</a>
+                            this article is one example of how <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> is working with builders, to help them find leads and grow their business</h5>
+    
+
+                            <ul class="list-inline share-buttons">
+                                    <li class="list-inline-item">Share Post:</li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                            <hr class="mb40">
+                            <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                            <div class="media mb40">
+                                <div class="media-body">
+                                    <h5 class="mt-0 font700">Sarah Tring</h5> Hi, I'm Sarah, I'm a blogger who enjoys
+                                    eveything related to home improvement, I'm passionate about sustainable homes, home
+                                    improvement, home developments and technology used in the home. When not blogging, I
+                                    enjoy spending time with my husband, two children and our dog 'Leto'.
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </article>
+                    <!-- post article-->
+                </div>
+                <div class="col-md-3 mb30">
+                    <div class="mb30">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search..."
+                                    aria-describedby="basic-addon2">
+                                <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <h4 class="sidebar-title">Other blogs</h4>
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                            successfully deal with mould in your home</a></h5> Apr, 2021
+                                </div>
+                            </li>
+                            <li class="media my-4">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                            plumber</a></h5> Jul, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                                    </div>
+                                </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                    </div>
+                            </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                                <h5 class="mt-0 mb-1"><a href="{% url 'blog6' %}">The 12 step essential guide to protecting your home from cold weather damage</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                                    </div>
+                                </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog8' %}">Your essential 18 point guide to organising a home move</a></h5> Oct, 2021
+                                </div>
+                            </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                                </div>
+                            </li>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog10' %}">17 essential tips to help you with hydroponic gardening</a></h5> Nov, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog12' %}">13 steps to de-clutter a storage room and make money</a></h5> Dec, 2021
+                    </div>
+                </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog13' %}">12 quick tips to reduce the risk of a burglary at your home</a></h5> Jan, 2022
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog14' %}">How to Find a builder</a></h5> Feb, 2022
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog16' %}">Hire a plumber</a></h5> Mar, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog17' %}">Electrical safety dos and donts for homeowners</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog18' %}">How to find a reliable Electrician</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog19' %}">Plumbing dos and donts for home and property owners</a></h5> Apr, 2022
+        </div>
+        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6 text-lg-left text-center">
+                        <div class="copyright">
+                            <strong>&copy; Copyright 2021 -
+                                <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>, Billntrade
+                                Ltd</strong>. All Rights Reserved
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                            <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                            <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                            <a href="{% url 'cookies' %}">Cookies</a>
+                            <a href="{% url 'blogs' %}">Blogs</a>
+                            <a href="{% url 'about-us' %}">About us</a>
+                            <a href="{% url 'sitemap' %}">Sitemap</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+    
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    
+        <style>
+            .brand {
+                width: 14rem;
+                margin-left: 2rem;
+                /* border: 2px solid lime; */
+            }
+        </style>
+    
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+        <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+        <script src="assets/vendor/counterup/counterup.min.js"></script>
+        <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/venobox/venobox.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    
+        <script>
+            $(document).ready(function () {
+                feather.replace();
+    
+                $('button').click(function () {
+                    $('.alert').html('<i data-feather="activity"></i>');
+                    feather.replace();
+                });
+    
+            });
+        </script>
+    
+        <!-- Template Main JS File -->
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+    
+    </html>
+    
+    
+    <script>
+        body{
+            margin - top: 20px;
+        }
+    /*
+    Blog post entries
+    */
+    
+    .entry - card {
+            -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+            -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+            box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        }
+    
+    .entry - content {
+            background - color: #fff;
+            padding: 36px 36px 36px 36px;
+            border - bottom - left - radius: 6px;
+            border - bottom - right - radius: 6px;
+        }
+    
+    .entry - content.entry - title a {
+            color: #333;
+        }
+    
+    .entry - content.entry - title a: hover {
+            color: #4782d3;
+        }
+    
+    .entry - content.entry - meta span {
+            font - size: 12px;
+        }
+    
+    .entry - title {
+            font - size: .95rem;
+            font - weight: 500;
+            margin - bottom: 15px;
+        }
+    
+    .entry - thumb {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border - top - left - radius: 6px;
+            border - top - right - radius: 6px;
+        }
+    
+    .entry - thumb img {
+            border - top - left - radius: 6px;
+            border - top - right - radius: 6px;
+        }
+    
+    .entry - thumb.thumb - hover {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(71, 130, 211, 0.85);
+            display: block;
+            top: 50 %;
+            left: 50 %;
+            color: #fff;
+            font - size: 40px;
+            line - height: 100px;
+            border - radius: 50 %;
+            margin - top: -50px;
+            margin - left: -50px;
+            text - align: center;
+            transform: scale(0);
+            -webkit - transform: scale(0);
+            opacity: 0;
+            transition: all .3s ease -in -out;
+            -webkit - transition: all .3s ease -in -out;
+        }
+    
+    .entry - thumb: hover.thumb - hover {
+            opacity: 1;
+            transform: scale(1);
+            -webkit - transform: scale(1);
+        }
+    
+    .article - post {
+            border - bottom: 1px solid #eee;
+            padding - bottom: 70px;
+        }
+    
+    .article - post.post - thumb {
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+    
+    .article - post.post - thumb.post - overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100 %;
+            height: 100 %;
+            background - color: rgba(0, 0, 0, 0.6);
+            transition: all .3s;
+            -webkit - transition: all .3s;
+            opacity: 0;
+        }
+    
+    .article - post.post - thumb.post - overlay span {
+            width: 100 %;
+            display: block;
+            vertical - align: middle;
+            text - align: center;
+            transform: translateY(70 %);
+            -webkit - transform: translateY(70 %);
+            transition: all .3s;
+            -webkit - transition: all .3s;
+            height: 100 %;
+            color: #fff;
+        }
+    
+    .article - post.post - thumb: hover.post - overlay {
+            opacity: 1;
+        }
+    
+    .article - post.post - thumb: hover.post - overlay span {
+            transform: translateY(50 %);
+            -webkit - transform: translateY(50 %);
+        }
+    
+    .post - content.post - title {
+            font - weight: 500;
+        }
+    
+    .post - meta {
+            padding - top: 15px;
+            margin - bottom: 20px;
+        }
+    
+    .post - meta li: not(: last - child) {
+            margin - right: 10px;
+        }
+    
+    .post - meta li a {
+            color: #999;
+            font - size: 13px;
+        }
+    
+    .post - meta li a: hover {
+            color: #4782d3;
+        }
+    
+    .post - meta li i {
+            margin - right: 5px;
+        }
+    
+    .post - meta li: after {
+            margin - top: -5px;
+            content: "/";
+            margin - left: 10px;
+        }
+    
+    .post - meta li: last - child: after {
+            display: none;
+        }
+    
+    .post - masonry.masonry - title {
+            font - weight: 500;
+        }
+    
+    .share - buttons li {
+            vertical - align: middle;
+        }
+    
+    .share - buttons li a {
+            margin - right: 0px;
+        }
+    
+    .post - content.fa {
+            color: #ddd;
+        }
+    
+    .post - content a h2 {
+            font - size: 1.5rem;
+            color: #333;
+            margin - bottom: 0px;
+        }
+    
+    .article - post.owl - carousel {
+            margin - bottom: 20px!important;
+        }
+    
+    .post - masonry h4 {
+            text - transform: capitalize;
+            font - size: 1rem;
+            font - weight: 700;
+        }
+    .mb40 {
+            margin - bottom: 40px!important;
+        }
+    .mb30 {
+            margin - bottom: 30px!important;
+        }
+    .media - body h5 a {
+            color: #555;
+        }
+    .categories li a: before {
+            content: "\f0da";
+            font - family: 'FontAwesome';
+            margin - right: 5px;
+        }
+    /*
+    Template sidebar
+    */
+    
+    .sidebar - title {
+            margin - bottom: 1rem;
+            font - size: 1.1rem;
+        }
+    
+    .categories li {
+            vertical - align: middle;
+        }
+    
+    .categories li > ul {
+            padding - left: 15px;
+        }
+    
+    .categories li > ul > li > a {
+            font - weight: 300;
+        }
+    
+    .categories li a {
+            color: #999;
+            position: relative;
+            display: block;
+            padding: 5px 10px;
+            border - bottom: 1px solid #eee;
+        }
+    
+    .categories li a: before {
+            content: "\f0da";
+            font - family: 'FontAwesome';
+            margin - right: 5px;
+        }
+    
+    .categories li a: hover {
+            color: #444;
+            background - color: #f5f5f5;
+        }
+    
+    .categories > li.active > a {
+            font - weight: 600;
+            color: #444;
+        }
+    
+    .media - body h5 {
+            font - size: 15px;
+            letter - spacing: 0px;
+            line - height: 20px;
+            font - weight: 400;
+        }
+    
+    .media - body h5 a {
+            color: #555;
+        }
+    
+    .media - body h5 a: hover {
+            color: #4782d3;
+        }
+    
+    </script>
+
+<style>
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+</style>

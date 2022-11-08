@@ -1,0 +1,204 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+
+<title>Billntrade</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+<link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+<div class="card">
+<div class="card-header">
+<div class="row mb-4">
+<div class="col-md-12">
+<h1>INVOICE</h1> 
+<div>INVOICE ID:  <strong>{{values.Invoice_id}}</strong></div>
+<div>Status:  <strong>PAID</strong></div>
+</div>
+<div class="card-body">
+<div class="row mb-4">
+<div class="col-sm-6">
+<h6 class="mb-3">From:</h6>
+<div>
+    <strong>{{values.Businessname_qt_inv}}</strong>
+</div>
+<div>{{values.Address1_qt_inv}}</div>
+<div>{{values.Address2_qt_inv}}</div>
+<div>{{values.Town_qt_inv}}</div>
+<div>{{values.City_qt_inv}}</div>
+<div>{{values.County_qt_inv}}</div>
+<div>{{values.Postcode_qt_inv}}</div>
+<div>Email: {{values.Email_qt_inv}}</div>
+<div>Mobile: {{values.Mobile_qt_inv}}</div>
+</div>
+      
+<div class="col-sm-6">
+<h6 class="mb-3">To:</h6>
+<div>
+<strong>{{values.Title_custquote_qt_inv}} {{values.Firstname_custquote_qt_inv}} {{values.Surname_custquote_qt_inv}} </strong>
+</div>
+<div>{{values.Address1_custquote_qt_inv}}</div>
+<div>{{values.Address2_custquote_qt_inv}}</div>
+<div>{{values.Town_custquote_qt_inv}}</div>
+<div>{{values.City_custquote_qt_inv}}</div>
+<div>{{values.County_custquote_qt_inv}}<div>
+<div>{{values.Postcode_custquote_qt_inv}}</div>
+</div>
+</div>
+
+<div class="row mb-4">
+<h6 class="mb-3">Trade invoice paid date: {{values.Invoice_dateactualpaid}}</h6>
+</div>    
+<br>
+
+</div>
+<h6 class="mb-3">Invoice details:</h6>
+<div>
+
+<body>
+<div class="table-responsive-sm">
+<table class="table table-striped">
+<div class="row mb-1">
+<div class="col-left-5">
+<thead>
+<tr>
+<td class="left" style="background-color: grey;"><strong>#</strong></td>
+<td class="left" style="background-color: grey;"><strong>Area of work</strong></td>
+<td class="left" style="background-color: grey;"><strong>Brief description<strong></td>
+<td class="left" style="background-color: grey;"><strong>Detailed description</strong></td>
+<td class="left" style="background-color: grey;"><strong>Comments</strong></td>
+</tr>
+</thead>
+</div>
+</div>
+</table>
+</div>
+<div class="table-responsive-sm">
+<table class="table table-clear">
+<div class="row mb-1">
+<div class="col-left-5">
+<tbody>
+<tr>
+<td class="left">1</td>
+<td class="right">{{values.Areaofwork_busquote_qt_inv}}</td>
+<td class="left">{{values.Briefdescription_busquote_qt_inv}}</td>
+<td class="left">{{values.Detaileddescription_busquote_qt_inv}}</td>
+<td class="left">{{values.Comments_busquote_qt_inv}}</td>
+</tr>
+</tbody>
+</div>
+</div>
+</table>
+</div>
+<hr>
+<div class="table-responsive-sm">
+<table class="table table-clear">
+<table align="right">
+<tbody>   
+<td class="right">
+<strong>Subtotal</strong>
+</td>
+<td class="right">£{{values.Subtotal_qt_inv}}</td>
+</tr>
+<tr>
+<td class="right">
+<strong>Discount %</strong>
+</td>
+<td class="right">{{values.Discount_qt_inv}}</td>
+</tr>
+<td class="right">
+<strong>Subtotal after discount</strong>
+</td>
+<td class="right">£{{values.Subtotalafterdisc_qt_inv}}</td>
+<tr>
+<td class="right">
+<strong>VAT %</strong>
+</td>
+<td class="right">{{values.VAT_qt_inv}}</td>
+</tr>
+<tr>
+<td class="right">
+<strong>Total amount due</strong>
+</td>
+<td class="right">
+<strong>£{{values.Total_qt_inv}}</strong>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<hr>
+<div id="container">
+<tr>
+    <td class="center"></td>
+
+    <td class="left" style="padding-top: 10px; border-top: 1px solid #ddd; font-size:12px; color: #333; margin-top: 20px; text-align: right;"><strong>Thank you for your business {{values.Title_custquote_qt_inv}}
+            {{values.Firstname_custquote_qt_inv}} {{values.Surname_custquote_qt_inv}}, we look forward
+            to working with you again.</strong></td>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</body>
+
+<div class="footer" style="padding-top: 10px; border-top: 1px solid #ddd; font-size:12px; color: #333; margin-top: 20px; text-align: center;"><a style="color: #03c; text-decoration: none;" href="https://footer.example"> VAT number: {{values.VATnumber}}</a></div>
+
+
+        
+
+<style>
+
+th {
+background-color: #4287f5;
+color: white;
+}
+
+th,
+td {
+width: 150px;
+text-align: center;
+border: 1px solid black;
+padding: 5px;
+}
+
+h2 {
+color: #4287f5;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+</style> 
+    

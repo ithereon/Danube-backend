@@ -1,0 +1,286 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% block title %}
+
+  {% endblock %}
+  </title>
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light py-0 class">
+    <a href=""><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex ml-auto">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        </ul>
+        <ul class="navbar-nav ml-auto mr-5">
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="{% url 'logout-view' %}">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      {% include 'partials/_bus_quote_issue.html' %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="col-auto mt-3">
+        </div>
+        {% block content %}
+        {% include 'partials/_messages.html' %}
+        <div class="col-md-8"></div>
+        <div class="col-auto md-2 my-2">
+          <form class="form-inline" action="" method="POST">
+            <div class="card mt-1 style=width: 18rem;"></div>
+            {% csrf_token %}
+          </form>
+        </div>
+        <div class="accordion" id="accordionExample">
+
+
+            {% for issue in issues %}
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button style="color: black" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapseOne">
+                         Issue no: {{forloop.counter}} - {{issue.Issue_description}} <span data-feather="plus-circle"></span>
+                        </button>
+
+                        {% if not issue.both_agreed %}
+
+                      
+                        <a style="position: relative;top: 6px" 
+                           class="btn 
+                                  {% if issue.business_issue_resolved %}
+                                    btn-success
+                                  {% else %}
+                                    btn-warning
+                                  {% endif %} float-right btn-sm
+                                  "
+                           href='{% url "business_quote_issue_resolved" issue.id id %}'
+
+                          >
+                          
+                          {% if issue.business_issue_resolved %}
+                          Resolved
+                          {% else %}
+                          unresolved
+                          {% endif %}
+                          
+                        </a>
+
+                        {% else %}
+                        <a style='font-size: 13px ;position: relative;top: 14px' class='float-right text-dark'>Resolved</a>
+                        {% endif %}
+
+
+                      </h2>
+                    </div>
+                
+                    <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+
+                          <table class="table" width="700px">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Username</th>
+                                  <th scope="col">Comments</th>
+                                  <th scope="col">Date</th>
+                                  <th scope="col">Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+
+                                
+                                {% for comments in issues_comments %}
+                                
+                                
+                                {% if comments.issueManagement.id  == issue.id %}
+
+                                  
+                                  <tr>
+                                    <td>{{comments.User.username}}</td>
+                                    <td>{{comments.Issue_description}}</td>
+                                    <td>{{comments.Datecreated}}</td>   
+                                    <td></td>   
+                                  </tr>
+                                  
+                                {% endif %}
+
+
+                                {% endfor %}
+
+                                {% if not issue.both_agreed %}
+
+                                  <tr>
+                                      <form action="/quote_business_comment/issue/{{id}}/{{issue.id}}" 
+                                            method="post">
+                                        {% csrf_token %}
+                                        <td width="100px">
+                                          <input type="text" name="Username" value="{{ request.user }}"  readonly class="form-control"/>
+                                        </td>
+                                        <td width="400px">
+                                          <input id="comment" placeholder="Add your comments here." required type="text" name="comments" class="form-control"/>
+                                        </td>
+                                        <td width="100px" >
+                                          <input type="text" name="date" value="{% now "SHORT_DATE_FORMAT" %}" readonly class="form-control"/>
+                                        </td>
+                                        <td width="100px">
+                                          <input style="text-align:right" style="position: relative;top: 7px" type="submit" name="Create" id="add-row" value="Create" href="" class="btn btn btn-info"/>
+                                        </td>
+                                      </form>
+                        
+                        
+                        
+                        
+                                    </tr>
+
+                                  {% endif %}
+                              </tbody>
+                            </table>  
+
+                      </div>
+                    </div>
+                  </div>
+
+
+          
+
+            {% endfor %}
+        
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <style>
+  .my-custom-scrollbar {
+
+height: 200px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/bootstrap.feather.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  <script src="{% static 'js/min.js' %}"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="{% static 'js/function.js' %}"></script>
+  <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+   feather.replace();
+
+   $('button').click(function(){
+      $('.alert').html('<i data-feather="activity"></i>');
+      feather.replace();
+   });
+
+});
+</script>
+
+<script>
+$(document).ready(function () {
+    var counter = 0;
+
+    $("#addrow").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += '<td><input type="text" class="form-control" name="username' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control" name="comments' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control" name="date' + counter + '"/></td>';
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-success "  value="Save"></td>';
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-info "  value="Add"></td>';
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+        newRow.append(cols);
+        $("table.order-list").append(newRow);
+        counter++;
+    });
+
+    $("table.order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();       
+        counter -= 1
+    });
+});
+function calculateRow(row) {
+    var price = +row.find('input[name^="price"]').val();
+}
+function calculateGrandTotal() {
+    var grandTotal = 0;
+    $("table.order-list").find('input[name^="price"]').each(function () {
+        grandTotal += +$(this).val();
+    });
+    $("#grandtotal").text(grandTotal.toFixed(2));
+}
+</script>
+
+<style>
+    .brand {
+        height: auto;
+        width: auto;
+        max-height: 72px;
+        max-width: 250px;
+    }
+  </style>
+
+      </body>     
+{% endblock %}

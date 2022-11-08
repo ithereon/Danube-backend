@@ -1,0 +1,217 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% block title %}
+
+  {% endblock %}
+  </title>
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light py-0 class">
+        <a href=""><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex ml-auto">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        </ul>
+        <ul class="navbar-nav ml-auto mr-5">
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="{% url 'logout-view' %}">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      {% include 'partials/_bus_VAT.html' %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="col-auto mt-3">
+        </div>
+        {% block content %}
+        {% include 'partials/_messages.html' %}
+        <div class="col-md-8"></div>
+        <div class="col-auto md-2 my-2">
+        </div>
+        <table id="myTable" class=" table order-list">
+          <thead>
+            <tr>
+              <td>VAT</td>
+              <td>Date from</td>
+              <td>Date to</td>
+              <td>Save</td>
+              <td>Add</td>
+              <td>Delete</td>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in entries %}
+            <tr>
+              <td data-vat="{{item.VAT}}" class="col-sm-3">
+                {{item.VAT}}
+              </td>
+              <td data-datefrom="{{item.Date_from}}" class="col-sm-3">
+                {{item.Date_from}}
+              </td>
+              <td data-lastname="{{item.Date_to}}" class="col-sm-3">
+                {{item.Date_to}}
+              </td>
+              <td class="col-sm-3">
+                <input disabled type="submit" name="Save" id="saverow" value="Save" href=""
+                  class="btn btn btn-success" />
+              </td>
+              <td class="col-sm-3">
+                <button onclick="editFunction('{{item.VAT}}', '{{item.Date_from}}', '{{item.Date_to}}')"
+                  data-toggle="modal" data-target="#editModal" type="button" name="Edit" value="Edit" href=""
+                  class="btn btn btn-info">Edit</button>
+              </td>
+              <td class="col-sm-3">
+                <a class="btn btn-danger" href="{% url 'financial-setup-delete' item.pk %}">Delete</a>
+              </td>
+            </tr>
+            {% endfor %}
+            <form action="{% url 'add-financial-setup' %}" method="POST">
+              {% csrf_token %}
+              <tr>
+                <td class="col-sm-4">
+                  <input type="number" name="vat" class="form-control" />
+                </td>
+                <td class="col-sm-4">
+                  <input type="date" name="datefrom" class="form-control" />
+                </td>
+                <td class="col-sm-4">
+                  <input type="date" name="dateto" class="form-control" />
+                </td>
+                <td class="col-sm-3">
+                  <input type="submit" name="Save" id="saverow" value="Save" class="btn btn btn-success" />
+                </td>
+                <td class="col-sm-3">
+                  <input type="button" name="Add" id="addrow" value="Add" href="" class="btn btn btn-info" />
+                </td>
+                <td class="col-sm-3">
+                  <button name="Delete" id="deleterow" value="Delete" class="btn btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </form>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="edit-form" action="{% url 'financial-setup-edit' %}" , method="post"> {% csrf_token %}
+          <div class="modal-body">
+            <td class="col-sm-2">
+              VAT
+              <input id="edit-vat" required type="text" name="vat" class="form-control" value="{{values.VAT}}" />
+            </td>
+            <td class="col-sm-3">
+              Date from
+              <input required id="edit-datefrom" type="date" name="datefrom" class="form-control"
+                value="{{values.datefrom | date:'mm-dd-yy'}}" />
+            </td>
+            <td class="col-sm-3">
+              Date to
+              <input required id="edit-dateto" type="date" name="dateto" class="form-control"
+                value="{{values.dateto | date:'mm-dd-yy'}}" />
+            </td>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Save changes" />
+          </div>
+          <form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/bootstrap.feather.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  <script src="{% static 'js/min.js' %}"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="{% static 'js/function.js' %}"></script>
+  <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+
+      function editFunction(VAT, date_from, date_to) {
+        $("#edit-vat").val(VAT);
+        $("#edit-datefrom").val(date_from);
+        $("#edit-dateto").val(date_to);
+      }
+  
+      function deleteFunction(url, username) {
+        $("#delete-username").text(username);
+        $("#delete-link").attr("href", url);
+      }
+  
+      $(document).ready(function () {
+        feather.replace();
+  
+        $('button').click(function () {
+          $('.alert').html('<i data-feather="activity"></i>');
+          feather.replace();
+        });
+  
+      });
+    </script>
+
+<style>
+    .brand {
+        height: auto;
+        width: auto;
+        max-height: 72px;
+        max-width: 250px;
+    }
+  </style>
+
+</body>
+{% endblock %}
+
+

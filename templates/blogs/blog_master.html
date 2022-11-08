@@ -1,0 +1,1077 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Billntrade</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-141253078-2');
+    </script>
+
+
+    <!--support working-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+    <!-- IcoFonts -->
+    <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+    <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+        <a href="{% url 'home' %}"><img src="{% static '/img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static 'img/tradplumber.jpg' %}" class="responsive" alt="image plumbers form the 1930's"> 
+                    <div class="post-content">
+                        <h1>How to Find a Plumber?</h1>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Tom Cakebread</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">13 September 2021</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+
+                        <h2>Plumbers are skilled tradespeople</h2>
+
+                        <h3>Seeking a plumber</h3>
+
+                        <h4>Do you need some plumbing assistance in your home but don't know how to find a plumber? Or maybe you never had to hire a plumber before, but now the toilet is overflowing or the drains are clogged, 
+                            and you don't know what to do. Finding the right plumbing services to work on your home is not as easy as it may sound. If you know what to look for and where to look, 
+                            you will be fine. Here is a simple guide on how to find reliable plumbers.</h4>
+
+                        <h4>Before anything else, not every plumber is good for you. There are plumbing companies that may offer affordable rates at first, only for them to exceed their estimates later. Other plumbing companies may also lure you with their cheap rates and end up using low-quality products that will not sustain your plumbing system for a long time. 
+                            So, how do you find a plumber that is the best fit for your home? Let's find out.</h4>
+
+                        <h4>what does seem important is asking <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> for help</h4>
+                       
+                        <h3>What type of plumbing services can I expect from a local plumbing company?</h3>
+
+                        <h4>Before you hire a plumber, you need to figure out the specific plumbing services that you require from them.</h4>
+                        
+                        <h4> - Is it a drain problem?</h4>
+                        <h4> - Waste flow pipe leakage, broken cistern or toilet?</h4>
+                        <h4> - Low water pressure?, frozen piping or No hot water?</h4>
+                        
+                        <h4>Failure to identify the services you need may allow deceitful plumbing contractors to offer unnecessary plumbing services and charge you extra. 
+                            Here are some of the plumbing services you can expect from a local plumbing company.</h4>
+
+                        <img src="{% static 'img/streetplumb.jpg' %}" class="responsive" alt="image plumbers fixing damaged road water pipe"> 
+
+                        <h4><b>Leak repairs services</b></h4>
+
+                        <h4>Is your bathtub or shower leaking? If so, the leak could be caused by a burst pipe. Continuous leaking may end up increasing your water bill due to the amount of water lost in the leak. 
+                            Perhaps you have a swimming pool that has a pinhole-sized leak. Do you know that a pinhole-sized leak in your home can waste up to 970 gallons of water daily! Some of the characteristics of 
+                            pool leakage to look out for include algae formation after treating the pool, cracked pool shells and loose tiles.</h4>
+
+                        <h4>Maybe the toilet is leaking. If this sound familiar and you are experiencing any of problems to do wih a water leark, turn off the mains water valave, in your home, 
+                            then contact th plumbing services as they will be of great use, potentially saving you additional costs, water damage through flooding, and repair work at an affordable price,
+                            It may just be a seal or gasket that needs replacing right up to corrosive damage and burst peipe repair which can require new plumbing installed.
+                            It is important to Find a plumber in your area that specializes in leak repairs and hire them to inspect, quote and gurantee they can fix the leak.</h4>
+
+                        <h4><b>Shower repair services</b></h4>
+
+                        <h4>If you need a shower unit installed and plumbed, a plumber can help here. If your shower does not deliver hot water shower it may be the boiler unit that 
+                            is not heating up the wates as it should do, then you may need to get a licensed plumber to look at it. 
+                            Perhaps there is no water coming out of the shower. This could be a result of blockage within the shower pipes.</h4>
+
+                        <h4>Does your shower produce screeching or yelling sounds inside the pipe anytime you use it? The sound could be caused by sediments built 
+                            up within the pipes and may require deep cleaning and sometimes replacement of the pipes. Additionally, it could be that there is cold water,
+                            but no hot in which case check it may no be a local outage due to work or damage in the area, before contating a plimber</h4>
+
+                        <h4>Most plumbing professional services have the skills, equipment, and experience to handle shower repairs, having been apprentices and been technically, engineered and on the job trained, for many hours as well as 
+                            getting qulaified. Before you find a plumber in your local area, ensure they are qualified, and have worked on several shower repair projects in the past. 
+                            Additionally, you want to work with someone who has experience in dealing with different shower systems as not all shower systmes are the same.</h4>
+
+                        <h4><b><p style="color:red;">Pick a referral website that does not charge per RFQ.</p></b></h4>
+
+                        <h4><b>Removal of trapped air or air bubbles in the plumbing apparatus</b></h4>
+
+                        <h4>Have you noticed that water is not flowing from the taps in your home? Lack of water flow may be caused by the formation of airlocks within the pipes. 
+                            The trapped air prevents the normal flow of water in the pipes, making it difficult to use the bathroom sinks, kitchen sinks, and even the hot showers.
+                            These dependent systems in the structure can all be affected ny single or multiple air bubbles in the piping.</h4>
+
+                        <h4>Professional licensed plumbers can release the trapped air from your drainage system. Since there is no way to tell whether the lack of water in the taps is a result of airlocks or 
+                            blocked pipes, we recommend you get in touch with plumbing services for an inspection first.</h4>
+
+                        <h4><b>Services for unblocking the drainage</b></h4>
+
+                        <h4>The majority of plumbing companies in the UK offer services to unblock the drainage. Blocked drains can cause big problems in the kitchen and bathroom, 
+                            including foul smells, mould, bacteria and other bacteria and hygiene  related issues. That's why care shuld 
+                            be taken when considering fluching toiletry products, wipes, etc down the toilet, </h4>
+
+                        <h4>They may block the drainage, at exfiltration or in the waste water system making it difficult to flush the toilet, cause rising toilet water or waste retention.
+                            You should read the correct disposal instructions on the packaging before flushing anything down the toilet.</h4>              
+
+                        <h4>Additionally, flushing food debris down the kitchen sink may cause the drainage to block, making it difficult to wash dishes in the sink. 
+                            Any pressure applied to the pipes of the plumbing system in your home may cause them to burst. Burst pipes cause the waste in the pipes to back up and come out of the toilet bowl or the kitchen sink. 
+                            If you have witnessed any of the above in your home, you need to hire a plumber immediately to fix the drains. </h4>
+
+                        <h4><b>Costs for drainage unblocking</b></h4>
+
+                        <h4>The cost of unblocking a drain is a combination of the call-out charge and the work they need to do. THe Type of job will have an average cost Call out i.e.
+                            n.b. these prices are a a guide, and may vary by georgraphy and business size, and type:</h4>
+                        
+                        <h4><b>- £60 Emergency call out (+)</b></h4>
+                        <h4><b>- £180 Drain rodding </b></h4>
+                        <h4><b>- £80 Drain jetting </b></h4>
+                        <h4><b>- £175 Drain rodding and jetting </b></h4>
+                        <h4><b>- £275 Drain specialist (per day) </b></h4>
+                        <h4><b>>- £250 - £300 Drain CCTV survey </b></h4>
+                        <h4><b>- £250 Drain relining (per-metre) </b></h4>
+
+                        <h4><b>Odor detection test services</b></h4>
+
+                        <h4>One of the signs that your home may be in desperate need of plumbing services is strange funky odors around the house. Finding the source of strange odors caused by plumbing issues 
+                            may be difficult since the odor may come from within the pipes.</h4>
+                        
+                        <h4>Plumbing companies provide odor detection tests. The tests involve the use of smoke or electronic tests to trace the source of the odor. Strange odors in your home may pose a safety threat to your home. We recommend you call in a 
+                            plumbing contractor immediately to detect the source of strange odors in your home.</h4>
+                        
+                        <h4><b>How Is Smoke Drain Testing Done?</b></h4>
+
+                        <h4>1. Firstly the plumber needds the right tools, equipment and resources as well as knowledge of drainage systems</h4>
+
+                        <h4>2. They then locate the main drain line, where the waste pipe exits the property, a ballon is inserted and air inflated 
+                            past the sweep, to block the drainage system. The main water stop cock must be turned off and no water allowed to flow.</h4>
+
+                        <h4>3. The roof is accessed or the attic, and smoke is introduced. Whereever, the odur or smell is coming from it is best to start 
+                            in this area, as this is the likely source, (although there may be additional sources).</h4>
+
+                        <h4>4. The plumber will look for the smoke beginning to rise from vents, and block these off with duct tape as appropraite</h4>
+
+                        <h4>5. The plumber will inspect the attic under crawl spaces and between beams.</h4>
+
+                        <h4>6. The plumber will be inspecting for breaches and once identified will mark the area in question and remove any cladding 
+                            to access the breach.</h4>
+
+                        <h4>7. The plumber can then inspect and make the necessary repairs</h4>
+
+                        <h4>The whole process can take upto several hours, and depend on the drainage system, accessability, size of property etc.
+                            you can expect to pay between £500 and £4000 pounds for the whole job, but many factors affect the price, some of which we 
+                            have mentioned above.</h4>
+
+                        <h3>Sewer line replacement services</h3>
+
+                        <h4>When we flush water down the drain, we assume it goes straight to the sewer system and disappears. However, if the sewer line for the home breaks or clogs, 
+                            dirty water finds its way back into your home again. Old age and tree roots may cause the sewer pipes to break. Plumbing contractors provide sewer line repair and replacement services. If your sewer line is broken, 
+                            we recommend you hire a plumber to fix it and improve the hygiene of the water in your home.</h4>
+
+                        <h4><b>Costs and what is involved in sewer line replacement?</b></h4>
+
+                        <h4>1. A camera line inspection is a pre-requisite in any sewer line inspection, and can identify faults using visual and digital imagery.
+                            This can be to inspect what the plumber can't see, or to confirm what the plumber suspects, either way, the obhjective is inspection,
+                            through visual analysis and identification of the root problem and/or secondary problems. As well as confirming potential causes. The cost 
+                            of this can be anywhere between £200 and £600, and will depend on a number of factors, such as access, location, time, disruption etc.</h4>
+
+                        <h4>The added benefit is that the process is more surgical, in that the plumber does not need to dig up the entire piping foundation, but rather,
+                            can use a method to pin-point the prblem area, and focus on digging their, and rectifying the problem at source. This is cheaper than digging up 
+                            and entire drainage or sewer line, as well as the work to repair and replace it.</h4>
+
+                        <h4>In the event that it is highly localised damage, the plumebr can quote for the cheapest and most effective way to repair the damage
+                            through the use of a camera. This is also less disruptive, distressing and costly for the homeowner.</h4>
+
+                        <h4><b>Piping replacement costs</b></h4>
+
+                        <h4>You should budget around £200 to £500 per square foot of piping replaced, the more piping the higher the cost.
+                            There are different types of piping materials, that can be used and your plumber can advise you of what to use and where.</h4>
+
+                        <h4><b>Materials used in plumbing benefits comparison table </b></h4>
+                    
+                        <img src="{% static 'img/materialtable.png' %}" class="responsive" alt="table of materials used in plumbing"> 
+
+                        <br>
+
+                        <h4><b>Traditional vs. Trenchless replacment</b></h4>
+
+                        <h4><b>Traditional</b></h4>
+
+                        <h4>If work needs doing the two most common methods are traditional or trenchless. Traditional costs around, £100 to £200 per foot, and involves
+                            digging up the old piping and replacing it with a new one. This is costly on removals of earth and aggregate, as well as 
+                            clean up and restoration costs.</h4>
+
+                        <h4><b>Trenchless</b></h4>
+
+                        <h4>Is less invasive, and requires the insertion of a pre-inflated tube. there are two methods.</h4>
+
+                        <h4><b>1. Pipe Lining</b></h4>
+
+                        <h4>Insertion of a pre-inflated tube, and onve in position, it is inflated, this tube hardens and creates a new secure piping infrastructure
+                            at the location. This is common if the line isn't completely broken, but split, it is also possible to aling it.</h4>
+
+                        <h4><b>2.  Pipe Bursting:</b></h4>
+
+                        <h4>Insertion of a new pipe which is expanded, to cause the old pipe to burst, and the new pipe replaces the localised area, 
+                            and creates a uniform seal.</h4>
+                        
+                        <h4><b>Landscaping and clean-up</b></h4>
+
+                        <h4>These are sperate costs, so ensure you factor them in over and above the cost of the inspection, and repair by the plumber.</h4>
+
+                        <h3>Installation and repairs of backflow prevention</h3>
+
+                        <h4>You are likely drinking and bathing with contaminated water if you haven't installed backflow preventers in your home. The backflow preventers keep the wastewater from 
+                            flowing back and contaminating water in the pipes. professional plumbers offer installation and repair services to fix the backflow system of a house.</h4>
+
+                        <h3>What are the most common plumbing issues? </h3>
+
+                        <h4>Plumbing issues are inevitable in any household. At some point, you will need to find a plumber to fix a leak or a blockage in your home. 
+                            Below are some of the most common plumbing issues, which plumbers have reported to us <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> 
+                            in a survey og 500 plumbers: In no particular order</h4>
+
+                        <h4><b>Leaking pipes<b></h4>
+
+                        <h4>Leaking pipes are a common problem and should not be put off in repair, (Plumbers report customers worried about rising costs are reportedly putting this 
+                            important work off) but if not resolved the other problems around the house can develop, and cost more in the long run these problems include:</h4>
+
+
+                        <h4>•	Increased water pressure</h4>
+                        <h4>•	Corrosion of the pipes</h4>
+                        <h4>•	Improper laying of the pipes</h4>
+                        <h4>•	Clogging</h4>
+                        <h4>•	Cracked pipes</h4>
+                        <h4>•   Faults in the mains</h4>
+
+                        <h4>Leaks need to be addressed quickly by bringing in a professional plumber. Failure to fix leaks in time can cause more damage to the piping system 
+                            and also to your property.</h4>
+
+                        <h3>Running toilet</h3>
+
+                        <h4>Running toilets waste about 200 gallons of water in a day. Can you imagine how high the water bill will be? Several 
+                            things may cause running toilets</h4>
+
+                        <h4>•	Corroded handles of the toilet</h4>
+                        <h4>•	Oversized or undersized flapper chains</h4>
+                        <h4>•	Faulty refill tube</h4>
+                        <h4>•   Damaged flush valves</h4>
+
+                        <h3>Leaking faucets</h3>
+
+                        <h4>Leaking faucets around the house can be wasteful and annoying. What causes dripping faucets? Various 
+                            things could cause the faucet to leak.</h4>
+
+                        <h4>•	Damaged washer</h4>
+                        <h4>•	Faulty O-ring</h4>
+                        <h4>•	Corrosion of the faucet</h4>
+                        <h4>•	Incorrect faucet installation</h4>
+
+                        <h3>Low water pressure</h3>
+
+                        <h4>The low water pressure within the plumbing system can make it difficult to access water in the taps and shower. Most times, low water pressure indicates an underlying problem in the plumbing system. 
+                            Problems that may result in low water pressure include:</h4>
+
+                        <h4>•	Corrosion of the water pipes</h4>
+                        <h4>•	Hidden leaks around the house</h4>
+                        <h4>•	Clogging of the drains</h4>
+                        <h4>•	Cracked sewer lines</h4>
+                        <h4>•	Clogged sewer line</h4>
+
+                        <h4>If the water pressure in your home has been low for the past few days or weeks, 
+                            you need to hire a plumber immediately to check it out.</h4>
+
+                        <h3>Clogged drains</h3>
+
+                        <h4>Clogged drains are among the most common plumbing issues in the UK. 
+                            There are 2 types of clogged drains to look out for.</h4>
+
+                        <h4>Single clogged drain</h4>
+
+                        <h4>This is the type of clogged drain that has only one source. For instance, if the bathroom drain clogs, the clogging only affects the 
+                            bathroom and can easily be spotted by the plumber. Substances like hair, soap, and tissues can build up in the drain over time and eventually lead to clogging.</h4>
+
+                        <h4>Multiple clogged drains</h4>
+
+                        <h4>The multiple clogged drains occur when more than one drain in the house clogs. If the drains in the kitchen, 
+                            bathroom, and bedroom clog at once, it's a sign of multiple clogging. Have you observed such an occurrence in your
+                            home? Yes? We recommend you hire a plumber immediately. Multiple clogged drains result from a sewer line issue. The plumber will help prevent the sewage from backing up into your 
+                            plumbing system and contaminating the clean water you use to cook.</h4>
+                        
+                        <h3>Failure of the sump pump</h3>
+
+                        <h4>The sump pump (less common in the developed world, but still important to mentions) usually fails if the unit is faulty or when affected by an external issue. Other things that might cause the sump pump to fail to 
+                            work include:</h4>
+                        
+                        <h4>•	Clogging within the discharge pipes</h4>
+                        <h4>•	Improper installation of the sump pump</h4>
+                        <h4>•	Aging (the average life span of a sump pump is 10 years)</h4>
+                        <h4>•	Excess water</h4>
+                        <h4>•	Stuck switches</h4>
+
+                        <h4>If you notice that the sump pump is failing, get in touch with a licensed plumber to come and check it out.</h4>
+
+                        <h3>What should I know before hiring a plumber?</h3>
+
+                        <h4>Now you know what types of services to expect from a plumbing company, as well as the most common plumbing problems in households. 
+                            However, there are several things you need to know before you hire a plumber.</h4>
+
+                        <h3>Licensing</h3>
+
+                        <h4>Before you hire a plumber, you need to find out whether they are licensed and approved by the law to carry out plumbing activities in your area. Also, check whether the plumbing company has the right certificates and state insurance. These documents will prove that the plumbing company is 
+                            legitimate and safe to hire.</h4>
+                        
+                        <h4>Whenever you hire a plumber, they have to come into your home to inspect the problem. Therefore, you need to be certain that you are bringing a trustworthy, licensed professional into your home. Ask to see the credentials of the 
+                            plumbing company first.</h4>
+
+                        <h4>In case you live in a state that does not require a plumbing company to be licensed, we recommend that you do diligent research on the plumber and check whether any complaints have been filed against them in the past. If the plumbing company is clean, 
+                            go ahead and hire a plumber.</h4>
+                        
+                        <h3>Price</h3>
+
+                        <h4>Before you hire a plumber in the UK, you need to first request their quotes and determine if their prices match your plumbing budget. However, be mindful of extremely low plumbing prices. 
+                            The quality of the plumbing work is determined by the cost.</h4>
+
+                        <h4><p style="color:#FF0000">Additionally, cheap plumbers provide cheap unlicensed labor and may not adhere to correct installation processes, which will require 
+                            you to spend more money on the plumbing system.</p></h4>
+
+                        <h4>We recommend you work with plumbers that charge reasonable prices for their services. Look up the average cost of plumbing services online and work with plumbers 
+                            that charge similar rates.</h4>
+
+                        <h3>Warranty</h3>
+
+                        <h4>One important takeway, is Good plumbers will always provide you with a guarantee for their services. 
+                            When choosing a plumber, check the type of warranties they offer, what the warranties cover, and how 
+                            the plumber is willing to stand by their work.</h4>
+
+                        <h4>The plumbers on Billntrade.com need to offer a warranty that is valid and really does help you as customers, understand
+                            what is covered, what is not, but most important if your company is not working with you should be concerned.
+                            At billntrade, we are able to protect you by ensuring that with our review of trades, you are able to:</h4>
+
+                        <h3>How to find a trustworthy plumber</h3>
+
+                        <h4>Have you ever worked with a deceptive plumber or a 'cowboy plumber', in the past did they end up charging you more than for the amount of work they did or for the quote? 
+                            Or maybe you've dealt with a plumber that carried out poor installations of the plumbing systems, and you ended up looking for a new plumber the following week. This is indeed the
+                            stuff of nightmares, but is very real and does happen</h4>
+
+                        <h4>Whatever your experiences might be, you will agree that working with a trustworthy plumber is very important. How do you find a plumber you can trust? 
+                            Here are some of the things you need to look for in a plumber.</h4>
+                        
+                        <h3>References</h3>
+
+                        <h4>When considering a specific plumber in the UK, we recommend you ask them for their references. References are people that can vouch for the quality of work and integrity of the plumber. 
+                            It could be the former clients or their business partners. It could be they demonstrate the are members of a reputable trade body,
+                            like the APHC (Association of Heating and Plumbing Contractors) this is one way to ensure the are not rogue traders.</h4>
+
+                        <h4>A plumbing company that is confident in its quality of work and relationship with other clients and businesses will have no problem giving and shoing you some 
+                            of its references. If the plumber avoids the topic or refuses to provide references, do not hire them.</h4>
+
+                        <h3>Reviews</h3>
+
+                        <h4>Reviews are the opinions of former clients about the services of the plumber. Every reputable plumbing company in the UK has a review section. Take time to go over the reviews. What are former customers saying about the plumbing services they received? Was the plumber able to fix the plumbing issue? 
+                            How long did it take the plumber to respond to urgent plumbing problems? Did the plumber complete their work on time.</h4>
+
+                        <h4>This is the information you need to be looking for in the review section. If most of the plumber's former clients approve their services, 
+                            then you will likely be pleased with the outcome of the plumber's services, too.</h4>
+
+                        <h3>Experience</h3>
+
+                        <h4>The amount of experience of the plumber is a significant factor to consider when looking for a trustworthy plumber. If you are looking for sewer line installation services, we recommend you hire a plumber that has worked on several sewer line installations in the past. Their experience with similar projects makes them the perfect 
+                            fit for the services you need.</h4>
+
+                        <h3>Where can I find a plumber?</h3>
+
+                        <h4>There are sources you can use to find the most suitable plumber for your home.</h4>
+
+                        <h4>The internet</h4>
+
+                        <h4>The internet is the most obvious place to look for a plumber. Just go online and search for plumbers in your location. 
+                            Go through each of the plumbing services that Google will display on your screen. Check the license, insurance, certificates, warranty, experience level, 
+                            and reviews of each plumber to find the best plumber near me.</h4>
+                        
+                        <h4>Personal referrals</h4>
+
+                        <h4>Another great way to find good plumbers in your area is by asking those close to you. Have your parents, siblings, friends, or neighbors used plumbing services lately? 
+                            If so, you can ask them to refer you to the plumbing contractor.</h4>
+
+                        <h4>Online referral sources</h4>
+
+                        <h4>You can also utilize online referral sources such as Billmtrade, 
+                            to find competent plumbers in your area. However, before you work with any plumbing company, 
+                            ensure that you research to determine if they are licensed and verified.</h4>
+
+                        <h4>Advertisement</h4>
+
+                        <h4>Another great place to find a plumber is in an advertisement. The advertisement could be on social media, TV, or print. 
+                            Once you spot a plumbing services advert, you can determine whether the plumber is appropriate for your project or not.</h4>
+
+                        <h3>Benefits of working with a professional plumber</h3>
+
+                        <h4>Instead of trying to fix the plumbing issues in your home on your own, we recommend you find a plumber to do the job. Here are several 
+                            reasons why working with a professional plumber can benefit you.</h4>
+
+                        <h4>Plumbers have the right tools</h4>
+
+                        <h4>Whatever plumbing issue your home has, rest assured that licensed plumbers have the appropriate tools and equipment to address the problem. If it's a repair or installation, plumbers know which tools to use. In case you tried to fix the plumbing issue, you would have to spend time learning about the plumbing issue and how to use the tools. You will also incur costs for purchasing the plumbing tools. When you hire a plumber, 
+                            they perform all the work and bring their tools and equipment.</h4>
+
+                        <h4>Plumbers can spot underlying plumbing problems</h4>
+
+                        <h4>The benefit of working with a skilled plumber is that they can notice additional problems within the plumbing system that you may have missed. For instance, if the water pressure in the house is too low, 
+                            it could be caused by a broken sewer line or clogged drains.</h4>
+
+                        <h4>Plumbers are experienced and skilled.</h4>
+
+                        <h4>Instead of struggling with the plumbing issue in your home, hiring a plumber offers you a quick and easy solution. When you hire an experienced plumber, they will quickly fix the plumbing problem. Experienced plumbers understand 
+                            how to handle the plumbing process from troubleshooting, materials, installations and repair.</h4>
+
+                        <h3>Tips for getting in touch with a plumber</h3>
+
+                        <h4>Asking the right questions</h4>
+
+                        <h4>When you find several potential plumbers that offer the services you need, we recommend that you ask the plumbers the same questions, and analyze the answers they provide. 
+                            Some of the best questions to ask a plumber in the UK include:</h4>
+
+                        <h4>•	Have they done a similar project in the past?</h4>
+                        <h4>•	Does the plumbing company specialize in both installation and repair services or does it offer specific services?</h4>
+                        <h4>•	What trade bodies do they belong to and can they demonstrate this</h4>
+                        <h4>•	Will the plumber offer a guarantee for the work they do in your home?</h4>
+                        <h4>•	Does the plumber require a permit to offer plumbing services in your area?</h4>
+                        <h4>•	How long will it take the plumber to complete the project or job?</h4>
+                        <h4>•	In case the project takes more time and involves new costs, will the plumbing company notify me before hand</h4>
+
+                        <h4>Again, this is not an exahustive list, but questions you should consider asking, why not think of questions that are also important for you?</h4>
+
+                        <h3>How much does it cost to hire a plumber</h3>
+
+                        <h4>The average cost of hiring a plumber is between £70 and £120 for each hour the plumber works. This plumbing fee is exclusive of any costs related to transport and materials. 
+                            When working with an affordable plumbing contractor, you can expect to pay about £50. 
+                            If you are looking to work with an experienced, high-quality, professional plumber, you may pay about £200 per hour, plus costs.</h4>
+
+                        <h3>Use our tool</h3>
+
+                        <h4>With billntrade.com, using our free online find a plumber tool. We have a platform that allows plumbers to set up their profiles and showcase their services in less than five minutes. All you have to do is check out our 
+                            Find a plumber tool and select the plumber of your choice.</h4>
+                        
+                        <h4>Our digital tool allows plumbers to manage their work with ease, making it simpler for them to connect with their customers. 
+                            Instead of struggling to find professional licensed plumbers online, allow us to do all the heavy lifting for you, by allowing you to selct from
+                            the marketplace qualified plumbers or specific referral plumbers, we can recommend in your area.</h4>
+
+                        <h4>Want to sign up and use our Bill n Trade Find a plumber tool? Just follow the few steps below. The best thing about Bill n Trade is that is completely 
+                            free to customers looking for plumbers. Join the platform today by doing the following:</h4>
+
+                        <h4>•	Step 1- Follow the instructions provided to set up your profile by clicking a few buttons.</h4>
+                        <h4>•	Step 2- Create your request for quote</h4>
+                        <h4>•	Step 3- Select the plumbers you want to provide their quotes. We also recommend that you send them the quote requests directly.</h4>
+                        <h4>•	Step 4- In case you do not have any specific plumbers in mind, post your requirements on the marketplace. We will review your requests and match 
+                                you with a plumber that meets your criteria.</h4>
+                        <h4>•	Step 5- Once you find a plumber, BillnTrade allows you to keep track of the plumber's jobs, deliverables and costs.</h4>
+
+                        <h4>Are you ready to work with the best plumbers in the UK?. In case the plumbing services you need are not listed in this guide, 
+                            reach out to us and let us know what you need. Our team of highly trained professional plumbers is waiting to hear from you and 
+                            get straight to work</h4>
+
+                        <h4>If you liked this guide, do check out our other articles <a href="{% url 'blog14' %}">How to find a builder</a>
+                            to guide you through the builder selction process, as hiring is just one part of the process and finding the right builder is just as crucial.</h4>
+
+
+                            <ul class="list-inline share-buttons">
+                                    <li class="list-inline-item">Share Post:</li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                                <hr class="mb40">
+                                                <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                                                <div class="media mb40">
+                                                    <div class="media-body">
+                                                        <h5 class="mt-0 font700">Tom Cakebread</h5> Hi, I'm Tom
+                                                        I enjoy writing about the trades, and supporting tradespeople
+                                                        and customers
+                                                        where I
+                                                        can as an independent consultant.
+                                                    </div>
+                                        </div>
+                            </form>
+                    </div>
+                </article>
+                <!-- post article-->
+
+            </div>
+            <div class="col-md-3 mb30">
+                <div class="mb30">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..."
+                                aria-describedby="basic-addon2">
+                            <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="sidebar-title">Other blogs</h4>
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                        successfully deal with mould in your home</a></h5> Apr, 2021
+                            </div>
+                        </li>
+                        <li class="media my-4">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                        plumber</a></h5> Jul, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                    </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog6' %}">The 12 step essential guide to protecting your home from cold weather damage</a></h5> Sep, 2021
+                                    </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog8' %}">Your essential 18 point guide to organising a home move</a></h5> Oct, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog10' %}">17 essential tips to help you with hydroponic gardening</a></h5> Nov, 2021
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog11' %}">6 points to consider in a garange conversion</a></h5> Nov, 2021
+                </div>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog12' %}">13 steps to de-clutter a storage room and make money</a></h5> Dec, 2021
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog13' %}">12 quick tips to reduce the risk of a burglary at your home</a></h5> Jan, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog14' %}">How to Find a builder</a></h5> Feb, 2022
+        </div>
+    </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+                </div>
+            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 text-lg-left text-center">
+                    <div class="copyright">
+                        <strong>&copy; Copyright 2021 -
+                            <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>
+                            , Billntrade
+                            Ltd</strong>. All Rights Reserved
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                        <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                        <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                        <a href="{% url 'cookies' %}">Cookies</a>
+                        <a href="{% url 'blogs' %}">Blogs</a>
+                        <a href="{% url 'about-us' %}">About us</a>
+                        <a href="{% url 'sitemap' %}">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <style>
+        .brand {
+            width: 14rem;
+            margin-left: 2rem;
+            /* border: 2px solid lime; */
+        }
+    </style>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            feather.replace();
+
+            $('button').click(function () {
+                $('.alert').html('<i data-feather="activity"></i>');
+                feather.replace();
+            });
+
+        });
+    </script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+
+
+<script>
+    body{
+        margin - top: 20px;
+    }
+/*
+Blog post entries
+*/
+
+.entry - card {
+        -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+.entry - content {
+        background - color: #fff;
+        padding: 36px 36px 36px 36px;
+        border - bottom - left - radius: 6px;
+        border - bottom - right - radius: 6px;
+    }
+
+.entry - content.entry - title a {
+        color: #333;
+    }
+
+.entry - content.entry - title a: hover {
+        color: #4782d3;
+    }
+
+.entry - content.entry - meta span {
+        font - size: 12px;
+    }
+
+.entry - title {
+        font - size: .95rem;
+        font - weight: 500;
+        margin - bottom: 15px;
+    }
+
+.entry - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb img {
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb.thumb - hover {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: rgba(71, 130, 211, 0.85);
+        display: block;
+        top: 50 %;
+        left: 50 %;
+        color: #fff;
+        font - size: 40px;
+        line - height: 100px;
+        border - radius: 50 %;
+        margin - top: -50px;
+        margin - left: -50px;
+        text - align: center;
+        transform: scale(0);
+        -webkit - transform: scale(0);
+        opacity: 0;
+        transition: all .3s ease -in -out;
+        -webkit - transition: all .3s ease -in -out;
+    }
+
+.entry - thumb: hover.thumb - hover {
+        opacity: 1;
+        transform: scale(1);
+        -webkit - transform: scale(1);
+    }
+
+.article - post {
+        border - bottom: 1px solid #eee;
+        padding - bottom: 70px;
+    }
+
+.article - post.post - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+
+.article - post.post - thumb.post - overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100 %;
+        height: 100 %;
+        background - color: rgba(0, 0, 0, 0.6);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        opacity: 0;
+    }
+
+.article - post.post - thumb.post - overlay span {
+        width: 100 %;
+        display: block;
+        vertical - align: middle;
+        text - align: center;
+        transform: translateY(70 %);
+        -webkit - transform: translateY(70 %);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        height: 100 %;
+        color: #fff;
+    }
+
+.article - post.post - thumb: hover.post - overlay {
+        opacity: 1;
+    }
+
+.article - post.post - thumb: hover.post - overlay span {
+        transform: translateY(50 %);
+        -webkit - transform: translateY(50 %);
+    }
+
+.post - content.post - title {
+        font - weight: 500;
+    }
+
+.post - meta {
+        padding - top: 15px;
+        margin - bottom: 20px;
+    }
+
+.post - meta li: not(: last - child) {
+        margin - right: 10px;
+    }
+
+.post - meta li a {
+        color: #999;
+        font - size: 13px;
+    }
+
+.post - meta li a: hover {
+        color: #4782d3;
+    }
+
+.post - meta li i {
+        margin - right: 5px;
+    }
+
+.post - meta li: after {
+        margin - top: -5px;
+        content: "/";
+        margin - left: 10px;
+    }
+
+.post - meta li: last - child: after {
+        display: none;
+    }
+
+.post - masonry.masonry - title {
+        font - weight: 500;
+    }
+
+.share - buttons li {
+        vertical - align: middle;
+    }
+
+.share - buttons li a {
+        margin - right: 0px;
+    }
+
+.post - content.fa {
+        color: #ddd;
+    }
+
+.post - content a h2 {
+        font - size: 1.5rem;
+        color: #333;
+        margin - bottom: 0px;
+    }
+
+.article - post.owl - carousel {
+        margin - bottom: 20px!important;
+    }
+
+.post - masonry h4 {
+        text - transform: capitalize;
+        font - size: 1rem;
+        font - weight: 700;
+    }
+.mb40 {
+        margin - bottom: 40px!important;
+    }
+.mb30 {
+        margin - bottom: 30px!important;
+    }
+.media - body h5 a {
+        color: #555;
+    }
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+/*
+Template sidebar
+*/
+
+.sidebar - title {
+        margin - bottom: 1rem;
+        font - size: 1.1rem;
+    }
+
+.categories li {
+        vertical - align: middle;
+    }
+
+.categories li > ul {
+        padding - left: 15px;
+    }
+
+.categories li > ul > li > a {
+        font - weight: 300;
+    }
+
+.categories li a {
+        color: #999;
+        position: relative;
+        display: block;
+        padding: 5px 10px;
+        border - bottom: 1px solid #eee;
+    }
+
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+
+.categories li a: hover {
+        color: #444;
+        background - color: #f5f5f5;
+    }
+
+.categories > li.active > a {
+        font - weight: 600;
+        color: #444;
+    }
+
+.media - body h5 {
+        font - size: 15px;
+        letter - spacing: 0px;
+        line - height: 20px;
+        font - weight: 400;
+    }
+
+.media - body h5 a {
+        color: #555;
+    }
+
+.media - body h5 a: hover {
+        color: #4782d3;
+    }
+
+</script>
+
+<style>
+    .responsive {
+      width: 100%;
+      height: auto;
+    }
+</style>

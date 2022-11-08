@@ -1,0 +1,824 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+
+  <!-- <link rel="icon" type="image/png" href="{% static '/img/Favicon.png' %}"/> -->
+
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!--support working-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- IcoFonts -->
+  <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+    <a href="{% url 'home' %}"><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static 'img/doginbox.jpg' %}" class="responsive" alt="picture of dog in removal box"> 
+                    <div class="post-content">
+                        <h1>Your essential 18 point guide to organising a home move</h1>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Sarah Tring</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">10 October 2021</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+
+                        <h2>House moves need not be stressful</h2>
+
+                        <h4>Moving home is both a thrilling and stressful time, you may have to deal with many different 
+                            things before during and after the move</h4>
+
+                        <h4>We have complied this guide to help you get organised and reduce the stress associated 
+                            with moving home.</h4>
+
+                        <h3>1.   Doing the transportation yourself</h3>
+
+                        <h4>Depending on the size of your property, the amount of things you want to move and your physical and prepared state. 
+                            It may be you could managet the actual move yourself. If you have a small property it may be better and cheaper to higher a van for the day, 
+                            or contact.</h4>
+                            
+                        <h4>friends or family that could help with the move. This can be less stressful as you can organise the logistics 
+                            and loading in your own way. By making several trips between the properties (assuming they are not to far apart) over a couple of days, or one day, 
+                            this will save you money and a bit of stress. if you are on a budget, this can be an option tooo, but it will take time, effort and energy.</h4>
+
+                        <h3>2.   Hire the right removal company</h3>
+
+                        <h4>If you have a slightly larger property, you may want to hire a man with a van, or 
+                            if you have a large estate, enlist the services of a reliable removal firm. It is important to book the removals early 
+                            on to avoid any issues, or setbacks with timings, conflicts fuel availability etc.</h4>
+
+                        <h4>Most people move on the weekend, bank holidays or over the school holidays, so booking early will save having to 
+                            be disappointed that your preferred reliable removal companies is already booked.</h4>
+                            
+                        <h4>Make sure the company that you selected is reliable trustworthy and professional,
+                            You are after all entrusting your home contents to a company and people you have met for the first time.
+                            Make sure you are able to clearly outline the expectations from the firm in terms of service, both 
+                            in respect of things like Covid, fragile items, toilet use, etc. 
+                            If this isn't establishged before the contract, it could likely lead to problems in the relationship and process, 
+                            I.e. damaged goods, lost packages, property not being treated with respect etc.</h4>
+
+                        <h3>3.   Check feedback</h3>
+
+                        <h4>Make sure the removal companies can direct you to reviews and can be checked on social media,
+                            also, aske for any references that you can contact, you need to be sure the business and service they provide
+                            meets all the requirements for you selecting them. Don't forget, if they do a good job, offer to provide a
+                            review and positive reference for them</h4>
+
+                        <h3>4.   Surveys and quotes</h3>
+
+                        <h4>The company should be willing to send out an 'assesor' to assess the cost of the moving job,
+                            prior to making any recommendations or quotes. They should be able to provide a quote after this, 
+                            the route to success here is to ensure you are as transparent as you can be with what you need in the removal quote,
+                            and that the company can quote correctly and competitively, whilst being able to ensure they can manage the removal project.</h4>
+
+                        <h4>One thing to ensure it the moving compaby have the right expertise, resources, equipment, trained staff and vehicles. Within our platform <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> 
+                            it is possible for customers to get a quote for the removal for removal firms registered with us, our digital quote workflow management system, is ideal for sending out 
+                            requests, comparing quotes, confirming quotes, managing budgets and keeping all didgital paperwork in one place.</h4>
+                        
+                        <h3>5.   Check insurances</h3>
+
+                        <h4>Ensure the removal company has the right insurance, for Health and Safety, handling, transportation and delivery during the project. 
+                            You can also check with your policy provider to see if any additional requirements are needed.</h4>
+
+                        <h3>6.   Payment options</h3>
+
+                        <h4>Ensure that the reputable business accepts credit/debit, and digital paynents, there may be the 
+                            option to pay in crypto currency also (bitcoin or ethereum as examples) but this is still an extremely rare setup, but one which my grow in future. 
+                            Ensure if there are an issues with payment, you are always provided with invoice/receipt with any payment methods, 
+                            with cash this could be a way for the business to avoid its tax obligations, or lose transparency of the transaction.</h4>
+
+                        <h3>7.   Parking</h3>
+
+                        <h4>If appropriate let the removal company make arrangements for parking, if they can’t do this, you may have to organise parking permits, 
+                            including notification of your current and new neighbours, this can help the relationship with the neighbours 
+                            while being compliant with parking requirements.</h4>
+                        
+                        <h3>8.   Delays policy</h3>
+
+                        <h4>Ensure the terms of delay and costs are clear, with the delivery firm, if you are waiting for legal verification or contractual obligations, this can add delays, and associated costs, 
+                            which can quickly spiral out of control.</h4>                      
+
+                        <h3>9.   Services</h3>
+
+                        <h4>Some companies can offer packing boxes, which can help reduce costs, but also consider disassembly and assembly costs, of items like appliances, 
+                            beds furniture etc. Also consider how large items can be moved if you are in a large elevated apartment space, e.g. piano’s.</h4>
+                        
+                        <h3>10.  Complaints</h3>
+
+                        <h4>Ensure there is a valid complaints process and the company is regulated by the ombudsman or the BAR, British Association of Removals. 
+                            These bodies have the processes and procedures to manage and resolve any complaints made. Also, on <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> there is an 
+                            area where you can create notes, as well as an area to manage issues, this workflow is ideal for complaint understanding, communication 
+                            and resolution, before escallation. As well as being essential for audit, it is good practice in being able to show how the situation was 
+                            documented if issues were to arise.</h4>
+
+                        <h3>11.  Plan</h3>
+
+                        <h4>Make a list of the task that need to be undertaken, when, by who, dependencies and start and completion dates, 
+                            most removals fail because the homeowners fail to make a plan, ensuring both organisation, things aren’t missed 
+                            and they are able to see gaps and areas of risk. The plan should also include a list of inventory, at this point 
+                            it is essential to go room by room to ensure a full inventory count, 
+                            and allocate packaging clearly labelled by room and contents.</h4>
+                        
+                        <h3>12.  De-clutter</h4>
+
+                        <h4>This is one of the more challenging tasks, as it requires a level of discipline that typically a homeowner would save for spring. 
+                            With any house move, this is a great opportunity to filter through your possessions and get rid of unwanted items, 
+                            this could be either through a home product sale initiative as well as sending products to the skip, 
+                            donating or recycling. De-cluttering is a way to both purge your house of unwanted products, but also symbolises a more organised beginning, 
+                            as well as being mentally therapeutic as a tidy home, relaxes the mind, it can also save on packin and costs, of moving junk between properties.</h4>
+
+                        <h3>13.  Inventory</h3>
+
+                        <h4>Make sure inventory is packed securely and safely, ensuring both the safety and health of the removal companies staff. 
+                            Don’t leave knives rattling around, secure each individual blade in secure bubble wrap, and store securely, 
+                            make sure the packaging highlights, knives and sharp instruments. Some homeowners have rifles and shotguns, 
+                            ensure the security cabinets are removed and transferred safely.</h4>
+                            
+                        <h4>Do not leave any unattended firearms in the cabinet, 
+                            Make sure and firearms have their ammunition removed seperated from the firearms, and ensure the firing mechanisma are removed, (i.e. bolts) and stored in a mobile safe.
+                            ahead of time talk to your firearms officer who can help you with how to store firearms and ammunitions, during a move. Always ensure
+                            that you transport firearms either yourself, or with a firm approved to transport them. Ensure inventory is accurate before and 
+                            after the move. Alway remember to notify your firearms officer of your move.</h4>
+
+
+                        <h4>Do not overfill boxes or mark sensitive items as described. i.e. VVS1 flawless diamond collection., if these need to be transported hire the relevant transportation and security 
+                            company to both move, hold and transport these precious items.</h4>
+
+                        <h3>14.   Paperwork</h3>
+
+                        <h4>Important documents such as passports, wills, insurances etc. In a fie or box which is easily accessible.
+                            A backup plan, would be to scan all your documents and back them up on cloud and or USB, to ensure that you have backups 
+                            that can be called upon in case of things get lost, are damaged or destroyed.</h4>
+
+                        <h3>15.   Exchanging</h3>
+
+                        <h4>To reduce stress and improve the flow of the process, 
+                            allocate time to make the exchange of keys go as smoothly as possible with the parties, 
+                            in a chain this means you exchanging with the buyers of your old property and the keys for the new property 
+                            from the vendors of the property you have acquired.</h4>
+
+                        <h3>16.   First aid kit, power supplies and survival kits</h3>
+
+                        <h4>Too many people miss this step and it is really important, Keep an emergency day survival kits, 
+                            this could include medication, toiletries, water, food and snacks, clothing and a first aid kit. Today, battery banks for charging mobile devices
+                            is also improtant. Make sure children have entertainment available like ipads or reading material, they can 
+                            be just as stressed about a house move as an adult, and keeping them pre-occupied can really help both them and 
+                            you.</h4>
+
+                        <h3>17.   Organise utilities and address changes</h3>
+
+                        <h4>Ensure you take readings of electric and gas meter values, submit these readings to the utilities companies and providers. 
+                            If you have any bills due,  ensure the provider knows your last date and time as an occupant of the property. 
+                            Additionally,  put an interim post redirect for any mail to your new property, in the period after, you can change your mailing details with banks, businesses, work etc.</h4>
+
+                        <h3>18.    Relax at the end</h3>
+
+                        <h4>It is important to relax at the point the move is complete, boxes are settled and your bed(s) are built. On your first night make sure your have a way to heat water, and a bed.  
+                            You can always order takeout, but if you have children, prepare the appropriate food ahead of time. At <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> we have property removal companies 
+                            who use <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> to manage the digital aspects of the move, such as quote, agreements, invoicing etc.</h4>
+                        
+                        <h4>We hope this guide can help you with the essential aspects of planning your home move, in a less stressfull way.</h4>
+
+                        <ul class="list-inline share-buttons">
+                                <li class="list-inline-item">Share Post:</li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        <hr class="mb40">
+                        <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                        <div class="media mb40">
+                            <div class="media-body">
+                                <h5 class="mt-0 font700">Sarah Tring</h5> Hi, I'm Sarah, I'm a blogger who enjoys
+                                eveything related to home improvement, I'm passionate about sustainable homes, home
+                                improvement, home developments and technology used in the home. When not blogging, I
+                                enjoy spending time with my husband, two children and our dog 'Leto'.
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </article>
+                <!-- post article-->
+            </div>
+            <div class="col-md-3 mb30">
+                <div class="mb30">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..."
+                                aria-describedby="basic-addon2">
+                            <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="sidebar-title">Other blogs</h4>
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                        successfully deal with mould in your home</a></h5> Apr, 2021
+                            </div>
+                        </li>
+                        <li class="media my-4">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                        plumber</a></h5> Jul, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                </div>
+                        </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog6' %}">The 12 step essential guide to protecting your home from cold weather damage</a></h5> Sep, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog10' %}">17 essential tips to help you with hydroponic gardening</a></h5> Nov, 2021
+                        </div>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog11' %}">6 points to consider in a garange conversion</a></h5> Nov, 2021
+                        </div>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog12' %}">13 steps to de-clutter a storage room and make money</a></h5> Dec, 2021
+                        </div>
+                    </li> 
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog13' %}">12 quick tips to reduce the risk of a burglary at your home</a></h5> Jan, 2022
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog14' %}">How to Find a builder</a></h5> Feb, 2022
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog16' %}">Hire a plumber</a></h5> Mar, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog17' %}">Electrical safety dos and donts for homeowners</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog18' %}">How to find a reliable Electrician</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog19' %}">Plumbing dos and donts for home and property owners</a></h5> Apr, 2022
+        </div>
+        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 text-lg-left text-center">
+                    <div class="copyright">
+                        <strong>&copy; Copyright 2021 -
+                            <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>, Billntrade
+                            Ltd</strong>. All Rights Reserved
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                        <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                        <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                        <a href="{% url 'cookies' %}">Cookies</a>
+                        <a href="{% url 'blogs' %}">Blogs</a>
+                        <a href="{% url 'about-us' %}">About us</a>
+                        <a href="{% url 'sitemap' %}">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <style>
+        .brand {
+            width: 14rem;
+            margin-left: 2rem;
+            /* border: 2px solid lime; */
+        }
+    </style>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            feather.replace();
+
+            $('button').click(function () {
+                $('.alert').html('<i data-feather="activity"></i>');
+                feather.replace();
+            });
+
+        });
+    </script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+
+
+<script>
+    body{
+        margin - top: 20px;
+    }
+/*
+Blog post entries
+*/
+
+.entry - card {
+        -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+.entry - content {
+        background - color: #fff;
+        padding: 36px 36px 36px 36px;
+        border - bottom - left - radius: 6px;
+        border - bottom - right - radius: 6px;
+    }
+
+.entry - content.entry - title a {
+        color: #333;
+    }
+
+.entry - content.entry - title a: hover {
+        color: #4782d3;
+    }
+
+.entry - content.entry - meta span {
+        font - size: 12px;
+    }
+
+.entry - title {
+        font - size: .95rem;
+        font - weight: 500;
+        margin - bottom: 15px;
+    }
+
+.entry - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb img {
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb.thumb - hover {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: rgba(71, 130, 211, 0.85);
+        display: block;
+        top: 50 %;
+        left: 50 %;
+        color: #fff;
+        font - size: 40px;
+        line - height: 100px;
+        border - radius: 50 %;
+        margin - top: -50px;
+        margin - left: -50px;
+        text - align: center;
+        transform: scale(0);
+        -webkit - transform: scale(0);
+        opacity: 0;
+        transition: all .3s ease -in -out;
+        -webkit - transition: all .3s ease -in -out;
+    }
+
+.entry - thumb: hover.thumb - hover {
+        opacity: 1;
+        transform: scale(1);
+        -webkit - transform: scale(1);
+    }
+
+.article - post {
+        border - bottom: 1px solid #eee;
+        padding - bottom: 70px;
+    }
+
+.article - post.post - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+
+.article - post.post - thumb.post - overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100 %;
+        height: 100 %;
+        background - color: rgba(0, 0, 0, 0.6);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        opacity: 0;
+    }
+
+.article - post.post - thumb.post - overlay span {
+        width: 100 %;
+        display: block;
+        vertical - align: middle;
+        text - align: center;
+        transform: translateY(70 %);
+        -webkit - transform: translateY(70 %);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        height: 100 %;
+        color: #fff;
+    }
+
+.article - post.post - thumb: hover.post - overlay {
+        opacity: 1;
+    }
+
+.article - post.post - thumb: hover.post - overlay span {
+        transform: translateY(50 %);
+        -webkit - transform: translateY(50 %);
+    }
+
+.post - content.post - title {
+        font - weight: 500;
+    }
+
+.post - meta {
+        padding - top: 15px;
+        margin - bottom: 20px;
+    }
+
+.post - meta li: not(: last - child) {
+        margin - right: 10px;
+    }
+
+.post - meta li a {
+        color: #999;
+        font - size: 13px;
+    }
+
+.post - meta li a: hover {
+        color: #4782d3;
+    }
+
+.post - meta li i {
+        margin - right: 5px;
+    }
+
+.post - meta li: after {
+        margin - top: -5px;
+        content: "/";
+        margin - left: 10px;
+    }
+
+.post - meta li: last - child: after {
+        display: none;
+    }
+
+.post - masonry.masonry - title {
+        font - weight: 500;
+    }
+
+.share - buttons li {
+        vertical - align: middle;
+    }
+
+.share - buttons li a {
+        margin - right: 0px;
+    }
+
+.post - content.fa {
+        color: #ddd;
+    }
+
+.post - content a h2 {
+        font - size: 1.5rem;
+        color: #333;
+        margin - bottom: 0px;
+    }
+
+.article - post.owl - carousel {
+        margin - bottom: 20px!important;
+    }
+
+.post - masonry h4 {
+        text - transform: capitalize;
+        font - size: 1rem;
+        font - weight: 700;
+    }
+.mb40 {
+        margin - bottom: 40px!important;
+    }
+.mb30 {
+        margin - bottom: 30px!important;
+    }
+.media - body h5 a {
+        color: #555;
+    }
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+/*
+Template sidebar
+*/
+
+.sidebar - title {
+        margin - bottom: 1rem;
+        font - size: 1.1rem;
+    }
+
+.categories li {
+        vertical - align: middle;
+    }
+
+.categories li > ul {
+        padding - left: 15px;
+    }
+
+.categories li > ul > li > a {
+        font - weight: 300;
+    }
+
+.categories li a {
+        color: #999;
+        position: relative;
+        display: block;
+        padding: 5px 10px;
+        border - bottom: 1px solid #eee;
+    }
+
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+
+.categories li a: hover {
+        color: #444;
+        background - color: #f5f5f5;
+    }
+
+.categories > li.active > a {
+        font - weight: 600;
+        color: #444;
+    }
+
+.media - body h5 {
+        font - size: 15px;
+        letter - spacing: 0px;
+        line - height: 20px;
+        font - weight: 400;
+    }
+
+.media - body h5 a {
+        color: #555;
+    }
+
+.media - body h5 a: hover {
+        color: #4782d3;
+    }
+
+</script>
+
+<style>
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+</style>

@@ -1,0 +1,177 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  {% block title %}
+  {% endblock %}
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light py-0 class">
+    <a href=""><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex ml-auto">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        </ul>
+        <ul class="navbar-nav ml-auto mr-5">
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="{% url 'logout-view' %}">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  {% block content %}
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      {% include 'partials/_cust_properties.html' %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      
+
+        <div class="card mt-3 style=width: 18rem;">
+
+          <div class="card">
+            <div class="col-auto mt-3">
+              <h6>Add property</h6>
+            </div>
+            <div class="card-body">
+              <form action="{% url 'customer-properties' %}" method="POST">
+
+                {% include 'partials/_messages.html' %}
+                {% csrf_token %}
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Addressline1">Address line 1:</label>
+                    <input type="text" class="form-control" name="address1" id="address1Field"
+                      value="{{values.address1}}">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="Addressline2">Address line 2:</label>
+                    <input type="text" class="form-control" name="address2" id="address2Field"
+                      value="{{values.address2}}">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="Town">Town:</label>
+                    <input type="text" class="form-control" name="town" id="townField" value="{{values.town}}">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="City">City:</label>
+                    <input type="text" class="form-control" name="city" id="cityField" value="{{values.city}}">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="County">County:</label>
+                    <input type="text" class="form-control" name="county" id="countyField" value="{{values.county}}">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="Postcode">Postcode:</label>
+                    <input type="text" class="form-control" name="postcode" id="postcodeField"
+                      value="{{values.postcode}}">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="Date">Date created:</label>
+                    <input type="text" class="form-control" name="datecreated" id="date" value="{{values.datecreated}}"
+                      readonly>
+                    <small id="datecreatedHelpBlock" class="form-text text-muted">
+                      The creation date of the property record is automatically assigned on save
+                    </small>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="PropetyID">Property ID:</label>
+                    <input value="{{ propid }}" type="text" class="form-control" name="propertyid" id="propertyidField"
+                      value="{{values.propertyid}}" readonly>
+                    <small id="propertyiDHelpBlock" class="form-text text-muted">
+                      Your property-ID number is automatically generated and assigned.
+                    </small>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-auto my-1">
+                      <button type="submit" value="submit" style="color: black" class="btn btn-outline-primary">Add property</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+          integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+        <script src="{% static 'js/bootstrap.feather.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="{% static 'js/min.js' %}"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'js/function.js' %}"></script>
+        <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+$(document).ready(function(){
+feather.replace();
+
+$('button').click(function(){
+$('.alert').html('<i data-feather="activity"></i>');
+feather.replace();
+});
+
+});
+</script>
+
+<style>
+    .brand {
+        height: auto;
+        width: auto;
+        max-height: 72px;
+        max-width: 250px;
+    }
+  </style>
+
+      </body>
+{% endblock %}
+</html>

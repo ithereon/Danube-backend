@@ -1,0 +1,810 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+
+  <!-- <link rel="icon" type="image/png" href="{% static '/img/Favicon.png' %}"/> -->
+
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!--support working-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- IcoFonts -->
+  <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+    <a href="{% url 'home' %}"><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static 'img/clutter.jpg' %}" class="responsive" alt="picture of cluttered room"> 
+                    <div class="post-content">
+                        <h1>13 steps to de-clutter a storage room and make money</h1>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Sarah Tring</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">02 November 2021</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+                        <h5></h5>
+                    
+                        <h2>Using 5s lean method can help you declutter your home/<h2>
+
+                        <h4>The 5S quality tool is derived from five Japanese terms beginning with the letter "S" used to create a workplace 
+                            suited for visual control and lean production. The pillars of 5S are simple to learn and important to implement:</h4>
+
+                            <h4>Seiri: To separate needed tools, parts, and instructions from unneeded materials and to remove the unneeded ones.</h4>
+                            <h4>Seiton: To neatly arrange and identify parts and tools for ease of use.</h4>
+                            <h4>Seiso: To conduct a cleanup campaign.</h4>
+                            <h4>Seiketsu: To conduct seiri, seiton, and seiso daily to maintain a workplace in perfect condition.</h4>
+                            <h4>Shitsuke: To form the habit of always following the first four S’s.</h4>
+                        
+                        <h4>5S model</h4>
+                        <br>
+
+                        <img src="{% static 'img/5s.png' %}" class="responsive" alt="Lean method table with japanese translation"> 
+
+                        <h3>1.   Why you should de-clutter</h3>
+
+                        <h4>The start of a new year or the start of spring, always invites homeowners to look at the opportunity 
+                            to plan and execute property alterations, but homeowners should always be looking to opportunities to create the perfect space,
+                            as well as appreciate the value of their property, here at Billntrade we have been doing some research into the simplest steps 
+                           in which this can be acheived, and we are sharing this with you</h4>
+
+                        <h4>There are always opportunities to create value in your property, with de-cluttering storage, by planning and 
+                            manageable schedule of work, this should keep you motivated, as well as make the 
+                            task less intensive, it is also looking at investing some capital in improving the space,
+                            as this tends to increase value of the property, by substantially more than that of the small investment
+                            in itself.</h4>
+                        
+                        <h3>2.   Utilise spare rooms</h3>
+
+                        <h4>Storage rooms (if you are fortunate enough to have one or some) are spaces that over time attract items and assets usually placed 
+                            in a random or non-organised way, into a space, which limits the functional and practical use of the space.</h5>
+                        
+                        <h4>We all have that room that over time goes from useful space i.e. former child’s room, spare room with no dedicated purpose, non-functional office etc. 
+                            To the goto space for dumping possessions we acquire over time, but are no longer sure what purpose they serve or what to do with them, they sit in a limbo of 
+                            sorts waiting for some allocation to task that will usually never happen.</h4>
+                        
+                        <h3>3.   Evaluate the spaces you utlise</h3>
+
+                        <h4>Spare rooms, can become a magnet for possessions, items and things that we know overtime are infrequently or never used, have become redundant or broken (with intent to fix), 
+                            been replaced, superseded or have some kind of perceived sentimental value. They aren’t like a corner footprint in a room reserved for items that can be used, but for the most 
+                            part simply take up to much useful space if left out on a work surface or table, and inhibit daily use of other more regularly used kitchen item, e.g. in the kitchen, a bread maker. 
+                            It might be something you use once a quarter, so if your not it the business of artisan bread making or believe in making fresh bread daily, then it makes sense to only bring the bread maker out 
+                            when it’s needed. This means it ends up in the kitchen, on the shelf or on the floor or in the storage room, the idea of storage is to facilitate the storage of these items, as an alternative to disposal or sale.</h4>
+
+                        <h4>These spaces can accrue items very quickly over time, and it’s not until we decide to move home or look to sell our house, or look at making the most of the space we have, that we get the need to target these spaces, get organised, 
+                            remove clutter and junk and creates value and a feeling of accomplishment and pride in the revitalisation of the room and the value it creates for your property.</h4>
+
+                        <h4>Some research was conducted by comparethemarket.com, and the report states that even with restricted space in our home, we find it really hard to getting rid of our possessions.</h4>
+
+                        <h4>The UK uses 37.6 million square feet of storage space, which is the equivalent of a staggering 268,500 removal vans. And, while 1 in 2 Brits admit to holding onto things for longer than they should, 
+                            1 in 3 say they don't like the idea of getting rid of their possessions.</h4>
+                        
+                        <h3>4.    De-cluttering takes time</h3>
+                    
+                        <h4>Clearing out a storage room, or any space will take planning and time. The first step is to decide what you want to accomplish, in the time allocated, set yourself realistic activities, like, separation, 
+                            organisation, grouping, bagging etc. And set yourself a target around these activities. This does not mean the whole room has to be cleared in a day, it means set yourself a goal i.e. I’m going to box up every DVD I have in the storage room 
+                            and get it ready for some kind of disposal, sale or give away.</h4>
+
+                        <h3>5.    Sort, sift and catalogue your stock to either make money or dispose</h3>
+
+                        <h4>By doing this you accomplish two goals, getting rid of redundant and or superseded products and potentially making a little return on the product. DVD’s will not appreciate in value; they will be consigned to museums 
+                            due to the nature and pace of technological development. They have been long superseded by new technologies such as streaming services, server storage facility, cloud services etc. All offering a more practical, 
+                            convenient and condensed space to store movies or music, whilst delivering faster on demand services, with improved visual technology and more product propositions.</h4>
+
+                        <h3>6.    Let's take DVDs as an example</h3>
+
+                        <h4>Place all your DVDs in a box, and create a spreadsheet list of all the DVDs as stock note the condition they are in also, and leave a column for value. By doing this you 
+                            create a digital inventory of your products, and you create a QC of the condition of the DVD.</h4>
+
+                        <h3>7.    Making money</h3>
+
+                        <h4>This is fundamental for the next step. At a convenient time, you need to dispose of the DVDs; the first is by way of sale, second by give away the third by scrap. For the sale, download 
+                            an app like musicmagpie.co.uk, CEX (webuy.co.uk). Use your phone camera as a barcode scanner with the feature these apps provide, and scan the DVDs. This will give you the opportunity to receive a 
+                            monetary value offer from the second hand retailer, at this point any money is better than no money; even if It is nominal, because of the objective, (i.e. add more value to your home through better use of space) 
+                            and you should consider the offer.</h4>
+                        
+                        <h4>At this point, you can pack up the DVDs that the second hand retailer has offered to buy, check the inventory and purchase value are updated to the inventory 
+                            spreadsheet and reflect the contents and ship it by Hermes to the postal address provided by the retailer, wait for 
+                            the receipt and payment to your account.</h4>
+
+                        <h4>have (or go to) a car-boot sale, only if this approach is practical and feasible for you, but it is not essential.
+                            It is a great way to make some money, and you can do it in a safe and low cost way.</h4>
+                                
+                        <h3>8.    Making money in not limited to DVDs</h3>
+
+                        <h4>our products, should go to a second hand retailer, or sold through a third party retail platform, Gumtree, or EBay. It is better to take an offer for a dress, or computer, or toy, 
+                            whatever it is you are selling from your own sale through third party, prior to offering it to a second hand retailer, the goal is to make as much money as you can, create a 
+                            functional space and increase the value of your property.</h4>
+
+                        <h3>9.    Other options for what to do wth items</h3>
+
+                        <h4>With what is not sellable to the second hand retailer, look to give it away to friends, or sell on Facebook, Instagram, and Gumtree etc. 
+                            If these items can’t ne sold then these items should find their way to a local charity shop, make sure the items are can still offer fitness for purpose 
+                            eveb thou they have had some use, otherwise, they can be taken to your local recycling facility.</h4>
+                        
+                        <h3>10.    Organise and maximise the opportunity</h3>
+
+                        <h4>Make sure you have some recyclable black bin liners for storing the recycling items (such as clothing, soft toys etc.) Make sure you use your phone to take the best pictures, 
+                            capture the item in the best lighting and provide the most accurate product positioning and description for what it is you are selling, and post the best advert for maximum views, 
+                            interest and potential sales.</h4>
+
+                        <h4>Use cardboard boxes to box up electrical equipment, and bubble wrap if it is fragile. Do not overfill the boxes or make the boxes to heavy, as this will create a problem for you and or any one else who need to manual handle the items, not doing so means you will not be able to lift or move the boxing without potentially damaging something, or even worse if someone 
+                            else can’t move it they end up injuring themselves.</h4>
+                        
+                        <h3>11.    How to deal with sentimental items</h3>
+
+                        <h4>These are probably the hardest to resolve when it comes to deciding what to do with the possessions and how they should be treated. This can really become a challenge, if you are an executor to will, and have to manage the liquidation or disposal of assets in the event of the passing of the loved one, but equally; if you have keepsakes, 
+                            or pictures of loved ones, or footprints of adults as babies, or even items of memory, nostalgia and sentiment. These need to be assessed on their individual merit and value to determine how best to deal with them.</h4>
+
+                        <h4>Does the possession represent something of memory that evokes emotion of joy, happiness, nostalgia and irreplaceability, then this is an item you can keep, but be sure to pass it on as a keepsake, such that the possession doesn’t end up in the bin at some point in the future, 
+                            if you are not around to keep it secure. If the item has no sentimentality, i.e. you can’t place an emotional value or a meaning financial connection to it, them look to sell it or dispose of it, It will cost you more to handle store, replace, repair etc. Than it is really worth, not to mention the time effort, 
+                            energy and cost, required to do so.</h4>
+
+                        <h4>ake a Singer sewing machine, at one point in history 9 out of 10 household had a sewing machine and these can be found as a possession in home storage, is the possession something functional can you use it, and is it invaluable to your day-to-day life. 
+                            If the answer is no, i.e. as a homeowner your happy to find alternative apparel solutions the possession is not essential or invaluable, certainly not sentimental, so think about selling or disposing of the sewing machine and investing in something that is 
+                            functional and you can use day to day.</h4>
+
+                        <h3>12.    Consider hoarding as just expensive boarding</h3>
+
+                        <h4>Hoarding is costing you money, in a home storage area. If you hoard you are paying rent or a mortgage for footprint of items that are gathering dust and taking the place for items that can release money or make money. 
+                            Hoarding to the extreme is a sub-type of OCD (Over Compulsive Disorder) this can be to the detriment of your objective to clear out a storage area. Coping with OCD usually requires support of some type to identify 
+                            the best way to cope with managing the de-clutter project without feeling the process is frustrating or not conducive to how you feel, this is symptomatic of the disorder. Manage this at a pace that makes you comfortable. 
+                            This does not mean that is you’ve had a chair for 5 years, it’s broken but it would be a shame to dispose of it, because you had great memories wit the chair take a picture of the chair, then dispose of it. Keeping it for the sake of keeping it, 
+                            is not nostalgia, it is a way of thinking that refuses to let go of things that are really of no practical value but have a perceived sentimental value.</h4>
+
+                        <h3>13.    Plan the end game for the storage</h3>
+
+                        <h4>You should not just clear out as much as you can, but you should consider the end game of the storage, do you want the space to be a second bedroom, an office a study. Make sure you organise the remaining items to harmoniously fit into the 
+                            future state of the space created, as well as the right storage solution, i.e. under bed, or shelving, Either way you can either go from de-clutter to transition to final state, 
+                            or from de-clutter, to final state. Ensure the plans for desks or beds, or tables or cupboards are all measured up, footprints planned and assembly and build organised. This will greatly help in the delivery of the next phase of 
+                            the project. Remember, a project can add a minimum of 10% more value to your home by simply creating a new functional space, not just more storage.</h4>
+
+                        <h5>If you found this article helpful, do check out our other articles <a href="{% url 'blog14' %}">Find a builder</a>
+                            this article is one example of how <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> is working with builders, to help them find leads and grow their business</h5>
+    
+                
+                            <ul class="list-inline share-buttons">
+                                    <li class="list-inline-item">Share Post:</li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                            <hr class="mb40">
+                            <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                            <div class="media mb40">
+                                <div class="media-body">
+                                    <h5 class="mt-0 font700">Sarah Tring</h5> Hi, I'm Sarah, I'm a blogger who enjoys
+                                    eveything related to home improvement, I'm passionate about sustainable homes, home
+                                    improvement, home developments and technology used in the home. When not blogging, I
+                                    enjoy spending time with my husband, two children and our dog 'Leto'.
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </article>
+                    <!-- post article-->
+                </div>
+                <div class="col-md-3 mb30">
+                    <div class="mb30">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search..."
+                                    aria-describedby="basic-addon2">
+                                <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <h4 class="sidebar-title">Other blogs</h4>
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                            successfully deal with mould in your home</a></h5> Apr, 2021
+                                </div>
+                            </li>
+                            <li class="media my-4">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                            plumber</a></h5> Jul, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                                    </div>
+                                </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                    </div>
+                            </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                                <h5 class="mt-0 mb-1"><a href="{% url 'blog6' %}">The 12 step essential guide to protecting your home from cold weather damage</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                                    </div>
+                                </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog8' %}">Your essential 18 point guide to organising a home move</a></h5> Oct, 2021
+                                </div>
+                            </li>
+                                <li class="media">
+                                        <img class="d-flex mr-3 img-fluid" width="64"
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                                </div>
+                            </li>
+                        </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog10' %}">17 essential tips to help you with hydroponic gardening</a></h5> Nov, 2021
+                </div>
+            </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog11' %}">6 points to consider in a garage conversion</a></h5> Nov, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog13' %}">12 quick tips to reduce the risk of a burglary at your home</a></h5> Jan, 2022
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog14' %}">How to Find a builder</a></h5> Feb, 2022
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog16' %}">Hire a plumber</a></h5> Mar, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog17' %}">Electrical safety dos and donts for homeowners</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog18' %}">How to find a reliable Electrician</a></h5> Apr, 2022
+        </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog19' %}">Plumbing dos and donts for home and property owners</a></h5> Apr, 2022
+        </div>
+        </li>
+                     </ul>
+                 </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6 text-lg-left text-center">
+                        <div class="copyright">
+                            <strong>&copy; Copyright 2021 -
+                                <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>, Billntrade
+                                Ltd</strong>. All Rights Reserved
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                            <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                            <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                            <a href="{% url 'cookies' %}">Cookies</a>
+                            <a href="{% url 'blogs' %}">Blogs</a>
+                            <a href="{% url 'about-us' %}">About us</a>
+                            <a href="{% url 'sitemap' %}">Sitemap</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+    
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    
+        <style>
+            .brand {
+                width: 14rem;
+                margin-left: 2rem;
+                /* border: 2px solid lime; */
+            }
+        </style>
+    
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+        <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+        <script src="assets/vendor/counterup/counterup.min.js"></script>
+        <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/venobox/venobox.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    
+        <script>
+            $(document).ready(function () {
+                feather.replace();
+    
+                $('button').click(function () {
+                    $('.alert').html('<i data-feather="activity"></i>');
+                    feather.replace();
+                });
+    
+            });
+        </script>
+    
+        <!-- Template Main JS File -->
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+    
+    </html>
+    
+    
+    <script>
+        body{
+            margin - top: 20px;
+        }
+    /*
+    Blog post entries
+    */
+    
+    .entry - card {
+            -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+            -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+            box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        }
+    
+    .entry - content {
+            background - color: #fff;
+            padding: 36px 36px 36px 36px;
+            border - bottom - left - radius: 6px;
+            border - bottom - right - radius: 6px;
+        }
+    
+    .entry - content.entry - title a {
+            color: #333;
+        }
+    
+    .entry - content.entry - title a: hover {
+            color: #4782d3;
+        }
+    
+    .entry - content.entry - meta span {
+            font - size: 12px;
+        }
+    
+    .entry - title {
+            font - size: .95rem;
+            font - weight: 500;
+            margin - bottom: 15px;
+        }
+    
+    .entry - thumb {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border - top - left - radius: 6px;
+            border - top - right - radius: 6px;
+        }
+    
+    .entry - thumb img {
+            border - top - left - radius: 6px;
+            border - top - right - radius: 6px;
+        }
+    
+    .entry - thumb.thumb - hover {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(71, 130, 211, 0.85);
+            display: block;
+            top: 50 %;
+            left: 50 %;
+            color: #fff;
+            font - size: 40px;
+            line - height: 100px;
+            border - radius: 50 %;
+            margin - top: -50px;
+            margin - left: -50px;
+            text - align: center;
+            transform: scale(0);
+            -webkit - transform: scale(0);
+            opacity: 0;
+            transition: all .3s ease -in -out;
+            -webkit - transition: all .3s ease -in -out;
+        }
+    
+    .entry - thumb: hover.thumb - hover {
+            opacity: 1;
+            transform: scale(1);
+            -webkit - transform: scale(1);
+        }
+    
+    .article - post {
+            border - bottom: 1px solid #eee;
+            padding - bottom: 70px;
+        }
+    
+    .article - post.post - thumb {
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+    
+    .article - post.post - thumb.post - overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100 %;
+            height: 100 %;
+            background - color: rgba(0, 0, 0, 0.6);
+            transition: all .3s;
+            -webkit - transition: all .3s;
+            opacity: 0;
+        }
+    
+    .article - post.post - thumb.post - overlay span {
+            width: 100 %;
+            display: block;
+            vertical - align: middle;
+            text - align: center;
+            transform: translateY(70 %);
+            -webkit - transform: translateY(70 %);
+            transition: all .3s;
+            -webkit - transition: all .3s;
+            height: 100 %;
+            color: #fff;
+        }
+    
+    .article - post.post - thumb: hover.post - overlay {
+            opacity: 1;
+        }
+    
+    .article - post.post - thumb: hover.post - overlay span {
+            transform: translateY(50 %);
+            -webkit - transform: translateY(50 %);
+        }
+    
+    .post - content.post - title {
+            font - weight: 500;
+        }
+    
+    .post - meta {
+            padding - top: 15px;
+            margin - bottom: 20px;
+        }
+    
+    .post - meta li: not(: last - child) {
+            margin - right: 10px;
+        }
+    
+    .post - meta li a {
+            color: #999;
+            font - size: 13px;
+        }
+    
+    .post - meta li a: hover {
+            color: #4782d3;
+        }
+    
+    .post - meta li i {
+            margin - right: 5px;
+        }
+    
+    .post - meta li: after {
+            margin - top: -5px;
+            content: "/";
+            margin - left: 10px;
+        }
+    
+    .post - meta li: last - child: after {
+            display: none;
+        }
+    
+    .post - masonry.masonry - title {
+            font - weight: 500;
+        }
+    
+    .share - buttons li {
+            vertical - align: middle;
+        }
+    
+    .share - buttons li a {
+            margin - right: 0px;
+        }
+    
+    .post - content.fa {
+            color: #ddd;
+        }
+    
+    .post - content a h2 {
+            font - size: 1.5rem;
+            color: #333;
+            margin - bottom: 0px;
+        }
+    
+    .article - post.owl - carousel {
+            margin - bottom: 20px!important;
+        }
+    
+    .post - masonry h4 {
+            text - transform: capitalize;
+            font - size: 1rem;
+            font - weight: 700;
+        }
+    .mb40 {
+            margin - bottom: 40px!important;
+        }
+    .mb30 {
+            margin - bottom: 30px!important;
+        }
+    .media - body h5 a {
+            color: #555;
+        }
+    .categories li a: before {
+            content: "\f0da";
+            font - family: 'FontAwesome';
+            margin - right: 5px;
+        }
+    /*
+    Template sidebar
+    */
+    
+    .sidebar - title {
+            margin - bottom: 1rem;
+            font - size: 1.1rem;
+        }
+    
+    .categories li {
+            vertical - align: middle;
+        }
+    
+    .categories li > ul {
+            padding - left: 15px;
+        }
+    
+    .categories li > ul > li > a {
+            font - weight: 300;
+        }
+    
+    .categories li a {
+            color: #999;
+            position: relative;
+            display: block;
+            padding: 5px 10px;
+            border - bottom: 1px solid #eee;
+        }
+    
+    .categories li a: before {
+            content: "\f0da";
+            font - family: 'FontAwesome';
+            margin - right: 5px;
+        }
+    
+    .categories li a: hover {
+            color: #444;
+            background - color: #f5f5f5;
+        }
+    
+    .categories > li.active > a {
+            font - weight: 600;
+            color: #444;
+        }
+    
+    .media - body h5 {
+            font - size: 15px;
+            letter - spacing: 0px;
+            line - height: 20px;
+            font - weight: 400;
+        }
+    
+    .media - body h5 a {
+            color: #555;
+        }
+    
+    .media - body h5 a: hover {
+            color: #4782d3;
+        }
+    
+    </script>
+
+    <style>
+            .responsive {
+              width: 100%;
+              height: auto;
+            }
+    </style>

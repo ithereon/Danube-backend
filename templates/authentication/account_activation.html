@@ -1,0 +1,11 @@
+Hello {{ user }},
+
+You have successfully created your Billntrade customer account.
+
+Please click on the link below to activate your account: 
+
+https://{{domain}}{% url 'account_activation' uidb64=uid token=token %}
+
+Best,
+
+Billntrade Team

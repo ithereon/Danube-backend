@@ -1,0 +1,1047 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+
+  <!-- <link rel="icon" type="image/png" href="{% static '/img/Favicon.png' %}"/> -->
+
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!--support working-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- IcoFonts -->
+  <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+    <a href="{% url 'home' %}"><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static '/img/imagebuildingproject.jpg' %}" class="responsive" alt="picture of a house build project">
+
+                    <div class="post-content">
+                        <br>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Sarah Tring</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">19 February 2022</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+                        <h5></h5>
+
+                        <h1>How to find a builder?</h1>
+
+                        <h4>Finding a builder is easy, but finding a builder that is right for your project is the challenge. 
+                            You need to find a builder that is qualified, experienced and licensed if you want a high-quality 
+                            building project delivered. We have compiled a detailed guide below on how to find a builder that you can trust to 
+                            deliver your project on time and for the right price. Check it out below and learn how to find a good builder.</h4>
+
+                        <h2>What do builders do?</h2>
+
+                        <h4>First step in learning how to find a builder is to understand the type of work that builders do. Builders include tradesmen and women, 
+                            engineers, architects, designers, and project managers. They understand how the construction process and the building industry works from 
+                            design to project completion. Builders must comply with building regulations when carrying out construction projects. 
+                            Below are actions that a builder carries out during a standard construction.</h4>
+
+                        <h2>Examining the building site and health and safety</h2>
+
+                        <h4>Once you find a builder, the builder will examine the building site and introduce signs and protective barriers. 
+                            Health and safety are very important considerations for builders, they make sure that the H&S procedures are in place and followed 
+                            to the letter. They also ensure all those working on the site are aware of the H&S procedures and protocals, they also ensure the right 
+                            equipment is worn on the site, and go and no go areas are clearly marked. They ensure that site attnedees are briefed on
+                            safety, health, emergency procedures, access, communication and questions and queries. It may seem like the job of one 
+                            person, (i.e. Foreman, Project manager etc,) but everyone on site has a responsibility and duty of care to themselves, their colleagues, 
+                            and those civilians who are attending the site, e.g. ensuring supervision and briefings.</h4>
+
+                        <h2>Deliver the construction equipment</h2>
+
+                        <h4>When the builder confirms that the building site is set and ready for construction, they ensure 
+                            that the machinery, building materials and equipment, such as hoists, 
+                            cranes and concrete mixers are brought to the site. This task can be very complex, as certain equipment may need 
+                            certain licences to operate, or have regulations on emissions or noise, weight, materials, etc. The sequencing of delivery in 
+                            some kind of schedule is also important, to ensure that no time is lost, and the build plan can be delivered in the timeframes
+                            planned. Additionally, they must check paperwork i.e. BOM, orders, deliveries, site schedules for logistics etc. 
+                            There is a lot to do in terms of preparedness, administration and protocals, but also, they have to respond to issues that happen, delays in delivery, 
+                            broken down vehicles, missing paperwork, emergencies etc. They have to ensure that they can respond efficiently and effectievly to 
+                            any problems that can happen whilst the project is in progress.</h4>
+
+                        <h2>Oversee the construction process</h2>
+
+                        <h4>The builder oversees the rest of the construction process from the laying of the foundations, to construction sequence 
+                            up to the painting of the building. This means that measuring, detailing, inspecting, signing off and all things associted with the 
+                            project and the plan, to ensure the highest standards are met. If there are any delays, issues, or opportunities, the builder must be able to problem solve 
+                            on the scene, or pull in the right resource and expertise to resolve the issue. An example could be delivering a sizeable 
+                            weight of concrete mix, to a location which is not easily accessible with a mixer and wheel barrow, the builder must consider 
+                            some kind o piping delivery system to deliver the concrete mix, they would be considering the density of mixture, delivery per minute, volume required, set times, etc. There could 
+                            be some maths and calculations involved here also, to ensure that the right amount is supplied and not too much as this will cost more, and increase potential waste and profit loss,
+                            and on the other hand not too little as this will be insufficient and require additional costs to make up the shortfall.
+                        </h4>
+
+                        <h2>What to do before getting a builder</h2>
+
+                        <h4>When researching methods of how to find a builder, we recommend that you 
+                            consider the following factors:</h4>
+
+                        <h2>The cost of the project</h2>
+
+                        <h4>How much money are you willing to spend on the building project? How much does the builder charge for their services? We recommend you find a builder 
+                            whose cost of charges falls within your budget, and the builder is able to henestly and accuratly be faithful to this in as far as both the plan, your expectations, the contract and the builders expertise
+                            all work to deliver. The cost of the project will be largely determined by the builder, but ensuring that discussion and clarity on what and how. ensure that the 
+                            risk of surprise, scope creep, dispute management and resolution etc, are all clear and how to approach, resolve or minimise issues occuring is clarified and documented, before the contract is signed.</h4>
+                        
+                        <h4>In the end, you don't want to exceed your budget and drain your bank account on the project. Find a builder whose services are affordable to you, but most importantly, 
+                            be realistic about what your budget can achieve and do not deviate from this (assuming it is realistic). </h4>
+
+                        <h2>How much experience the builder has</h2>
+
+                        <h4>Experienced builders deliver high quality projects and outcomes. Find a builder that has worked on several similar projects in the past. If you need a unique new home, 
+                            look for a custom home builder, who has experience in this area as well as working with vendors and partners who have the experience to deliver this.
+                            Harmony on the project to maximise the chance of success will favour partners who have built relationships through working together on projects. </h4>
+
+                        <h2>The credentials of the builder</h2>
+
+                        <h4>Always ensure that you work with a builder that not only complies with the law but also offers the right type of insurance that you need for the project. Additionally, we recommend that you 
+                            find an body affiliated and licensed builder. They should also have the necessary qualifications, verified referencs and
+                            permits to undertake the construction projects. </h4>
+                        
+                        <h2>How to find a builder you can trust?</h2>
+
+                        <h4>The next step is to find a trustworthy builder. How do you find a builder you can trust? 
+                            Below are some easy steps that will help you find a builder you can trust. </h4>
+
+                        <h3>1. Use our free online tool to connect with builders.</h3>
+
+                        <img src="{% static '/img/crmdashboard.jpg' %}" class="responsive" alt="crm dashboard on a laptop">
+
+                        <h4>You might be asking; how do I find a builder online? You can use online tools to find a builder. The advantage of such platforms is that they allow customers 
+                            to rate their experience with the listed builders. If a builder is not trustworthy, you can easily check their profile, review their profile and determine if 
+                            you want to avoid them altogether based on the reviews.  </h4>
+
+                        <h4>Here at <a href="https://billntrade.com" class= "billntrade">billntrade.com</a>, we connect customers with their desired builders. We have developed an online tool that will help you find a builder for your project. Instead of struggling to find a builder on your own through the 
+                            thousands of builders available on the internet, in your local area, we support you and them from quote, through to invoice, and everythig inbetween, i.e. digital issue management, communication, document management to name a few features.
+                            <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> connects you directly to the most resourceful and efficient builders near you. </h4>
+                        
+                        <h4>You can even compare the options available when you search "builder near me". A builder site showing at the top of the list is not a guaranteed fit for you. 
+                            Check reviews, expertise, costing, and certifications. Also, check the location. <a href="https://billntrade.com" class= "billntrade">billntrade.com</a> hosts many qualified and vetted builders, 
+                            so you can start your search journey here.</h4>
+                        
+                        <h3>2. Ask for recommendations from friends and family</h3>
+
+                        <h4>Another tip on how to find a good builder is to ask for recommendations from family members and friends that have worked with builders in the past. 
+                            If someone you know had their project completed by a qualified, professional and licensed builder, they can easily connect you with that builder, especially if 
+                            they liked the outcome of their project. Asking for recommendations is one of the easiest and fastest 
+                            ways to find a reputable builder for your home. </h4>
+                        
+                        <h3>3. Look around your local area to check for builders.</h3>
+
+                        <h4>Another tip on how to find a reliable builder is to look for a local builder in your area. 
+                            You can take a walk in your area or drive around to see if you can find any building projects going on. 
+                            This will help you identify active builders near your area. Additionally, in case you come across a builder’s board, 
+                            it will help you figure out which builders in your area are open to work. If you are looking for ways to find a 
+                            builder of a house, you need to consider local builders. They understand the permits needed as well as local planning requirements, permissions, laws and protocals, 
+                            that ensure the building process can be conducted smoothly and without any legal challenges. </h4>
+
+                        <h3>4. Ask other trades such as designers and architects</h3>
+
+                        <h4>If you have worked with other contractors in the past such as designers or architects you can get in 
+                            touch with them and ask for referrals for the best home builders, or ask them for guidance on how to find a 
+                            good builder in the area. If someone recommends someone, take some time to look them up and compare them with the 
+                            other builders listed online. If they compare favourably, you can go ahead and request a quote for your building project.</h4>
+
+                        <h2>How do you know if a builder is reliable?</h2>
+
+                        <h4>As we stated earlier, it is easy to find a builder online. However, how will you determine whether the builder is reliable? Here are several 
+                            factors that you should take into account before hiring a builder. </h4>
+
+                        <h3>1. Previous projects</h3>
+
+                        <h4>A reliable builder will be willing to show you their past projects which they have worked on as well as the results. As a potential client, 
+                            you are allowed to request pictures or testimonials of the previous projects for that builder. If a builder keeps giving you excuses about why they cannot 
+                            show you the previous houses or buildings they have worked on, 
+                            it's probably because they did not do a great job. The previous results of the projects the builder has 
+                            worked on, indicate the quality of work and the likely results of your project when you hire the builder. If their past projects are impressive, 
+                            then you can rely on the builder to do great work on your project.  </h4>
+
+                        <h3>2. Customer service</h3>
+
+                        <h4>Another thing to know about how to find a good builder in your area that is reliable is the quality of their customer service. 
+                            When you contacted the website or business, how did the customer attendant treat you? Were they respectful and professional? Did they answer your questions well or were you ignored? 
+                            Were they rude over the phone, a reliable builder will have a customer service team that is reasonable, professional, ethical, and respectful. More importantly, 
+                            they should know what they are talking about, to be able to conect you to the right 
+                            person or people to ensure that the whole communication process is smooth and clear.</h4>
+
+                        <h3>3. What references, testimonials, reviews and opinions must you get from previous clients</h3>
+
+                        <h4>To know how to find a good home builder, you need to get in contact with the former clients of the
+                            builder to find out the following:</h4>
+
+                        <h4>•	Was the home builder always punctual</h4>
+                        <h4>•   Does the builder and his team conduct themselves with integrity, honesty and respect, this is important as an indication of the values of the business.
+                                if they don't do this it is likely they have little respect for the client or the work they deliver, and they should probably be avoided.</h4>
+                        <h4>•	Did the home builder deliver the project in the agreed time and budget? </h4>
+                        <h4>•	Did the home builder communicate politely and effectively with the client at all times? </h4>
+                        <h4>•	Did the home builder resolve issues, problems complanits in the right way? </h4>
+                        <h4>•	Are testimonials from previous clients for the builder sincere and accurate? </h4>
+                        <h4>•	Are reviews and ratings in line with reviews and levels that are excellent? </h4>
+
+                        <h2>What builder qualifications should you Look for? </h2>
+
+                        <h4>If you are wondering about how to find out if a builder is licensed, 
+                            you need to ensure that they stick to UK standards and have the right building works certifications. 
+                            Below are some of the qualifications that you should look for in a builder.</h4>
+
+                        <h3>1. What license should you look for in a builder </h3>
+
+                        <h4>A qualified home builder should have a license to prove that the business is legal and recognized by the law. 
+                            The last thing you need is for a builder to start working on your construction project, only for the project to be abandoned in the middle due to legal issues. 
+                            There are several websites that you can use to check if the home builder is licensed in the UK. Use such resources to confirm the qualifications of the home builder you intend to hire. 
+                            Some of the details that you would require to access the license information include:</h4>
+
+                        <h4>•	The name of the business</h4>
+                        <h4>•	Their address</h4>
+                        <h4>•	The businesses companies house registration number</h4>
+                        <h4>•	Trades they are qualified and trained to undertake</h4>
+                        <h4>•	Valid certification and association with a reputable trade body</h4>
+                        <h4>•	You can check they are registered with the NHBC using the link here: <a href="https://www.nhbc.co.uk/homeowners/check-the-register" class= "post-link__check-NHBC-register">Check NHBC register</a> </h4>
+
+                        <h3>2. What certification is important for a builder</h3>
+
+                        <img src="{% static '/img/certificate.jpg' %}" class="responsive" alt="certificate signiture of chancellor of intellectual body">
+
+                        <h4>Another indicator of qualification that you can look for in a home builder is the type of certification they have. Certificates like the
+                            CSCS card (issued by the Construction Skills Certification Scheme) are proof that the home builder has the right amount of training and qualification 
+                            to carry out the project that you want to give them. </h4>
+
+                        <h4>•	Health and safety certificates (these should be from approved certifiers such as CHAS and Constructionline)</h4>
+                        <h4>•	Joinery certificates</h4>
+                        <h4>•	Wood occupations certificates</h4>
+                        <h4>•	Electrotechnical technology installation certificates</h4>
+                        <h4>•	Site carpentry certificates</h4>
+
+                        <h2>What is meant by a master builder?</h2>
+
+                        <h4>A master builder is a person who has attained a high-level of proficiency in one of the building crafts, such as carpentry, 
+                            masonry, structural engineering, architectural engineering, civil construction to name a few. The majority of them are members of professional bodies. 
+                            There are many advantages of working with such professionals.</h4>
+
+                        <h4>They include:</h4>
+
+                        <h4>•	The builder’s credentials and work are inspected independently before joining or even applying 
+                            for the membership of their professional bodies. </h4>
+                        <h4>•	The trading history, public liability insurance, credit history, and employer liability insurance 
+                            are vetted professionally. </h4>
+                        <h4>•	The builder has to comply with the code of conduct of the community by upholding standards, complying with the regulations of health and safety, 
+                            and providing clients with quality guarantees. </h4>
+
+                        <h4>Therefore, you are sure to get the best service possible for your next construction project.</h4>
+
+                        <h2>Why hire a certified builder?</h2>
+
+                        <h4>If you are wondering how to find a builder for a custom home, you need to make certain that you hire a 
+                            builder that is certified. Although an unlicensed builder may cost cheaper, the quality of their work will most likely be poor and require you to carry out several repairs in future. As a result, the total cost of hiring an unlicensed home builder will undoubtedly be more in the long run. Why not save money right now by hiring a 
+                            certified builder? Below are the reasons why you need to hire a certified builder. </h4>
+
+                        <h3>1.  Reliability</h3>
+
+                        <h4>Finding a reliable builder is very important for the success of your project. Licensed builders tend to be more professional, ethical and straightforward, and will always comply with the Uk's construction standards. An uncertified builder may get in trouble with the law for carrying out a business without a license, 
+                            which would lead to them abandoning the project before completion. </h4>
+
+                        <h3>2. High quality work</h3>
+
+                        <h4>to find good quality builder a client needs to sperate the professionals from the cowboys, or name claimers, i.e. anyone who claims that the trade runs in their families. 
+                            a cleint should seek references that they can speak to directly, as well as confirm that they are registered with a professional body.
+                            Remember, it takes training and experience to become a master builder.</h4>
+
+                        <h2>How to manage paying your builder? </h2>
+
+                        <img src="{% static '/img/moneycoins.jpg' %}" class="responsive" alt="picture of british money in coins">
+
+                        <h4>The cost of a builder is determined by the amount of work they do, the building process, logistics, how long they
+                            require to finish the project, and the materials they will require to carry out the project. 
+                            When it comes to project costs, insist on seeing a list of deliverables. What is included? How much does it cost? 
+                            Without such a list, it will be hard to know what you are buying. If the contractor does not see it fit to break down his or her package, 
+                            they probably don't deserve your project. You also need to ensure that the written contract indicates how you should pay the builder as well as the amount of time it will take to complete the project. 
+                            Before signing the contract, ask the builder how they expect to be paid.</h4>
+
+                        <h4>Typically, there will be a down payment, usually between 5-15% of the overall cost, followed by a schedule for milestone delivery and payment. 
+                            Only release the payment based on the delivery of the actual work. Ensure that each stage is completed before you pay 
+                            the builder and if necessary the work is inspected and approved by third parties such as warranty and building inspectors. </h4>
+
+                        <h4>Additionally, ensure that you agree with the builder on the amount of money that you will hold as retention until the project is completed. The retention is usually between 
+                            2 and 5 per cent of the total project cost. </h4>
+
+                        <h2>How to get good quotes from builders</h2>
+
+                        <h4>Once you have narrowed down on the builder, you need to get a good quote from them. Apart from learning how 
+                            to find a builder of a house, you need to learn how to get a correct estimate from them. To get a good quote, you need to ensure that you provide the builder with as much information about the project as possible. Some of the details that you
+                            need to provide the builder with, to get a good estimate include:</h4>
+
+                        <h3>1. Materials</h3>
+
+                        <h4>Provide the builder with information about the type of materials the project will require. Include any fixtures, finishes, 
+                            and fittings that the project will require. Also ensure that skips and old material disposal are considered.</h4>
+
+                        <h3>2. Water works, toilet and sanitation</h3>
+
+                        <h4>Ensure that a portable toilet is part of the contract and that this is something that is a pre=requiste for work on the project site, if required.</h4>
+
+                        <h3>3. A description of the quote</h3>
+
+                        <h4>Inform the builder how you want the quote to be set out. This includes allowances for services that cannot be priced without an investigation such as groundworks, 
+                            as well as the sum of prime costs.</h4>
+
+                        <h2>How many builders' quotes do you need when trying to find a builder?</h2>
+
+                        <h4>The minimum number of quotes that you should get from builders before selecting the one you want to complete your project is three. We recommend that you get quotes from 3 or more builders so that you can compare their services and costs to select the builder that best suits your budget. How do you choose a home builder? 
+                            Here are a few tips you can keep in mind when selecting a builder.</h4>
+                        
+                        <h2>Don't settle for the first quote you get</h2>
+
+                        <h4>The first builder you come across may seem great but do not accept their quote before you can compare 
+                            it with other options. This is because the quote of one builder can vary with the quotes of another builder 
+                            by hundreds of pounds. Also, check what the quote entails because the cheapest quote may not be the best quote for your project. For instance, if the quote of a builder seems very low, 
+                            check whether it includes painting, decorating, and renovation costs. </h4>
+
+                        <h2>Compare the experiences of the builders</h2>
+
+                        <h4>To get the most out of your money, ensure that you go for the builder with the most experience and has worked on 
+                            several similar projects in the past. </h4>
+
+                        <h2>How to evaluate quotes</h2>
+
+                        <h4>Another thing on how to find a builder for a new home with the best quotes is to evaluate the genuineness of the quotes. 
+                            Do the quotes seem too high? Are the quotes too low? Do you think the quotes seem a little too good to be true? There are a few things that you need to clarify with the builder to be sure that you will be paying 
+                            for the price reflected in the quotes. They include:</h4>
+
+                        <h3>1. A detailed brief of the project</h3>
+
+                        <h4>Ensure that you prepare a brief that clearly explains the things you want or do not want for the project. 
+                            For instance, if your project is about building a new house, ensure that the quote you receive does not involve additional renovation or repair costs. 
+                            You need to study a quote before agreeing to its conditions. </h4>
+
+                        <h3>2. A list of the duties of everyone involved in the project</h3>
+
+                        <h4>Another thing you need to be careful about in the quote is the duties of people in the project. 
+                            Get a clear understanding of the duties that the builder will be responsible for, as well as your duties. 
+                            For instance, will you be in charge of managing the project? or is that the responsibility of the builder? Also, who will be in charge of ordering the materials? Imagine ordering the materials yourself only to realize later that you will have to pay the builder for ordering the materials, since it was part of 
+                            the contract that you signed, yet you ordered the materials yourself. </h4>
+
+                        <h2>Do I need a contract with my builder and what type of contract, written or verbal?</h2>
+
+                        <img src="{% static '/img/contract.jpg' %}" class="responsive" alt="picture of a lady's ahbd signing a contract">
+
+                        <h4>The best type of contract to have with a builder is a written contract so that both parties can have a clear 
+                            understanding of what is expected of them. If you come across a builder that tries to make you agree to an oral contract, you need to avoid them because they may have other intentions of overpricing you later on. Below are several 
+                            reasons why you need to have a legally binding contract with your builder. </h4>
+
+                        <h2>The contract contains important information to refer to</h2>
+
+                        <h4>In case you and your home builder have some disagreements during the project, you can both refer to the contract for confirmation. Some of the important details that a contract contains that 
+                            will help avoid any misunderstandings include:</h4>
+
+                        <h4>•	The agreed quote</h4>
+                        <h4>•	The drawings and plans of the construction project</h4>
+                        <h4>•	The permission requirements</h4>
+                        <h4>•	The schedule of the work to be carried out</h4>
+                        <h4>•	Specifications </h4>
+
+                        <h4>A written contract contains payment plans and conditions for retention</h4>
+
+                        <h4>Another reason why you need to have a legally binding written contract with your builder is that the contract 
+                            covers various payment issues that may arise during the project. For example, what will happen in case an overrun occurs during the project? How will the estimated 
+                            losses that may occur during the overrun be handled?</h4>
+
+                        <h2>Why you should hire local builders?</h2>
+
+                        <h4>If you are wondering how to find a builder for a house extension or how to find a builder near me, then you should consider hiring a local builder for your project.
+                            People prefer to hire local builders because of the following:</h4>
+
+                        <h3>1. Local builders are easy to find</h3>
+
+                        <h4>When you search for local builder services in your area, Google will show you the builders that are nearest your location. This is beneficial, especially if you have an urgent project that needs to be carried out within a short period. Local builders will be able to arrive at 
+                            your site in time and complete the project. </h4>
+
+                        <h3>2. Local builders are affordable</h3>
+
+                        <h4>Builders that are near your area will charge less compared to builders that are in another town. This is because builders that are far will 
+                            factor in extra logistical costs. </h4>
+
+                        <h2> Questions to ask your chosen builder before signing a contract? </h2>
+
+                        <img src="{% static '/img/question.jpg' %}" class="responsive" alt="question mark" width="800" height="400">
+
+                        <h4>Before you sign a contract, there are several questions that you need to ask the builder.</h4>
+
+                        <h3>1. The amount of time they will take to complete the project</h3>
+
+                        <h4>Ensure that you confirm with the builder how much time they will take to complete the project. 
+                            Working with a defined timeline will ensure that the builder delivers on their promise 
+                            before you pay for the services. </h4>
+
+                        <h3>2. Whether the builder offers any warranty options</h3>
+
+                        <h4>Check the details of the warranty. If there is no warranty, you will be exposed when something goes wong, is discovered 
+                            or is missing soon after the project is deemed complete. The warranty should act a a gurantee of rectification and this should have
+                            a timebound period whereby it can be triggered given the clauses that are included. </h4>
+
+                        <h3>3. Capability of the trade professionals</h3>
+                        
+                        <h4>Check the accreditaions and capabilities of the team, and any other contract labour that may be required, scaffolders, electricians, painter decorators, etc.
+                            Typically the builder will know of the teams and other businesses that will be undertaking the different work,
+                            so you should ensure that if the builder is recommending or providing the service, they can demonstrate the competency, accrediation, insurance and
+                            experience of the trade professionals providing that specifc service.</h4>
+
+                        <h2>License and certification</h2>
+
+                        <h4>You are allowed to ask the builder whether they are licensed, certified, and qualified to carry out the project that you are about to give them. 
+                            Also, you should ask for proof of past work, such as pictures and testimonials from their previous clients. This will 
+                            show you what to expect from the services of the builder. </h4>
+
+                        <h4>Your journey towards getting a reputable builder near your location is only smooth if you 
+                            know what you are looking for and where to look for it. </h4>
+          
+                
+                            <ul class="list-inline share-buttons">
+                                    <li class="list-inline-item">Share Post:</li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                            <hr class="mb40">
+                            <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                            <div class="media mb40">
+                                <div class="media-body">
+                                    <h5 class="mt-0 font700">Sarah Tring</h5> Hi, I'm Sarah, I'm a blogger who enjoys
+                                    eveything related to home improvement, I'm passionate about sustainable homes, home
+                                    improvement, home developments and technology used in the home. When not blogging, I
+                                    enjoy spending time with my husband, two children and our dog 'Leto'.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+                <!-- post article-->
+            </div>
+            <div class="col-md-3 mb30">
+                <div class="mb30">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..."
+                                aria-describedby="basic-addon2">
+                            <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="sidebar-title">Other blogs</h4>
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                        successfully deal with mould in your home</a></h5> Apr, 2021
+                            </div>
+                        </li>
+                        <li class="media my-4">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                        plumber</a></h5> Jul, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                    </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog6' %}">The 12 step essential guide to protecting your home from cold weather damage</a></h5> Sep, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog8' %}">Your essential 18 point guide to organising a home move</a></h5> Oct, 2021
+                            </div>
+                        </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                    </div>
+                </li>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog10' %}">17 essential tips to help you with hydroponic gardening</a></h5> Nov, 2021
+            </div>
+        </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog11' %}">6 points to consider in a garange conversion</a></h5> Nov, 2021
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog12' %}">13 steps to de-clutter a storage room and make money</a></h5> Dec, 2021
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog13' %}">12 quick tips to reduce the risk of a burglary at your home</a></h5> Jan, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+        </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog16' %}">Hire a plumber</a></h5> Mar, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog17' %}">Electrical safety dos and donts for homeowners</a></h5> Apr, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog18' %}">How to find a reliable Electrician</a></h5> Apr, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog19' %}">Plumbing dos and donts for home and property owners</a></h5> Apr, 2022
+    </div>
+    </li>
+
+
+                 </ul>
+             </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 text-lg-left text-center">
+                    <div class="copyright">
+                        <strong>&copy; Copyright 2021 -
+                            <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>, Billntrade
+                            Ltd</strong>. All Rights Reserved
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                        <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                        <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                        <a href="{% url 'cookies' %}">Cookies</a>
+                        <a href="{% url 'blogs' %}">Blogs</a>
+                        <a href="{% url 'about-us' %}">About us</a>
+                        <a href="{% url 'sitemap' %}">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <style>
+        .brand {
+            width: 14rem;
+            margin-left: 2rem;
+            /* border: 2px solid lime; */
+        }
+    </style>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            feather.replace();
+
+            $('button').click(function () {
+                $('.alert').html('<i data-feather="activity"></i>');
+                feather.replace();
+            });
+
+        });
+    </script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+
+
+<script>
+    body{
+        margin - top: 20px;
+    }
+/*
+Blog post entries
+*/
+
+.entry - card {
+        -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+.entry - content {
+        background - color: #fff;
+        padding: 36px 36px 36px 36px;
+        border - bottom - left - radius: 6px;
+        border - bottom - right - radius: 6px;
+    }
+
+.entry - content.entry - title a {
+        color: #333;
+    }
+
+.entry - content.entry - title a: hover {
+        color: #4782d3;
+    }
+
+.entry - content.entry - meta span {
+        font - size: 12px;
+    }
+
+.entry - title {
+        font - size: .95rem;
+        font - weight: 500;
+        margin - bottom: 15px;
+    }
+
+.entry - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb img {
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb.thumb - hover {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: rgba(71, 130, 211, 0.85);
+        display: block;
+        top: 50 %;
+        left: 50 %;
+        color: #fff;
+        font - size: 40px;
+        line - height: 100px;
+        border - radius: 50 %;
+        margin - top: -50px;
+        margin - left: -50px;
+        text - align: center;
+        transform: scale(0);
+        -webkit - transform: scale(0);
+        opacity: 0;
+        transition: all .3s ease -in -out;
+        -webkit - transition: all .3s ease -in -out;
+    }
+
+.entry - thumb: hover.thumb - hover {
+        opacity: 1;
+        transform: scale(1);
+        -webkit - transform: scale(1);
+    }
+
+.article - post {
+        border - bottom: 1px solid #eee;
+        padding - bottom: 70px;
+    }
+
+.article - post.post - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+
+.article - post.post - thumb.post - overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100 %;
+        height: 100 %;
+        background - color: rgba(0, 0, 0, 0.6);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        opacity: 0;
+    }
+
+.article - post.post - thumb.post - overlay span {
+        width: 100 %;
+        display: block;
+        vertical - align: middle;
+        text - align: center;
+        transform: translateY(70 %);
+        -webkit - transform: translateY(70 %);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        height: 100 %;
+        color: #fff;
+    }
+
+.article - post.post - thumb: hover.post - overlay {
+        opacity: 1;
+    }
+
+.article - post.post - thumb: hover.post - overlay span {
+        transform: translateY(50 %);
+        -webkit - transform: translateY(50 %);
+    }
+
+.post - content.post - title {
+        font - weight: 500;
+    }
+
+.post - meta {
+        padding - top: 15px;
+        margin - bottom: 20px;
+    }
+
+.post - meta li: not(: last - child) {
+        margin - right: 10px;
+    }
+
+.post - meta li a {
+        color: #999;
+        font - size: 13px;
+    }
+
+.post - meta li a: hover {
+        color: #4782d3;
+    }
+
+.post - meta li i {
+        margin - right: 5px;
+    }
+
+.post - meta li: after {
+        margin - top: -5px;
+        content: "/";
+        margin - left: 10px;
+    }
+
+.post - meta li: last - child: after {
+        display: none;
+    }
+
+.post - masonry.masonry - title {
+        font - weight: 500;
+    }
+
+.share - buttons li {
+        vertical - align: middle;
+    }
+
+.share - buttons li a {
+        margin - right: 0px;
+    }
+
+.post - content.fa {
+        color: #ddd;
+    }
+
+.post - content a h2 {
+        font - size: 1.5rem;
+        color: #333;
+        margin - bottom: 0px;
+    }
+
+.article - post.owl - carousel {
+        margin - bottom: 20px!important;
+    }
+
+.post - masonry h4 {
+        text - transform: capitalize;
+        font - size: 1rem;
+        font - weight: 700;
+    }
+.mb40 {
+        margin - bottom: 40px!important;
+    }
+.mb30 {
+        margin - bottom: 30px!important;
+    }
+.media - body h5 a {
+        color: #555;
+    }
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+/*
+Template sidebar
+*/
+
+.sidebar - title {
+        margin - bottom: 1rem;
+        font - size: 1.1rem;
+    }
+
+.categories li {
+        vertical - align: middle;
+    }
+
+.categories li > ul {
+        padding - left: 15px;
+    }
+
+.categories li > ul > li > a {
+        font - weight: 300;
+    }
+
+.categories li a {
+        color: #999;
+        position: relative;
+        display: block;
+        padding: 5px 10px;
+        border - bottom: 1px solid #eee;
+    }
+
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+
+.categories li a: hover {
+        color: #444;
+        background - color: #f5f5f5;
+    }
+
+.categories > li.active > a {
+        font - weight: 600;
+        color: #444;
+    }
+
+.media - body h5 {
+        font - size: 15px;
+        letter - spacing: 0px;
+        line - height: 20px;
+        font - weight: 400;
+    }
+
+.media - body h5 a {
+        color: #555;
+    }
+
+.media - body h5 a: hover {
+        color: #4782d3;
+    }
+
+</script>
+
+<style>
+.responsive {
+  width: 100%;
+  height: auto;
+}
+</style>

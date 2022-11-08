@@ -1,0 +1,977 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+    {% block title %} 
+    {% endblock %}
+    </title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href='static/img/favicon-32x32.png'>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light py-0 class">
+        <a href=""><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                </ul>
+                <ul class="navbar-nav ml-auto mr-5">
+                    <li class="nav-item dropdown ml-auto">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
+
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="{% url 'logout-view' %}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                {% include 'partials/_sidebar.html' %}
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                    <div class="container-fluid">
+                        <ol class="breadcrumb mt-3 mb-4">
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                        <div class="row">
+                            {% block content %}
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div style="color: black" class="card-body text-center">
+                                        Open quotes
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="col-sm-12">
+                                            <span style="color: black" class="text-small">Number: <span id="open-quotes-number"> {{ open_quotes }} </span></span><br>
+                                            <span style="color: black" class="text-small">Total value: £ <span id="open-quotes-value"> {{ open_quotes_value }}</span></span>
+                                        </div>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div style="color: black" class="card-body text-center">Completed quotes</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="col-sm-12">
+                                            <span style="color: black" class="text-small">Number: <span id="completed-quotes-number">{{ completed_quotes }}</span></span><br>
+                                            <span style="color: black" class="text-small">Total value: £ <span  id="completed-quotes-value"> {{ completed_quotes_value }}</span></span>
+                                        </div>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-info text-white mb-4">
+                                    <div style="color: black" class="card-body text-center">Open invoices</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="col-sm-12">
+                                            <span style="color: black" class="text-small">Number: <span id='open-invoices-number'> {{ open }} </span> </span><br>
+                                            <span style="color: black" class="text-small">Total value: £ <span id='open-invoices-value' > {{ open_value }} </span> </span>
+                                        </div>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-success text-white mb-4">
+                                    <div style="color: black" class="card-body text-center">Paid invoices</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="col-sm-12">
+                                            <span style="color: black" class="text-small">Number: <span id='paid-invoices-number'>{{ paid }} </span> </span><br>
+                                            <span style="color: black"class="text-small">Total value: £ <span id='paid-invoices-value' >{{ paid_value }}</span> </span>
+                                        </div>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar mr-2"></i>
+                                        Open quotes by month
+                                        <span class='float-right' >
+                                            <select class="form-control-sm" id='open-quotes'>
+                                            </select>
+                                        </span>                                        
+                                    </div>
+                                    <div class="card-body quotesBarChart">
+                                        <canvas id="quotesBarChart" width="100%" height="25%"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar mr-2"></i>
+                                        Open invoices by month
+                                        <span class='float-right' >
+                                            <select class="form-control-sm" id='open-invoices'>
+                                            </select>
+                                        </span>                                         
+                                    </div>
+                                    <div class="card-body openInvoices">
+                                        <canvas id="openInvoices" width="100%" height="25%"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar mr-2"></i>
+                                        Completed quotes by month
+                                        <span class='float-right' >
+                                            <select class="form-control-sm" id='completed-quotes'>
+                                            </select>
+                                        </span>                                         
+                                    </div>
+                                    <div class="card-body completeQuotes">
+                                        <canvas id="completeQuotes" width="100%" height="25%"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar mr-2"></i>
+                                        Paid invoices by month
+                                        <span class='float-right' >
+                                            <select class="form-control-sm" id='paid-invoices'>
+                                            </select>
+                                        </span>                                         
+                                    </div>
+                                    <div class="card-body paidInvoices"  >
+                                        <canvas id="paidInvoices" width="100%" height="25%"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+                    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <script src="{% static 'js/bootstrap.feather.js' %}"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+                <script src="{% static 'js/min.js' %}"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous"></script>
+                <script src="{% static 'js/main.js' %}"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="{% static 'js/function.js' %}"></script>
+                <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+   feather.replace();
+
+   $('button').click(function(){
+      $('.alert').html('<i data-feather="activity"></i>');
+      feather.replace();
+   });
+
+});
+
+// open quotes 
+var ctx = document.getElementById('quotesBarChart').getContext('2d');
+
+
+function getValueForOpenQuotesStatic(value){
+    if(value == '{{open_q_jan}}'){
+        var label = '{{open_q_jan_value}}'
+    }else if(value == '{{open_q_feb}}'){
+        var label = '{{open_q_feb_value}}'
+    }else if(value == '{{open_q_mar}}'){
+        var label = '{{open_q_mar_value}}'
+    }else if(value == '{{open_q_apr}}'){
+        var label = '{{open_q_apr_value}}'
+    }else if(value == '{{open_q_may}}'){
+        var label = '{{open_q_may_value}}'
+    }else if(value == '{{open_q_jun}}'){
+        var label = '{{open_q_jun_value}}'
+    }else if(value == '{{open_q_jul}}'){
+        var label = '{{open_q_jul_value}}'
+    }else if(value == '{{open_q_aug}}'){
+        var label = '{{open_q_aug_value}}'
+    }else if(value == '{{open_q_sep}}'){
+        var label = '{{open_q_sep_value}}'
+    }else if(value == '{{open_q_oct}}'){
+        var label = '{{open_q_oct_value}}'
+    }else if(value == '{{open_q_nov}}'){
+        var label = '{{open_q_nov_value}}'
+    }else if(value == '{{open_dec}}'){
+        var label = '{{open_q_dec_value}}'
+    }
+    return label
+
+}
+
+console.log('--------------------------------------')
+console.log(getValueForOpenQuotesStatic(1))
+console.log('--------------------------------------')
+
+
+var myChartquote = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+            // label: '# of Quotes',
+            data: [
+            '{{open_q_jan}}','{{open_q_feb}}','{{open_q_mar}}','{{open_q_apr}}',
+            '{{open_q_may}}','{{open_q_jun}}','{{open_q_jul}}','{{open_q_aug}}',
+            '{{open_q_sep}}','{{open_q_oct}}','{{open_q_nov}}','{{open_q_dec}}',
+            ],
+            backgroundColor: 'rgba(82, 179, 217, 1)',
+            borderColor: 'rgba(82, 179, 217, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        legend:{
+            display: false
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem,data){                    
+                    var  value = tooltipItem.yLabel
+                    return 'Total Value = £'+getValueForOpenQuotesStatic(value)
+                    
+                }
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+// completed quotes
+var ctx = document.getElementById('completeQuotes').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+            // label: '# of Quotes',
+            data: [
+            '{{completed_q_jan}}','{{completed_q_feb}}','{{completed_q_mar}}','{{completed_q_apr}}',
+            '{{completed_q_may}}','{{completed_q_jun}}','{{completed_q_jul}}','{{completed_q_aug}}',
+            '{{completed_q_sep}}','{{completed_q_oct}}','{{completed_q_nov}}','{{completed_q_dec}}',
+            ],
+            backgroundColor: 'rgba(82, 179, 217, 1)',
+            borderColor: 'rgba(82, 179, 217, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        legend:{
+            display: false
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem,data){                    
+                    var  value = tooltipItem.yLabel
+
+                    if(value == '{{completed_q_jan}}'){
+                        var label = '{{completed_q_jan_value}}'
+                    }else if(value== '{{completed_q_feb}}'){
+                        var label = '{{completed_q_feb_value}}'
+                    }else if(value == '{{completed_q_mar}}'){
+                        var label = '{{completed_q_mar_value}}'
+                    }else if(value == '{{completed_q_apr}}'){
+                        var label = '{{completed_q_apr_value}}'
+                    }else if(value == '{{completed_q_may}}'){
+                        var label = '{{completed_q_may_value}}'
+                    }else if(value == '{{completed_q_jun}}'){
+                        var label = '{{completed_q_jun_value}}'
+                    }else if(value == '{{completed_q_jul}}'){
+                        var label = '{{completed_q_jul_value}}'
+                    }else if(value == '{{completed_q_aug}}'){
+                        var label = '{{completed_q_aug_value}}'
+                    }else if(value == '{{completed_q_sep}}'){
+                        var label = '{{completed_q_sep_value}}'
+                    }else if(value == '{{completed_q_oct}}'){
+                        var label = '{{completed_q_oct_value}}'
+                    }else if(value == '{{completed_q_nov}}'){
+                        var label = '{{completed_q_nov_value}}'
+                    }else if(value == '{{completed_q_dec}}'){
+                        var label = '{{completed_q_dec_value}}'
+                    }
+                    return 'Total Value = £'+label
+                    
+                }
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+// open invoices 
+var ctx = document.getElementById('openInvoices').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+            // label: '# of invoices',
+            data: [
+            '{{open_invoices_jan}}','{{open_invoices_feb}}','{{open_invoices_mar}}','{{open_invoices_apr}}',
+            '{{open_invoices_may}}','{{open_invoices_jun}}','{{open_invoices_jul}}','{{open_invoices_aug}}',
+            '{{open_invoices_sep}}','{{open_invoices_oct}}','{{open_invoices_nov}}','{{open_invoices_dec}}',
+            ],
+            backgroundColor: 'rgba(82, 179, 217, 1)',
+            borderColor: 'rgba(82, 179, 217, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        legend:{
+            display: false
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem,data){
+                    
+                    var  value = tooltipItem.yLabel
+                    if(value == '{{open_invoices_jan}}'){
+                        var label = '{{open_invoices_jan_values}}'
+                    }else if(value== '{{open_invoices_feb}}'){
+                        var label = '{{open_invoices_feb_values}}'
+                    }else if(value == '{{open_invoices_mar}}'){
+                        var label = '{{open_invoices_mar_values}}'
+                    }else if(value == '{{open_invoices_apr}}'){
+                        var label = '{{open_invoices_apr_values}}'
+                    }else if(value == '{{open_invoices_may}}'){
+                        var label = '{{open_invoices_may_values}}'
+                    }else if(value == '{{open_invoices_jun}}'){
+                        var label = '{{open_invoices_jun_values}}'
+                    }else if(value == '{{open_invoices_jul}}'){
+                        var label = '{{open_invoices_jul_values}}'
+                    }else if(value == '{{open_invoices_aug}}'){
+                        var label = '{{open_invoices_aug_values}}'
+                    }else if(value == '{{open_invoices_sep}}'){
+                        var label = '{{open_invoices_sep_values}}'
+                    }else if(value == '{{open_invoices_oct}}'){
+                        var label = '{{open_invoices_oct_values}}'
+                    }else if(value == '{{open_invoices_nov}}'){
+                        var label = '{{open_invoices_nov_values}}'
+                    }else if(value == '{{open_invoices_dec}}'){
+                        var label = '{{open_invoices_dec_values}}'
+                    }
+                    return 'Total Value = £'+label
+                    
+                }
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+// paid invoices 
+var ctx = document.getElementById('paidInvoices').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+            // label: '# of invoices',
+            data: [
+            '{{paid_invoices_jan}}','{{paid_invoices_feb}}','{{paid_invoices_mar}}','{{paid_invoices_apr}}',
+            '{{paid_invoices_may}}','{{paid_invoices_jun}}','{{paid_invoices_jul}}','{{paid_invoices_aug}}',
+            '{{paid_invoices_sep}}','{{paid_invoices_oct}}','{{paid_invoices_nov}}','{{paid_invoices_dec}}',
+            ],
+            backgroundColor: 'rgba(82, 179, 217, 1)',
+            borderColor: 'rgba(82, 179, 217, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        legend:{
+            display: false
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem,data){
+                    
+                    var  value = tooltipItem.yLabel
+                    if(value == '{{paid_invoices_jan}}'){
+                        var label = '{{paid_invoices_jan_values}}'
+                    }else if(value == '{{paid_invoices_feb}}'){
+                        var label = '{{paid_invoices_feb_values}}'
+                    }else if(value == '{{paid_invoices_mar}}'){
+                        var label = '{{paid_invoices_mar_values}}'
+                    }else if(value == '{{paid_invoices_apr}}'){
+                        var label = '{{paid_invoices_apr_values}}'
+                    }else if(value == '{{paid_invoices_may}}'){
+                        var label = '{{paid_invoices_may_values}}'
+                    }else if(value == '{{paid_invoices_jun}}'){
+                        var label = '{{paid_invoices_jun_values}}'
+                    }else if(value == '{{paid_invoices_jul}}'){
+                        var label = '{{paid_invoices_jul_values}}'
+                    }else if(value == '{{paid_invoices_aug}}'){
+                        var label = '{{paid_invoices_aug_values}}'
+                    }else if(value == '{{paid_invoices_sep}}'){
+                        var label = '{{paid_invoices_sep_values}}'
+                    }else if(value == '{{paid_invoices_oct}}'){
+                        var label = '{{paid_invoices_oct_values}}'
+                    }else if(value == '{{paid_invoices_nov}}'){
+                        var label = '{{paid_invoices_nov_values}}'
+                    }else if(value == '{{paid_invoices_dec}}'){
+                        var label = '{{paid_invoices_dec_values}}'
+                    }   
+                    return 'Total Value = £'+label
+                    
+                }
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+
+</script>
+
+
+<script>
+    // filling select options with automatically ID's for open-quotes
+    let dateDropdown = document.getElementById('open-quotes'); 
+    let currentYear = new Date().getFullYear();    
+    let earliestYear = 1970;     
+    while (currentYear >= earliestYear) {      
+      let dateOption = document.createElement('option');          
+      dateOption.text = currentYear;      
+      dateOption.value = currentYear;        
+      dateDropdown.add(dateOption);      
+      currentYear -= 1;    
+    }
+    $('#open-quotes').val(new Date().getFullYear());
+    $('#open-quotes').change(function () {
+        var year = $('#open-quotes').val()
+        console.log(year)
+        $.ajaxSetup({
+            headers: {
+                "X-CSRFToken": '{{csrf_token}}'
+            }
+        });
+        $.ajax({
+            url: `/open_quotes_json_response/`,
+            dataType: 'json',
+            data :{"year":year},
+            type: 'POST',
+            success: function (data) {
+                $('#open-quotes-number').html(data['open_quotes'])
+                $('#open-quotes-value').html(data['open_quotes_value'])
+
+                $("canvas#quotesBarChart").remove();
+                $("div.quotesBarChart").append('<canvas id="quotesBarChart" class="animated fadeIn" width="100%" height="25%"></canvas>');
+                var ctx = document.getElementById("quotesBarChart").getContext("2d");                
+                function getTotalValue(value){
+                    if(value == data['open_q_jan']){
+                        var label = data['open_q_jan_value']
+                    }else if(value == data['open_q_feb']){
+                        var label = data['open_q_feb_value']
+                    }else if(value == data['open_q_mar']){
+                        var label = data['open_q_mar_value']
+                    }else if(value == data['open_q_apr']){
+                        var label = data['open_q_apr_value']
+                    }else if(value == data['open_q_may']){
+                        var label = data['open_q_may_value']
+                    }else if(value == data['open_q_jun']){
+                        var label = data['open_q_jun_value']
+                    }else if(value == data['open_q_jul']){
+                        var label = data['open_q_jul_value']
+                    }else if(value == data['open_q_aug']){
+                        var label = data['open_q_aug_value']
+                    }else if(value == data['open_q_sep']){
+                        var label = data['open_q_sep_value']
+                    }else if(value == data['open_q_oct']){
+                        var label = data['open_q_oct_value']
+                    }else if(value == data['open_q_nov']){
+                        var label = data['open_q_nov_value']
+                    }else if(value == data['open_dec']){
+                        var label = data['open_q_dec_value']
+                    }
+                    return label
+
+                }
+               
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            // label: '# of Quotes',
+                            data: [
+                            data['open_q_jan'],data['open_q_feb'],data['open_q_mar'],data['open_q_apr'],
+                            data['open_q_may'],data['open_q_jun'],data['open_q_jul'],data['open_q_aug'],
+                            data['open_q_sep'],data['open_q_oct'],data['open_q_nov'],data['open_q_dec'],
+                            ],
+                            backgroundColor: 'rgba(82, 179, 217, 1)',
+                            borderColor: 'rgba(82, 179, 217, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        legend:{
+                            display: false
+                        },
+                        tooltips: {
+                            callbacks: {
+                                label: function(tooltipItem,data){                    
+                                    var  value = tooltipItem.yLabel
+                                    return 'Total Value = £'+getTotalValue(value)
+                    
+                                }
+                            }
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+        },
+        error: function (data) {
+            console.log('not okk')
+        }
+      });
+    })
+
+
+
+    // filling select options with automatically ID's for open-quotes
+    dateDropdown = document.getElementById('completed-quotes'); 
+    currentYear = new Date().getFullYear();    
+    earliestYear = 1970;     
+    while (currentYear >= earliestYear) {      
+      let dateOption1 = document.createElement('option');          
+      dateOption1.text = currentYear;      
+      dateOption1.value = currentYear;        
+      dateDropdown.add(dateOption1);      
+      currentYear -= 1;    
+    }
+    
+    $('#completed-quotes').val(new Date().getFullYear());
+    $('#completed-quotes').change(function () {
+        var year = $('#completed-quotes').val()
+
+        console.log(year)
+        $.ajaxSetup({
+            headers: {
+                "X-CSRFToken": '{{csrf_token}}'
+            }
+        });
+        $.ajax({
+            url: `/completed_quotes_json_response/`,
+            dataType: 'json',
+            data :{"year":year},
+            type: 'POST',  
+            success: function (data) {
+
+                console.log(data['completed_quotes'])
+                $('#completed-quotes-number').html(data['completed_quotes'])
+                $('#completed-quotes-value').html(data['completed_quotes_value'])
+                var ctx = document.getElementById('completeQuotes').getContext('2d');
+                $("canvas#completeQuotes").remove();
+                $("div.completeQuotes").append('<canvas id="completeQuotes" class="animated fadeIn" width="100%" height="25%"></canvas>');
+                var ctx = document.getElementById("completeQuotes").getContext("2d");                
+                
+                function getTotalValue(value) {
+                    
+                if(value == data['completed_q_jan']){
+                    var label = data['completed_q_jan_value']
+                    }else if(value== data['completed_q_feb']){
+                        var label = data['completed_q_feb_value']
+                    }else if(value == data['completed_q_mar']){
+                        var label = data['completed_q_mar_value']
+                    }else if(value == data['completed_q_apr']){
+                        var label = data['completed_q_apr_value']
+                    }else if(value == data['completed_q_may']){
+                        var label = data['completed_q_may_value']
+                    }else if(value == data['completed_q_jun']){
+                        var label = data['completed_q_jun_value']
+                    }else if(value == data['completed_q_jul']){
+                        var label = data['completed_q_jul_value']
+                    }else if(value == data['completed_q_aug']){
+                        var label = data['completed_q_aug_value']
+                    }else if(value == data['completed_q_sep']){
+                        var label = data['completed_q_sep_value']
+                    }else if(value == data['completed_q_oct']){
+                        var label = data['completed_q_oct_value']
+                    }else if(value == data['completed_q_nov']){
+                        var label = data['completed_q_nov_value']
+                        
+                    }else if(value == data['completed_q_dec']){
+                        var label = data['completed_q_dec_value']
+                    }
+                return label
+
+                }
+
+                var myChart1 = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            // label: '# of Quotes',
+                            data: [
+                            data['completed_q_jan'],data['completed_q_feb'],data['completed_q_mar'],data['completed_q_apr'],
+                            data['completed_q_may'],data['completed_q_jun'],data['completed_q_jul'],data['completed_q_aug'],
+                            data['completed_q_sep'],data['completed_q_oct'],data['completed_q_nov'],data['completed_q_dec'],
+                            ],
+                            backgroundColor: 'rgba(82, 179, 217, 1)',
+                            borderColor: 'rgba(82, 179, 217, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        legend:{
+                            display: false
+                        },
+                        tooltips: {
+                            callbacks: {
+                                label: function(tooltipItem,data){                    
+                                    var  value = tooltipItem.yLabel
+                                    
+                                    return 'Total Value = £'+getTotalValue(value)
+
+                                    
+                                }
+                            }
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+                
+        },
+        error: function (data) {
+            console.log('not okk')
+        }
+      });
+    })
+
+    // filling select options with automatically ID's for open-quotes
+    dateDropdown = document.getElementById('paid-invoices'); 
+    currentYear = new Date().getFullYear();    
+    earliestYear = 1970;     
+    while (currentYear >= earliestYear) {      
+      let dateOption1 = document.createElement('option');          
+      dateOption1.text = currentYear;      
+      dateOption1.value = currentYear;        
+      dateDropdown.add(dateOption1);      
+      currentYear -= 1;    
+    }
+        
+    $('#paid-invoices').val(new Date().getFullYear());
+    $('#paid-invoices').change(function () {
+        var year = $('#paid-invoices').val()
+        console.log(year)
+        $.ajaxSetup({
+            headers: {
+                "X-CSRFToken": '{{csrf_token}}'
+            }
+        });
+        $.ajax({
+            url: `/paid_invoices_json_response/`,
+            dataType: 'json',
+            data :{"year":year},
+            type: 'POST',
+            success: function (data) {
+                console.log(data)  
+                $('#paid-invoices-number').html('')
+                $('#paid-invoices-value').html('')
+
+                $('#paid-invoices-number').html(data['paid'])
+                $('#paid-invoices-value').html(data['paid_value'])
+                $("canvas#paidInvoices").remove();
+                $("div.paidInvoices").append('<canvas id="paidInvoices" class="animated fadeIn" width="100%" height="25%"></canvas>');
+                var ctx = document.getElementById("paidInvoices").getContext("2d");
+
+                function getTotalValue(value){
+                    if(value == data['paid_invoices_jan']){
+                        var label = data['paid_invoices_jan_values']
+                        }else if(value == data['paid_invoices_feb']){
+                            var label = data['paid_invoices_feb_values']
+                        }else if(value == data['paid_invoices_mar']){
+                            var label = data['paid_invoices_mar_values']
+                        }else if(value == data['paid_invoices_apr']){
+                            var label = data['paid_invoices_apr_values']
+                        }else if(value == data['paid_invoices_may']){
+                            var label = data['paid_invoices_may_values']
+                        }else if(value == data['paid_invoices_jun']){
+                            var label = data['paid_invoices_jun_values']
+                        }else if(value == data['paid_invoices_jul']){
+                            var label = data['paid_invoices_jul_values']
+                        }else if(value == data['paid_invoices_aug']){
+                            var label = data['paid_invoices_aug_values']
+                        }else if(value == data['paid_invoices_sep']){
+                            var label = data['paid_invoices_sep_values']
+                        }else if(value == data['paid_invoices_oct']){
+                            var label = data['paid_invoices_oct_values']
+                        }else if(value == data['paid_invoices_nov']){
+                            var label = data['paid_invoices_nov_values']
+                        }else if(value == data['paid_invoices_dec']){
+                            var label = data['paid_invoices_dec_values']
+                        }   
+                        return label
+
+                }
+               
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            // label: '# of invoices',
+                            data: [
+                            data['paid_invoices_jan'],data['paid_invoices_feb'],data['paid_invoices_mar'],data['paid_invoices_apr'],
+                            data['paid_invoices_may'],data['paid_invoices_jun'],data['paid_invoices_jul'],data['paid_invoices_aug'],
+                            data['paid_invoices_sep'],data['paid_invoices_oct'],data['paid_invoices_nov'],data['paid_invoices_dec'],
+                            ],
+                            backgroundColor: 'rgba(82, 179, 217, 1)',
+                            borderColor: 'rgba(82, 179, 217, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        legend:{
+                            display: false
+                        },
+                        tooltips: {
+                            callbacks: {
+                                label: function(tooltipItem,data){
+                                    
+                                    var  value = tooltipItem.yLabel
+                                    return 'Total Value = £'+getTotalValue(value)
+                                    
+                                }
+                            }
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+
+        },
+        error: function (data) {
+            console.log('not okk')
+        }
+    });
+    })
+
+
+    // filling select options with automatically ID's for open-invoices
+    dateDropdown = document.getElementById('open-invoices'); 
+    currentYear = new Date().getFullYear();    
+    earliestYear = 1970;     
+    while (currentYear >= earliestYear) {      
+      let dateOption1 = document.createElement('option');          
+      dateOption1.text = currentYear;      
+      dateOption1.value = currentYear;        
+      dateDropdown.add(dateOption1);      
+      currentYear -= 1;    
+    }
+        
+    $('#open-invoices').val(new Date().getFullYear());
+    $('#open-invoices').change(function () {
+        var year = $('#open-invoices').val()
+        console.log(year)
+        $.ajaxSetup({
+            headers: {
+                "X-CSRFToken": '{{csrf_token}}'
+            }
+        });
+        $.ajax({
+            url: `/open_invoices_json_response/`,
+            dataType: 'json',
+            data :{"year":year},
+            type: 'POST',
+            success: function (data) {
+                $('#open-invoices-number').html(data['open'])
+                $('#open-invoices-value').html(data['open_value'])  
+                
+                // open invoices 
+                console.log(data['open'])
+                console.log(data['open_value'])   
+                $("canvas#openInvoices").remove();
+                $("div.openInvoices").append('<canvas id="openInvoices" class="animated fadeIn" width="100%" height="25%"></canvas>');
+
+
+                $("canvas#openInvoices").remove();
+                $("div.openInvoices").append('<canvas id="openInvoices" class="animated fadeIn" width="100%" height="25%"></canvas>');
+                var ctx = document.getElementById("openInvoices").getContext("2d");
+
+                function getTotalValue(value){
+                    if(value == data['open_invoices_jan']){
+                        var label = data['open_invoices_jan_values']
+                    }else if(value== data['open_invoices_feb']){
+                        var label = data['open_invoices_feb_values']
+                    }else if(value == data['open_invoices_mar']){
+                        var label = data['open_invoices_mar_values']
+                    }else if(value == data['open_invoices_apr']){
+                        var label = data['open_invoices_apr_values']
+                    }else if(value == data['open_invoices_may']){
+                        var label = data['open_invoices_may_values']
+                    }else if(value == data['open_invoices_jun']){
+                        var label = data['open_invoices_jun_values']
+                    }else if(value == data['open_invoices_jul']){
+                        var label = data['open_invoices_jul_values']
+                    }else if(value == data['open_invoices_aug']){
+                        var label = data['open_invoices_aug_values']
+                    }else if(value == data['open_invoices_sep']){
+                        var label = data['open_invoices_sep_values']
+                    }else if(value == data['open_invoices_oct']){
+                        var label = data['open_invoices_oct_values']
+                    }else if(value == data['open_invoices_nov']){
+                        var label = data['open_invoices_nov_values']
+                    }else if(value == data['open_invoices_dec']){
+                        var label = data['open_invoices_dec_values']
+                    }
+                        return label
+                }
+                
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            // label: '# of invoices',
+                            data: [
+                            data['open_invoices_jan'],data['open_invoices_feb'],data['open_invoices_mar'],data['open_invoices_apr'],
+                            data['open_invoices_may'],data['open_invoices_jun'],data['open_invoices_jul'],data['open_invoices_aug'],
+                            data['open_invoices_sep'],data['open_invoices_oct'],data['open_invoices_nov'],data['open_invoices_dec'],
+                            ],
+                            backgroundColor: 'rgba(82, 179, 217, 1)',
+                            borderColor: 'rgba(82, 179, 217, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        legend:{
+                            display: false
+                        },
+                        tooltips: {
+                            callbacks: {
+                                label: function(tooltipItem,data){
+                                    
+                                    var  value = tooltipItem.yLabel
+                                    return 'Total Value = £'+getTotalValue(value)
+                                    
+                                }
+                            }
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+
+        },
+        error: function (data) {
+            console.log('not okk')
+        }
+    });
+    })
+
+    
+
+  </script>
+
+        <style>
+            .brand {
+                height: auto;
+                width: auto;
+                max-height: 72px;
+                max-width: 250px;
+            }
+          </style>
+  
+      </body>
+{% endblock %}
+</html>

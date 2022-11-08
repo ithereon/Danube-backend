@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+
+
+<div class="container">
+        <div class="card">
+      <div class="card-header">
+      QUOTE ID:
+      <br><strong>{{values.Quoteid_busquote_qt}}</strong> 
+      <br><span class="float-right"> <strong>Status:</strong>{{values.Status_qt}}  </span>
+      <hr>
+      
+      </div>
+      <div class="card-body">
+      <div class="row mb-4">
+      <div class="col-sm-6">
+      <h6 class="mb-3">From:</h6>
+      <div>
+      <strong>{{values.Title_qt}} {{values.Firstname_qt}} {{values.Surname_qt}} </strong>
+      </div>
+      <div>{{values.Businessname_qt}}</div>
+      <div>{{values.Address1_qt}}, {{values.Address2_qt}}, {{values.Town_qt}}, {{values.City_qt}}, {{values.County_qt}},  {{values.Postcode_qt}}</div>
+      <div>Email:{{values.Email_qt}}</div>
+      <div>Mobile:{{values.Mobile_qt}}</div>
+      </div>
+      
+      <div class="col-sm-6">
+      <h6 class="mb-3">To:</h6>
+      <div>
+      <strong>{{values.Title_custquote_qt}} {{values.Firstname_custquote_qt}} {{values.Surname_custquote_qt}} </strong>
+      </div>
+      <div>{{values.Address1_custquote_qt}}, {{values.Address2_custquote_qt}}, {{values.Town_custquote_qt}}, {{values.City_custquote_qt}}, {{values.County_custquote_qt}}, {{values.Postcode_custquote_qt}}</div>
+      </div>
+      <br>
+      <hr>
+      </div>
+      <h6 class="mb-3">Issue details:</h6>
+      <div>
+      
+      <div class="table-responsive-sm">
+      <table class="table table-striped">
+      <thead>   
+      <tr>
+            <td>Username</td>
+            <td>Comments</td>
+            <td>Date</td>
+        </tr>
+    </thead>
+    <tbody>
+      {% for issue in issues %}
+      <tr>
+            <td class="col-sm-2">
+                {{issue.User}}
+            </td>
+            <td class="col-sm-8">
+                {{issue.Issue_description}}
+            </td>
+            <td class="col-sm-3">
+                {{issue.Datecreated}}
+            </td>        
+        </tr>
+      <td>   
+      </tbody>
+      </table>
+      </div>    
+      </html>

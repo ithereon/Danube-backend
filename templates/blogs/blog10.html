@@ -1,0 +1,916 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+
+  <!-- <link rel="icon" type="image/png" href="{% static '/img/Favicon.png' %}"/> -->
+
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!--support working-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- IcoFonts -->
+  <link rel="stylesheet" src="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" src="{% static 'css/icofont.css' %}">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/landstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+    <a href="{% url 'home' %}"><img src="{% static 'img/Logo.png' %}" alt="" class="img-fluid brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="d-flex ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Customer Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login-view' %}">Customer Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-register' %}">Business Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'business-login' %}">Business Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee-login' %}">Employee Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= End header Section ======= -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb50">
+        <div class="row">
+            <div class="col-md-9 mb40">
+                <article>
+                        <img src="{% static 'img/hydro.jpg' %}" class="responsive" alt="picture of a hydroponic garden in early growth"> 
+                    <div class="post-content">
+                        <h1>17 essential tips to help you with hydroponic gardening</h1>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item">
+                                <i class="fa fa-user-circle-o"></i> <a href="#">Sarah Tring</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-calendar-o"></i> <a href="#">02 November 2021</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-tags"></i> <a href="#">Tags</a>
+                            </li>
+                        </ul>
+                        <h5></h5>
+
+                        <h2>Hydroponic gardening is the new sustainable way to produce and cultivate the food of the future</h2>
+
+                        <h3>1.      What is hydroponic gardening or Hydroponics</h3>
+
+                        <h4>Hydroponic gardening or 'Hydroponics' is emerging as a trend for conscious homeowners, looking at opportunities to grow organic produce 
+                            for them and their families, enjoying the learning experience that comes with delivering a crop or yield through the process of hydroponics, or 
+                            just discivering a new hobby that meets their lifestyle and sustainable food goals. The plants grown in the hydroponic process, can be fully 
+                            traced through the purchase and growth cycle, to ensure no harmful chemicals or pesticides 
+                            are used but with the added benefit of having a relatively quick growth cycle, when compared with soil.</h4>
+
+                        <h4>Hydroponics is basically the process of growing plants in a solution of nutrients and water, without the need for soil. It is a derivative 
+                            of hydroculture with the difference being that instead of using a solution of nutrients in water as the growing medium an inorganic solid 
+                            growing medium is used, the (inert) inorganic solid growing medium is usually a mineral aggregate like rock, or ‘expanded clay aggregates’.</h4>
+
+                        <h4>ECA or Expanded Clay Aggregate</h4>
+
+                        <h4></h4>Expanded Clay Aggregate (ECA) is made by heating clay to 1,200 degrees Centigrade or 2,190 degrees Fahrenheit in a rotary kiln. 
+                            The hot gases expand the clay forming thousands of small bubbles, in a honeycomb structure. The honeycomb structure gives it properties 
+                            including strength and durability, the finished form of the clay, is circular this is a result of the circular movement of the kiln.</h4>
+
+                        <h3>2.    Benefits of growing using a hydroponic garden</h3>
+
+                        <h4>2.1   Growth speed</h4>
+
+                        <h4>According to experts the plants growth speed is approximately 20% faster in a well maintained hydroponic system, than outside in an non affiliated method. This means such system represent a 
+                            significant time saving benefit in the cycle time from planting to yield, compared to soil.</h4>
+
+                        <h4>2.2   Increased yields compared to soil</h4>
+                        
+                        <h4>Yields from the growth are also larger, with scientist recording between 20%-25% more yield than soil. Such a significant increase in return on produce when compared to soil,
+                            means more yield can sustain longer food reserves as well as give favourable returns on investment.</h4>
+
+                        <h4>2.3   Space saving</h4>
+
+                        <h4>Space saving is another benefit due to the medium the plants are immersed in, and the footprint required can be determined by the grower. Also, the roots don’t need to spread out as much to get the nutrients they need, 
+                            the oxygenated nutrient rich water, which makes up an essential part of hydroponics, allows the plants to be packed together more closely adding to the smaller footprint, without compromising quality of yield. Basically, care and attention to detail, 
+                            are the important factors with the benefit of the grwoer determining the footprint (or growth area) to use. Such a huge space saving benefit means you have more options, for example, in an urban home, space may be a premium, 
+                            with this method, you can put more indoor plants together and grow them in a smaller space. Homeowners looking to grow a variety of plants in a small space, 
+                            are now being offered a relatively low cost solution, to sustainable plant growth.</h4>
+
+                        <h4>2.4   Reduced water requirement</h4>
+
+                        <h4>Water saving can be made as reservoirs are used in a contained manner (preventing evaporation). The containers are also sealed 
+                            around the base, preventing water leakage and loss. This means the plants can absorb what they need whilst the reservoir holds the water they don’t absorb, until it is needed.
+                            With soil, plants, must be watered daily to compensate for water that is wasted or consumed. It can be noted that 
+                            the same amount of water soil uses in a day, can be used to feed a hydroponic based plant for days or 
+                            even weeks at a time. This can result in a potential 90% saving on water usage, cost and water conservation, 
+                            with this specific method when comparing hydroponics to soil.</h4>
+
+                        <h4>2.5   What no weeds</h4>
+
+                        <h4>Gardening with soil comes with managing weeds, this is frustrating, time consuming and costly. With hydroponics there are no weeds to manage, which 
+                            means less frustration, less cost and more time managing the crop, as opposed to time removing weeds.</h4>
+
+                        <h4>2.6   Guess what no pests and diseases</h4>
+
+                        <h4>The absence of soil in hydroponics means you can also remove soil based pest and diseases, and the damage they cause to your plants.</h4>
+
+                        <h3>Six diagrams which show the different hydroponic system setups</h3>
+
+                        <img src="{% static 'img/hydrosys.png' %}" class="responsive" alt="picture of the six different hydropnic systems"> 
+
+
+                        <h4>If we focus on the beginner hydroponic gardener, someone who is looking to get started, the three best systems are wick, water culture or ebb and flow. Each system can be self constructed based 
+                            on individual components that can be readily purchased, or purchased as kits. Many online specialist stores such as https://www.growell.co.uk can help here.</h4>
+
+                        <h3>3.    Ebb and flow</h3>
+
+                        <h4>Ebb and Flow is the most recognised system of hydroponics and also the most complex in the way it works compared to other methods. But this should not put the grower off, as it is easy to manage, and the setup is well worht the effort. 
+                            The process involves a cycle of flooding the nutrient rich water (medium), and then draining it into a reservoir tray. 
+                            The system requires a fill tray at the top, which contains the plants submersed in the rich water solution, a secondary reservoir container (minimum 1 foot deep) is placed beneath the tray. This has a submersible pump with a timer, 
+                            the pump hose is inserted into a hole in the base of the tray, which uses the timer to periodically pump the water into the fill tray.  A secondary pipe is used as a drain to release the surplus water from the fill tray back into the reservoir, 
+                            and this represents the cycle. It is possible to regulate the watering schedule depending on the various environmental factors, humidity, temperature etc which offers more measures to determine the success of crop yields and quality, based on 
+                            controlling the variables such as the volume and/or number of potting plants individually or in a group, another option with this method is 
+                            filling the tray with water and planting seedlings directly into the an ECA base.</h4>
+                        
+                        <h3>4.    Water culture systems</h3>
+
+                        <h4>Using a reservoir with a container basin which is at least 1 foot deep i.e. fish tank or water container. A Styrofoam raft is placed on top of the water medium, ECA clay balls and seedlings are placed into the raft pots. Holes are then cut into the Styrofoam, 
+                            to accommodate the different plants nested in net pots with perforated bottoms, this allow the ECA and seedlings to be submerges and the roots to grow into the nutrient rich water medium. The Styrofoam raft acts as a float for the pots to remain emerged 
+                            and the plants to grow above the waterline.  An aerator or air stone should be submerged just above the bottom of the reservoir, this ensure the nutrients do not become stagnated, the stone is connected to an outlet air pump via air tubing and sits directly 
+                            outside the reservoir, it is also essential to purchase the proper nutrients and equipment for monitoring the pH (potential of hydrogen or acidity or alkaline) level of the water.</h4>
+
+                        <h4>4.1   Disadvantages of a water culture system</h4>
+
+                        <h4>The water can get to hot if the system temperature is not regulated, and controlled. Also, if the pump breaks or stops, there is an urgent need to replace or respir it, 
+                            else the plants will begin to die. Finally, the pH and mutrient levels of the water can have a huge dispersion and range of variation, this variability will affect yield and quality between batches.
+                            There needs to be a multi-bucket testing system in place, to ensure the consitency of levels, within a given deviation, to acheive some level of consistency in results from batch to batch (assuming batch control testing).
+
+                        <h4>These are things to consdider but should not deter amateurs from getting into hydroponics, as the benefits are well worth the effort and time invested.</h4>
+
+                        <h3>5.    Wick systems</h3>
+
+                        <h4>The wick system is the most simplest and basic solution, it is ideal for homeowners who would like to get the basics of hydroponics, without the complexity, before going on to developing their skills and applying them to more complex methods, like, 
+                            the above mentioned, and them even more complex like, Drip, Aeroponic and Nutrient Film Technique (NFT).</h4>
+
+                        <h4>Wick systems are static systems (they have no moving parts like pumps) and are ideal for the beginner. This makes them more practical, cheaper to maintain and offer a more forgiving active system for hydroponics. 
+                            They have a slight drawback in that they are less efficient and cannot accommodate high maintenance plants, or large plants, which consume a lot of water (e.g. tomatoes), 
+                            but they are ideal for lettuce or herbs like rosemary and thyme.</h4>
+                        
+                        <h4>The system means the roots are always in contact with the water, the plants are submerged in a grow tray, a non organic soilless additive like horticultural perlite prized for its water absorption capabilities (horticultural perlite is a volcanic glass SiO2, mined globally, with a high 
+                            content of amorphous volcanic glass, perlite has considerable expansion properties when heated) can be used as an alternative to ECA. </h4>
+
+                        <h4>Caution should be taken with perlite, it can cause fluoride burn on plants and this is visible as browning of the tips of the leaves. When using perlite as a substance coming into contact with 
+                            humans or pets, to ensure there is no risk of dust entering your respiratory system use eye, mouth and hand protection when mixing the formulation and seeding, additioanlly, ensure that pets are kept out of that environment where the perlite is 
+                            actively used or stored.</h4>
+  
+                        <h4>The grow tray sits on the above level containing the water medium, and is filled up, the seedlings can be transferred directly into the perlite formulation i.e. (perlite and vermiculite) this formulation 
+                            is probably the best as it does not drain to quickly. It also enables the capillary action of the wicks to be most effective, 
+                            without becoming damp and soggy.</h4>
+
+                        <h4>The reservoir sits below the grow tray and is large container of nutrient and fertiliser rich water. The water should be refreshed every week because as the plants 
+                            absorb the properties and nutrients, and the water medium becomes less nutrient rich.</h4>
+
+                        <h4>An aerator or an aeration stone can be used with an external pump. The stone is submerged in the water, and the external pump feeds air into the stone, 
+                            the air  exits the stone via the micro pores in the form of via bubbles. This distributes oxygen through the water. Oxygen is essential for the roots to ensure the growth and the health of the plants. 
+                            Other or more traditional methods of oxygenation in gardening and hydroponics can include letting the roots dry out between watering schedules. In the wick setup, the roots are not aerated in the same way, 
+                            as they are never dried out, therefore, it is essential they stay oxygenated in water.</h4>
+
+                        <h4>The reservoir has two or more vertical wicks submerged that rise up and are inserted into the grow tray water medium. 
+                            Through a capillary action (the ability for liquids to flow through a narrow space without aid of gravity, or in opposition to gravity) 
+                            the water feed the grow tray fro the reservoir. The holes in the tray should be secured with a rubber connector and should be smaller 
+                            than the wicks to prevent leakage.</h4>
+
+                        <h3>6.    N.F.T (Nutrient Film Technology)</h3>
+
+                        <h4>With this method a shallow stream of water containing a dissolution of nutrients within the liquid. As the roots are suspendended in a gulley,
+                            they are able to come into contact with the liquid as it it circulates through the channel. Flow rates are typcially 1 liter per minute, but they can be as fast as 1 liter in 30 seconds, 
+                            or as slow as 1 liter in two minutes. The channel length of the gulley, should be between 5 and 15 metres, so space is a key consideration with this method.
+                            Care should also be taken to maintain a hygenic evnironment in which to immerse and grow the plants, this is why oxidising metals should not be used,
+                            and instead plastic resource should be used for the container, pump and components.</h4>
+
+                        <h3>7.   Drip system (Drip Irrigation Systems)</h3>
+
+                        <h4>The focus here is on water reduction through using a drip system to facilitate nutrition supply to the plants.
+                            A drip unit mechanical system contains valves, pipes, tubes and emitters and is placed above the plant roots. The water essentially drips like gentle rain onto the roots
+                            of the plants in the container or vessel. By placing water directly into the root zone, evaporaion is reduced as the 
+                            nutient rich liquid is absorbed by the plant roots. The system can be more effective than normal irrigation if installed, maintained and
+                            and operated correctly.</h4>
+
+                        <h4>Aeroponics</h4>
+
+                        <h4>We wont cover aeroponics in this blog, as this system is different from hydropnics, fundamentally because hydropnics deals with 
+                            the suspension of plants in water, whereas, aeroponics deals with the suspension of plants but using air and not water (nutrient rich water) or soil as an
+                            aggregate to facilitae growth. The nutrient rich water is added as a fine spray medium to facilitate growth.</h4>
+
+                        <h3>8.    What to grow</h3>
+
+                        <h4>Most plants can be grown in a hydroponic system, beginners should aim for herbs and vegetables as they grow quickly, require little maintenance and do not need a 
+                            huge range of nutrients. Monitor the system and adjust the requirements as you see the plants progressing through the growth cycle. Maintenance free plants are also a 
+                            great option for beginners, they allow you to focus on the fundamentals of your system, before moving onto more complex methods and plants, they also enable you to grow 
+                            like plants together in the same footprint.</h4>
+
+                        <h4>Hydroponic systems are based indoors, so do not benefit from natural sunlight exposure. Garden or external plants are exposed to sufficient sunlight daily (depending on placement), 
+                            which greatly enables the process of photosynthesis to work incredibly well. Hydroponic plants require at least 6 hours of sunlight daily, with 12 to 16 being ideal. Hydroponic systems 
+                            usually come with light fixtures, but if you are building your own, then, you will have to purchase the components and construct the light fixture feature yourself. </h4>
+
+                        <h4>The best lighting for hydroponic systems is a High Intensity Discharge light fixture (HIDLF). They contain High Pressure Sodium (HPS) or Metal Halide (MH). HPS emit an orange light, 
+                            which is great for the vegetative state of growth.  T5 is a high output fluorescent light ideal for stem cuttings as well as plants with short growth cycles and samples. Lighting should be on an automatic timer 
+                            so it turns on and off at the right time of day and for the right duration and exposure, tis will vary depending on the plant growth cycle and the plant type.</h4>
+                        
+                        <h3>9.    Room conditions</h3>
+
+                        <h4>Another important factor to consider is room conditions. Key considerations, are, room temperature, relative humidity, CO2 levels and air circulation. The ideal relative humidity conditions for a room are between 40%-60%, 
+                            any higher can lead to fungal and/or mildew problems. Circulation is also important, as in a room temperature of between 68 and 70 degrees Fahrenheit. Higher temperatures can heat up the water causing rot or even stunting the growth of your plants.
+                            The grow room should provide enough CO2 through the circulation process setup in the romm for the air. Plants take in CO2 and release O2 and this is an essential cycle in plant survival systen as is photosynthesis. Additionally, the more CO2 in the room the faster your plants will grow.</h4>
+        
+                        <h3>10.    Water quality</h3>
+
+                        <h4>The ideal water constituent for hydroponics is between pH 5.8 and 6.2. You can use chemicals to adjust the pH levels and monitor the levels to operate in this range. 
+                            It should be noted that hard water with a high mineral content (salt, calcium etc) will not dissolve nutrients as well as soft water with a low mineral content. 
+                            A filter can be purchased to filter out the high mineral contents and improve the potential for nutrient dissolution, this filter will need to be changed based on the instructions.</h4>
+                        
+                        <img src="{% static 'img/periodictable.jpg' %}" class="responsive" alt="photo of periodic table with wine glass over part of it">
+                        
+                        <h3>11.    Macronutrients</h3>
+
+                        <h4>Macronutrients nutrients or (fertilizer) are distributable in liquid or dry form, they can also be purchased in an organic or synthetic form. 
+                            They all are dissolvable in the water medium to create a nutrient rich formulation that is essential to the sustaining your hydroponic system, as well as being essential to the growth and survival of the plants. 
+                            The macronutrients, essential for hydroponic growth are listed below:</h4>
+                        
+                        <h3>12.   Nitrogen (N)</h3>
+
+                        <h4>Nitrogen is by far the most important element; it is responsible for vegetative plant growth, leaves stems and colours.  Nitrogen is also responsible for Chlorophyll formation, proteins used in new cells, amino acids and co-enzymes.
+                            In the early growth cycle prior to fruit bearing or flowering. Nitrogen is used in larger quantities.
+                            Plants lacking nitrogen typically have yellow leaves.</h4>
+
+                        <h3>13.   Phosphorus (P)</h3>
+
+                        <h4>Phosphorus contributes to the DNA of the plant or it’s genetic memory and construction. This is essential for cell division.
+                            It also enables plants to flower, fruit, seed and root. Plants require a larger dose of phosphorus during germination and flowering, 
+                            as well as being required in relatively smaller doses in the other parts of the plant growth cycle. Phosphorus deficiency includes shorter plant growth, 
+                            fragile leaves, fragile flowers and fragile roots.</h4>
+
+                        <h3>14.   Potassium (K)</h4>
+
+                        <h4>Potassium is required in large doses an is one of the essential macronutrients, it does not form compounds but is required to facilitate photosynthesis, 
+                            starch formation, protein synthesis and enzyme activation. Plants in need of potassium display yellow leaves in the initial cycles.</h4>
+
+                        <h3>15.   Calcium (CA)</h3>
+
+                        <h4>Calcium is required for cell formation, development and growth in the plant. Not enough calcium results in the leaf edges turning brown, 
+                            whereas too much calcium in the earlier phases can stunt the growth of the plant.</h4>
+
+                        <h3>16.   Sulphur (S)</h3>
+
+                        <h4>Sulphur is a structural component of 2 essential amino acids, Methionine and cysteine. They create proteins, 
+                            which help in the activation and formation of certain enzymes and vitamins.</h4>
+                        
+                        <h3>17.   Magnesium (Mg)</h3>
+
+                        <h4>Magnesium is a chemical component of chlorophyll; magnesium facilitates the creation of oxygen through photosynthesis and is used 
+                            in large amounts in fast growing plants.</h4>
+
+                        <h3>Micronutrients</h3>
+
+                        <h4>Micronutrients are required but in smaller quantities or in trace amounts include, 
+                            Iron (Fe), Manganese (Mn), Boron (B), Zinc (Zn), Copper (Cu), Molybdenum (Mo) and Chlorine (Cl).</h4>
+
+                        <h4>Good starter plants:</h4>
+
+                        <h4>If you are a beginner to hydroponics then some examples of good starter plants include:</h4>
+
+                        <h4>- Greens like lettuce, spinach, swiss chard and kale</h4>
+
+                        <h4>- Herbs like basil, oregano, thyme and mint</h4>
+
+                        <h4>- Tomatoes</h4>
+
+                        <h4>- Hot peppers</h4>
+
+                        <h4>- Strawberries</h4>
+                                
+                        <h3>Summary</h3>
+
+                        <h4>Gillian from Wimbledon is a senior citizen who was introduced to hydroponics by a group formed to help the aged with gardening. As someone who looks at cost, 
+                            she was keen to ensure the price of hydroponic gardening was lower than normal gardening, and she could access her hydroponic garden in her home more easily.
+                            She was able to find someone to help her source the materials and kits for a hydroponic 
+                            garden locally on <a href="https://billntrade.com" class= "billntrade">billntrade.com</a>. She said while looking for a way to connect with 
+                            other senior citizens interested in gardening she met ‘Martin who was an english gardener who was an expert in hydroponic gardening. Whilst she did look into gardening services
+                            near me online, she found that most of the focus was on gardneners, and not really on how gardening can help the aged, with hydroponics for example.
+                            She said he was able to introduce her to the basics of hydroponic gardening now she is on her way to growing more plants and sharing
+                            how she is getting on with friends and family. She is also looking to start a facebook page that looks to 
+                            offer how her gardening experience can help other seniors easily get into hydroponics.</h4>
+
+                        <ul class="list-inline share-buttons">
+                                <li class="list-inline-item">Share Post:</li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/billntrade" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.instagram.com/billntrade_support_saas_1" class="social-icon-sm si-dark si-colored-instagram si-gray-round">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.linkedin.com/company/billntrade-com" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        <hr class="mb40">
+                        <h4 class="mb40 text-uppercase font500">About the Author</h4>
+                        <div class="media mb40">
+                            <div class="media-body">
+                                <h5 class="mt-0 font700">Sarah Tring</h5> Hi, I'm Sarah, I'm a blogger who enjoys
+                                eveything related to home improvement, I'm passionate about sustainable homes, home
+                                improvement, home developments and technology used in the home. When not blogging, I
+                                enjoy spending time with my husband, two children and our dog 'Leto'.
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </article>
+                <!-- post article-->
+            </div>
+            <div class="col-md-3 mb30">
+                <div class="mb30">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..."
+                                aria-describedby="basic-addon2">
+                            <!-- <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button> -->
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="sidebar-title">Other blogs</h4>
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blogs' %}">7 essential tips to help you
+                                        successfully deal with mould in your home</a></h5> Apr, 2021
+                            </div>
+                        </li>
+                        <li class="media my-4">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog2' %}">10 Essential tips to help you choose a
+                                        plumber</a></h5> Jul, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog3' %}">14 Essential tips to help homeowners and builders with projects</a></h5> Aug, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="{% url 'blog4' %}">How electricians are supporting homeowners with solar</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog5' %}">Your essential 7 point guide to how builders can help you with asbestos removal</a></h5> Sep, 2021
+                                </div>
+                        </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                            <h5 class="mt-0 mb-1"><a href="{% url 'blog6' %}">The 12 step essential guide to protecting your home from cold weather damage</a></h5> Sep, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="{% url 'blog7' %}">A 10 step guide to a kitchen renovation project for homeowners on a budget</a></h5> Sep, 2021
+                                </div>
+                            </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog8' %}">Your essential 18 point guide to organising a home move</a></h5> Oct, 2021
+                            </div>
+                        </li>
+                            <li class="media">
+                                    <img class="d-flex mr-3 img-fluid" width="64"
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        alt="Generic placeholder image">
+                                    <div class="media-body">
+                                <h5 class="mt-0 mb-1"><a href="{% url 'blog9' %}">Why apprentices are improtant for the future of the trade</a></h5> Oct, 2021
+                            </div>
+                        </li>
+                        <li class="media">
+                                <img class="d-flex mr-3 img-fluid" width="64"
+                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                    alt="Generic placeholder image">
+                                <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blog11' %}">6 points to consider in a garange conversion</a></h5> Nov, 2021
+                        </div>
+                    </li>
+                    <li class="media">
+                            <img class="d-flex mr-3 img-fluid" width="64"
+                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                alt="Generic placeholder image">
+                            <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="{% url 'blog12' %}">13 steps to de-clutter a storage room and make money</a></h5> Dec, 2021
+                    </div>
+                </li>
+                <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64"
+                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                            alt="Generic placeholder image">
+                        <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="{% url 'blog13' %}">12 quick tips to reduce the risk of a burglary at your home</a></h5> Jan, 2022
+                </div>
+            </li>
+            <li class="media">
+                    <img class="d-flex mr-3 img-fluid" width="64"
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Generic placeholder image">
+                    <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="{% url 'blog14' %}">How to Find a builder</a></h5> Feb, 2022
+            </div>
+        </li>
+        <li class="media">
+                <img class="d-flex mr-3 img-fluid" width="64"
+                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="{% url 'blog15' %}">Hire a builder</a></h5> Feb, 2022
+        </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog16' %}">Hire a plumber</a></h5> Mar, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog17' %}">Electrical safety dos and donts for homeowners</a></h5> Apr, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog18' %}">How to find a reliable Electrician</a></h5> Apr, 2022
+    </div>
+    </li>
+    <li class="media">
+            <img class="d-flex mr-3 img-fluid" width="64"
+                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                alt="Generic placeholder image">
+            <div class="media-body">
+        <h5 class="mt-0 mb-1"><a href="{% url 'blog19' %}">Plumbing dos and donts for home and property owners</a></h5> Apr, 2022
+    </div>
+    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 text-lg-left text-center">
+                    <div class="copyright">
+                        <strong>&copy; Copyright 2021 -
+                            <script>new Date().getFullYear() > 2017 && document.write(+ new Date().getFullYear());</script>, Billntrade
+                            Ltd</strong>. All Rights Reserved
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                        <a href="{% url 'terms-conditions' %}">Terms and Conditions</a>
+                        <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                        <a href="{% url 'cookies' %}">Cookies</a>
+                        <a href="{% url 'blogs' %}">Blogs</a>
+                        <a href="{% url 'about-us' %}">About us</a>
+                        <a href="{% url 'sitemap' %}">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <style>
+        .brand {
+            width: 14rem;
+            margin-left: 2rem;
+            /* border: 2px solid lime; */
+        }
+    </style>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="https://bootstrapmade.com/demo/assets/js/jquery-3.1.0.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            feather.replace();
+
+            $('button').click(function () {
+                $('.alert').html('<i data-feather="activity"></i>');
+                feather.replace();
+            });
+
+        });
+    </script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+
+
+<script>
+    body{
+        margin - top: 20px;
+    }
+/*
+Blog post entries
+*/
+
+.entry - card {
+        -webkit - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        -moz - box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        box - shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+.entry - content {
+        background - color: #fff;
+        padding: 36px 36px 36px 36px;
+        border - bottom - left - radius: 6px;
+        border - bottom - right - radius: 6px;
+    }
+
+.entry - content.entry - title a {
+        color: #333;
+    }
+
+.entry - content.entry - title a: hover {
+        color: #4782d3;
+    }
+
+.entry - content.entry - meta span {
+        font - size: 12px;
+    }
+
+.entry - title {
+        font - size: .95rem;
+        font - weight: 500;
+        margin - bottom: 15px;
+    }
+
+.entry - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb img {
+        border - top - left - radius: 6px;
+        border - top - right - radius: 6px;
+    }
+
+.entry - thumb.thumb - hover {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: rgba(71, 130, 211, 0.85);
+        display: block;
+        top: 50 %;
+        left: 50 %;
+        color: #fff;
+        font - size: 40px;
+        line - height: 100px;
+        border - radius: 50 %;
+        margin - top: -50px;
+        margin - left: -50px;
+        text - align: center;
+        transform: scale(0);
+        -webkit - transform: scale(0);
+        opacity: 0;
+        transition: all .3s ease -in -out;
+        -webkit - transition: all .3s ease -in -out;
+    }
+
+.entry - thumb: hover.thumb - hover {
+        opacity: 1;
+        transform: scale(1);
+        -webkit - transform: scale(1);
+    }
+
+.article - post {
+        border - bottom: 1px solid #eee;
+        padding - bottom: 70px;
+    }
+
+.article - post.post - thumb {
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+
+.article - post.post - thumb.post - overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100 %;
+        height: 100 %;
+        background - color: rgba(0, 0, 0, 0.6);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        opacity: 0;
+    }
+
+.article - post.post - thumb.post - overlay span {
+        width: 100 %;
+        display: block;
+        vertical - align: middle;
+        text - align: center;
+        transform: translateY(70 %);
+        -webkit - transform: translateY(70 %);
+        transition: all .3s;
+        -webkit - transition: all .3s;
+        height: 100 %;
+        color: #fff;
+    }
+
+.article - post.post - thumb: hover.post - overlay {
+        opacity: 1;
+    }
+
+.article - post.post - thumb: hover.post - overlay span {
+        transform: translateY(50 %);
+        -webkit - transform: translateY(50 %);
+    }
+
+.post - content.post - title {
+        font - weight: 500;
+    }
+
+.post - meta {
+        padding - top: 15px;
+        margin - bottom: 20px;
+    }
+
+.post - meta li: not(: last - child) {
+        margin - right: 10px;
+    }
+
+.post - meta li a {
+        color: #999;
+        font - size: 13px;
+    }
+
+.post - meta li a: hover {
+        color: #4782d3;
+    }
+
+.post - meta li i {
+        margin - right: 5px;
+    }
+
+.post - meta li: after {
+        margin - top: -5px;
+        content: "/";
+        margin - left: 10px;
+    }
+
+.post - meta li: last - child: after {
+        display: none;
+    }
+
+.post - masonry.masonry - title {
+        font - weight: 500;
+    }
+
+.share - buttons li {
+        vertical - align: middle;
+    }
+
+.share - buttons li a {
+        margin - right: 0px;
+    }
+
+.post - content.fa {
+        color: #ddd;
+    }
+
+.post - content a h2 {
+        font - size: 1.5rem;
+        color: #333;
+        margin - bottom: 0px;
+    }
+
+.article - post.owl - carousel {
+        margin - bottom: 20px!important;
+    }
+
+.post - masonry h4 {
+        text - transform: capitalize;
+        font - size: 1rem;
+        font - weight: 700;
+    }
+.mb40 {
+        margin - bottom: 40px!important;
+    }
+.mb30 {
+        margin - bottom: 30px!important;
+    }
+.media - body h5 a {
+        color: #555;
+    }
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+/*
+Template sidebar
+*/
+
+.sidebar - title {
+        margin - bottom: 1rem;
+        font - size: 1.1rem;
+    }
+
+.categories li {
+        vertical - align: middle;
+    }
+
+.categories li > ul {
+        padding - left: 15px;
+    }
+
+.categories li > ul > li > a {
+        font - weight: 300;
+    }
+
+.categories li a {
+        color: #999;
+        position: relative;
+        display: block;
+        padding: 5px 10px;
+        border - bottom: 1px solid #eee;
+    }
+
+.categories li a: before {
+        content: "\f0da";
+        font - family: 'FontAwesome';
+        margin - right: 5px;
+    }
+
+.categories li a: hover {
+        color: #444;
+        background - color: #f5f5f5;
+    }
+
+.categories > li.active > a {
+        font - weight: 600;
+        color: #444;
+    }
+
+.media - body h5 {
+        font - size: 15px;
+        letter - spacing: 0px;
+        line - height: 20px;
+        font - weight: 400;
+    }
+
+.media - body h5 a {
+        color: #555;
+    }
+
+.media - body h5 a: hover {
+        color: #4782d3;
+    }
+
+</script>
+
+<style>
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+</style>

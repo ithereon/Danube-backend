@@ -1,0 +1,205 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+<link href="{% static 'css/footer.css' %}" rel="stylesheet">
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>QUOTE</h1> 
+            QUOTE ID:
+            <br><strong>{{values.Quoteid_busquote_qt}}</strong>
+            <br><span class="float-right"> <strong>Status: COMPLETED</strong></span>
+            <hr>
+
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-sm-6">
+                    <h6 class="mb-3">From:</h6>
+                    <div>
+                        <strong>{{values.Title_qt}} {{values.Firstname_qt}} {{values.Surname_qt}} </strong>
+                    </div>
+                    <div>{{values.Businessname_qt}}</div>
+                    <div>{{values.Address1_qt}}, {{values.Address2_qt}}, {{values.Town_qt}}, {{values.City_qt}},
+                        {{values.County_qt}}, {{values.Postcode_qt}}</div>
+                    <div>Email:{{values.Email_qt}}</div>
+                    <div>Mobile:{{values.Mobile_qt}}</div>
+                </div>
+
+                <div class="col-sm-6">
+                    <h6 class="mb-3">To:</h6>
+                    <div>
+                        <strong>{{values.Title_custquote_qt}} {{values.Firstname_custquote_qt}}
+                            {{values.Surname_custquote_qt}} </strong>
+                    </div>
+                    <div>{{values.Address1_custquote_qt}}, {{values.Address2_custquote_qt}},
+                        {{values.Town_custquote_qt}}, {{values.City_custquote_qt}}, {{values.County_custquote_qt}},
+                        {{values.Postcode_custquote_qt}}</div>
+                </div>
+
+                <div class="col-sm-6">
+                    <h6 class="mb-3">Dates:</h6>
+                    <div>
+                        <strong>Quote created date:</strong>
+                    </div>
+                    <div>{{values.Date_quote_created_qt}}</div>
+                </div>
+                <br>
+                <div>
+                    <strong>This quote is confirmation that {{values.Title_custquote_qt}}
+                        {{values.Firstname_custquote_qt}} {{values.Surname_custquote_qt}} accepts the work to be carried
+                        out by {{values.Businessname_qt}} as described, and agrees to comply with
+                        {{values.Businessname_qt}} terms & conditions.</strong>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <h6 class="mb-3">Quote details:</h6>
+        <div>
+
+            <div class="table-responsive-sm">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td class="left"><strong>#</strong></td>
+                            <td class="center"><strong>item</strong></td>
+                            <td class="center"><strong>Description</strong></td>
+                        </tr>
+                    </thead>
+                    <td>
+                        <tbody>
+                            <tr>
+                                <td class="left">1</td>
+                                <td class="left">Area of work</td>
+                                <td class="left">{{values.Areaofwork_busquote_qt}}</td>
+                            </tr>
+                            <tr>
+                                <td class="center"></td>
+                            </tr>
+                            <tr>
+                                <td class="center"></td>
+                                <td class="left">Brief description:</td>
+                                <td class="left" colspan="3">{{values.Briefdescription_busquote_qt}}</td>
+                            </tr>
+                            <tr>
+                                <td class="center"></td>
+                            </tr>
+                            <td class="center"></td>
+                            <td class="left">Detailed description:</td>
+                            <td class="left" colspan="3">{{values.Detaileddescription_busquote_qt}}</td>
+                            </tr>
+                            <tr>
+                                <td class="center"></td>
+                            </tr>
+                            <td class="center"></td>
+                            <td class="left">Comments:</td>
+                            <td class="left" colspan="3">{{values.Comments_busquote_qt}}
+                            <td>
+                                </tr>
+                                <tr>
+                                    <td class="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="center"></td>
+                                </tr>
+            </div>
+            <div class="table-responsive-sm">
+                <table class="table table-clear">
+                    <hr>
+                    <tr>
+                        <td class="center"></td>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td class="left"></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="left"><strong>Subtotal</strong></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="left"><strong>£{{values.Subtotal_qt}}</strong></td>
+                        </tr>
+                        <td class="center"></td>
+                        <tr>
+                            <td class="left">
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="left"><strong>Discount %</strong></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="left"><strong>{{values.Discount_qt}}</strong></td>
+                        </tr>
+                        <td class="center"></td>
+                        <tr>
+                            <td class="left"></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="center" colspan="2">
+                            <strong>Subtotal after discount</strong>
+                        </td>
+
+                            <td class="center"></td>
+                            <td class="left"><strong>£{{values.Subtotalafterdisc_qt}}</strong></td>
+                        </tr>
+                        <td class="center"></td>
+                        <tr>
+                            <td class="left">
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="left"><strong>VAT %</strong></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="left"><strong>{{values.VAT_qt}}</strong></td>
+                        </tr>
+                        <td class="center"></td>
+                        <tr>
+                            <td class="left">
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="left"><strong>Total</strong></td>
+                            <td class="center"></td>
+                            <td class="center"></td>
+                            <td class="left"><strong>£{{values.Total_qt}}</strong></td>
+                        </tr>
+                        <td class="center"></td>
+                    </tbody>
+                </table>
+                <hr>
+                <tr>
+                    <td class="center"></td>
+                </tr>
+                <td class="left">
+                <td class="center"></td>
+                <td class="center"></td>
+                <td class="center"></td>
+                <td class="left"><strong>Notes:</strong></td>
+                <td class="center"></td>
+                <td class="center"></td>
+            </div>
+            <tr>
+                <div>
+                </div>
+
+</html>

@@ -1,0 +1,735 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141253078-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141253078-2');
+</script>
+  <title>Billntrade</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+ 
+
+  {% block title %}
+
+  {% endblock %}
+  </title>
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link rel="icon" type="image/png" href='/static/img/favicon-32x32.png'>
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light w-100">
+    <a class="nav-link">Billntrade.com</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex ml-auto">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        </ul>
+        <ul class="navbar-nav ml-auto mr-5">
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="{% url 'logout-view' %}">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      {% include 'partials/_cust_edit_quote.html' %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        {% block content %}
+
+        <div class="card mt-3 style=width: 18rem;">
+
+          <div class="card">
+            <div class="col-auto mt-3">
+              <h6>Edit RFQ</h6>
+
+              <div class="card-body">
+               <form action="{% url 'customer-quote' %}" id='main-form' method="POST" onsubmit="return ProductMainForm(event);" >
+
+                <form action="{% url 'edit-quote' quote.id %}" id='main-form' method="POST" onsubmit="return ProductMainForm(event);" >
+
+                  {% include 'partials/_messages.html' %}
+                  {% csrf_token %}
+
+                  <div class="form-row">
+                    <div class="form-group col-md-2">
+                      <label for="QuoteID">Quote ID:</label>
+                      <input type="text" class="form-control" name="Quoteid" id="quoteidField"
+                        value="{{values.Quoteid}}" readonly>
+                    </div>
+                    <div class="form-group col-md-5">
+                      <label for="indent"></label>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="Status">Status:</label>
+                      <input type="text" class="form-control" name="Status" id="statusField" value="{{values.status}}"
+                        readonly>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="Date">Date created:</label>
+                      <input type="text" class="form-control" name="datecreated" id="dateField"
+                        value="{{values.Datecreated}}" readonly>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-2">
+                      <label for="Title">Title:</label>
+                      <input type="text" class="form-control" name="Title" id="titleField" value="{{values.Title}}"
+                        readonly>
+                      <small id="datecreatedHelpBlock" class="form-text text-muted">
+                        Not sent to Marketplace
+                      </small>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="Firstname">Firstname:</label>
+                      <input type="text" class="form-control" name="Firstname" id="firstnameField"
+                        value="{{values.Firstname}}" readonly>
+                      <small id="datecreatedHelpBlock" class="form-text text-muted">
+                        Not sent to Marketplace
+                      </small>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="Surname">Surname:</label>
+                      <input type="text" class="form-control" name="Surname" id="surnameField"
+                        value="{{values.Surname}}" readonly>
+                      <small id="datecreatedHelpBlock" class="form-text text-muted">
+                        Not sent to Marketplace
+                      </small>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="Mobile">Mobile:</label>
+                      <input type="text" class="form-control" name="Mobile" id="mobileField" value="{{values.Mobile}}"
+                        readonly>
+                      <small id="datecreatedHelpBlock" class="form-text text-muted">
+                        Not sent to Marketplace
+                      </small>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="Email">Email:</label>
+                      <input type="email" class="form-control" name="Email" id="emailField" value="{{values.Email}}"
+                        readonly>
+                      <small id="datecreatedHelpBlock" class="form-text text-muted">
+                        Not sent to Marketplace
+                      </small>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="Add ovner">Add property owner:</label>
+                      <td><a data-toggle="modal" data-target="#addCreatorModal" type="nav-link" value="submit"
+                          onclick="call_creator()" class="btn btn-outline-secondary">Add</a></td>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-2">
+                      <label for="Address1">Address 1:</label>
+                      <input type="text" class="form-control" name="Address1" id="address1Field"
+                        value="{{values.Address1}}" readonly>
+                      <small id="datecreatedHelpBlock" class="form-text text-muted">
+                        Not sent to Marketplace
+                      </small>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="Address2">Address 2:</label>
+                      <input type="text" class="form-control" name="Address2" id="address2Field"
+                        value="{{values.Address2}}" readonly>
+                      <small id="datecreatedHelpBlock" class="form-text text-muted">
+                        Not sent to Marketplace
+                      </small>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="Town">Town:</label>
+                      <input type="text" class="form-control" name="Town" id="townField" value="{{values.Town}}"
+                        readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="City">City:</label>
+                      <input type="text" class="form-control" name="City" id="cityField" value="{{values.City}}"
+                        readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="County">County:</label>
+                      <input type="text" class="form-control" name="County" id="countyField" value="{{values.County}}"
+                        readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="Postcode">Postcode:</label>
+                      <input type="text" class="form-control" name="Postcode" id="postcodeField"
+                        value="{{values.Postcode}}" readonly>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="Add property">Add property details:</label>
+                      <td><a type="nav-link" data-toggle="modal" data-target="#addAddressModal" value="submit"
+                          onclick="call_address()" class="btn btn-outline-secondary">Add</a></td>
+                    </div>
+                  </div>
+                </form>
+
+
+                
+                <div class=' mb-2' >
+
+                  <div class="quote_work_desc_main">
+
+                    {% for obj in objects %}
+                    <div class="form-row quote_work_desc_main_forms  mt-3 card p-5" >
+                      <form  class ='quote-work-desc-main-form' obj_id="{{obj.id}}"  method='POST'  >
+                        {% csrf_token %}
+                        <div class="form-group col-md-6">
+                          <label for="Areaofwork">Area of work:</label>
+                          <input type="text" class="form-control" required name="Areaofwork" id="Areaofwork"
+                            value="{{obj.Areaofwork}}">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="Briefdescription">Brief description:</label>
+                          <input type="text" class="form-control" required name="Briefdescription" id="Briefdescription"
+                            value="{{obj.Briefdescription}}">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="exampleFormControlTextarea1">Detailed description:</label>
+                          <textarea type="text" class="form-control" rows="4" required name="Detaileddescription"
+                            id="Detaileddescription">{{obj.Detaileddescription}}</textarea> 
+                            
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="exampleFormControlTextarea2">Additional comments:</label>
+                          <input type="text" class="form-control" rows="2" required name="Comments" id="Comments"
+                            value="{{obj.Comments}}">
+                            <small id="datecreatedHelpBlock" class="form-text text-muted">
+                              <strong>Do not include any personal information, contact information or any other sensitive information in the comments or any other section related to the work</strong>
+                            </small>
+                        </div>
+
+                      </form>
+
+                      {% if forloop.counter != 1 %}
+                        <div class="d-flex justify-content-end mt-2">
+                          <button type='button'  class="btn btn-outline-danger ml-2 quote-delete-button" obj_id="{{obj.id}}">Delete</button>
+                        </div>
+                      {% endif %}
+                    </div>
+                    {% endfor %}
+                  </div>
+                  
+                  <!-- Add button for form -->
+                  <div class="d-flex justify-content-end mt-2">
+                      <button class="btn btn-outline-primary add_new_form mt-5">Add New Form </button>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="col-auto my-1">
+                      <button type="submit" value="submit"  class="btn main-form btn-outline-primary">Update RFQ</button>
+                    </div>
+                </div> 
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3"></div>
+        <div class="modal fade" id="addCreatorModal" tabindex="-1" role="dialog" aria-labelledby="addCreatorModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="addCreatorModalLabel">Add property owner</h6>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Title</th>
+                      <th scope="col">Firstname</th>
+                      <th scope="col">Surname</th>
+                      <th scope="col">Mobile</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="creator_add">
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="addAddressModal" tabindex="-1" role="dialog" aria-labelledby="addAddressModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="addAddressModalLabel">Add property details</h6>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Address 1</th>
+                      <th scope="col">Address 2</th>
+                      <th scope="col">Town</th>
+                      <th scope="col">City</th>
+                      <th scope="col">County</th>
+                      <th scope="col">Postcode</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="address_add">
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+          integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+        <script src="{% static 'js/bootstrap.feather.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="{% static 'js/min.js' %}"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'js/function.js' %}"></script>
+        <script src="https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+$(document).ready(function(){
+feather.replace();
+
+$('button').click(function(){
+$('.alert').html('<i data-feather="activity"></i>');
+feather.replace();
+});
+
+});
+</script>
+<script>
+function call_creator(sym) {
+  $.ajax({
+      url: '{% url 'get-ajax-property-owner-profile' %}',
+      method: 'GET',
+      dataType: 'json',
+      success: function (main_data) {
+        let row_data = ''
+        let data = JSON.parse(main_data);
+        for(i=0; i<data.length; i++){
+          const item = data[i].fields;
+          row_data = row_data + `<tr>
+            <td class="align-middle">${item.Title}</td>
+            <td class="align-middle">${item.Firstname}</td>
+            <td class="align-middle">${item.Surname}</td>
+            <td class="align-middle">${item.Mobile}</td>
+            <td class="align-middle">${item.Email}</td>
+            <td class="align-middle"><button data-key="${item.id}" data-title="${item.Title}" data-fname="${item.Firstname}" data-sname="${item.Surname}" data-mobile="${item.Mobile}" data-email="${item.Email}"onclick="selectCreator(this)" class="btn btn-primary">Add</button></td>
+            </tr>
+           `
+        }
+        $("#creator_add").html(row_data);
+      },
+      error: function (err) {
+          console.error("error getting data")
+      }
+  });
+}
+function call_address(sym) {
+  $.ajax({
+      url: '{% url 'get-ajax-property-owner-address' %}',
+      method: 'GET',
+      dataType: 'json',
+      success: function (main_data) {
+        let row_data = ''
+        let data = JSON.parse(main_data);
+        for(i=0; i<data.length; i++){
+          const item = data[i].fields;
+          row_data = row_data + `<tr>
+            <td class="align-middle">${item.Address1}</td>
+            <td class="align-middle">${item.Address2}</td>
+            <td class="align-middle">${item.Town}</td>
+            <td class="align-middle">${item.City}</td>
+            <td class="align-middle">${item.County}</td>
+            <td class="align-middle">${item.Postcode}</td>
+            <td class="align-middle"><button data-key="${item.id}" data-add1="${item.Address1}" data-add2="${item.Address2}" data-town="${item.Town}" data-city="${item.City}" data-county="${item.County}" data-post="${item.Postcode}" onclick="selectAddress(this)" class="btn btn-primary">Add</button></td>
+            </tr>
+            `
+        }
+        $("#address_add").html(row_data);
+      },
+      error: function (err) {
+          console.error("error getting data")
+      }
+  });
+}
+function selectCreator(e){
+const data = $(e);
+$("#titleField").val(data.attr("data-title"));
+$("#firstnameField").val(data.attr("data-fname"));
+$("#surnameField").val(data.attr("data-sname"));
+$("#mobileField").val(data.attr("data-mobile"));
+$("#emailField").val(data.attr("data-email"));
+$('.modal').removeClass('show');
+$(document.body).removeClass('modal-open');
+$('.modal-backdrop').remove();
+}
+function selectAddress(e){
+const data = $(e);
+$("#address1Field").val(data.attr("data-add1"));
+$("#address2Field").val(data.attr("data-add2"));
+$("#townField").val(data.attr("data-town"));
+$("#cityField").val(data.attr("data-city"));
+$("#countyField").val(data.attr("data-county"));
+$("#postcodeField").val(data.attr("data-post"));
+$('.modal').removeClass('show');
+$(document.body).removeClass('modal-open');
+$('.modal-backdrop').remove();
+}
+
+function formSubmition() {
+  $(".quote-work-desc-main-form").submit(function(e){
+    e.preventDefault()
+    console.log('save')
+
+  });                
+}
+function formDeletion() {
+  $('.quote-delete-button').click(function(e){
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    var obj_id = $(this).attr('obj_id')
+
+    formdata = new FormData();
+    formdata.append("id",obj_id)
+    axios({
+      method: "POST",
+      url: '{% url "customer_quote_work_description_delete" %}',
+      data: formdata,
+      headers: {
+        "Content-Type": "multipart/form-data",
+        'X-CSRFToken': csrftoken
+      }
+    }).then(function (data) {
+      console.log('deleted successfully') 
+    })
+    .catch(function (error) {
+      console.log("not deleted", error);
+    })       
+    $(this).parent().parent().remove()
+    console.log('delete')
+
+  })               
+}
+function addNewForm(){
+  $('.add_new_form').click((e)=>{
+    e.preventDefault()            
+    $('.add_new_form').remove()
+    var htmlData = `
+        <div class="form-row quote_work_desc_main_forms card p-5" >
+        <form class="quote-work-desc-main-form" type='POST' >
+          {% csrf_token %}
+        <div class="form-group col-md-6">
+          <label for="Areaofwork">Area of work:</label>
+          <input type="text" class="form-control" name="workarea" id="workareaField"
+            value="{{values.workarea}}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="Briefdescription">Brief description:</label>
+          <input type="text" class="form-control" name="briefdescription" id="briefField"
+            value="{{values.briefdescription}}">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="exampleFormControlTextarea1">Detailed description:</label>
+          <textarea type="text" class="form-control" rows="4" name="detaileddescription"
+            id="detaileddescriptionField">{{values.detaileddescription}}</textarea> 
+        </div>
+        <div class="form-group col-md-12">
+          <label for="exampleFormControlTextarea2">Additional comments:</label>
+          <input type="text" class="form-control" rows="2" name="comments" id="additionalcommentsField"
+            value="{{values.comments}}"></input>
+            <small id="datecreatedHelpBlock" class="form-text text-muted">
+              <strong>Do not include any personal information, contact information or any other sensitive information in the comments or any other section related to the work</strong>
+            </small>
+        </div>
+   
+        <div class="d-flex justify-content-end mt-2">
+          <button type="submit" value="submit"  class="btn btn-outline-success">Save </button>
+          <button value="submit" class="btn btn-outline-danger ml-2">Delete</button>
+        </div>
+
+      </form>
+      </div>            
+      <!-- Add button for form -->
+      <div class="d-flex justify-content-end mt-5">
+          <button class="btn btn-outline-primary add_new_form">Add New Form </button>
+      </div>`
+    
+    $('.quote_work_desc_main').append(htmlData)
+
+  })
+}
+
+
+$('.add_new_form').click((e)=>{
+  e.preventDefault()            
+
+  var htmlData = `
+  <div class="form-row quote_work_desc_main_forms  mt-3 card p-5" >
+    <form class="quote-work-desc-main-form" type='POST' >
+      <div class="form-group col-md-6">
+        <label for="Areaofwork">Area of work:</label>
+        <input type="text" class="form-control" name="Areaofwork" id="workareaField"
+          value="{{values.workarea}}">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="Briefdescription">Brief description:</label>
+        <input type="text" class="form-control" name="Briefdescription" id="briefField"
+          value="{{values.briefdescription}}">
+      </div>
+      <div class="form-group col-md-12">
+        <label for="exampleFormControlTextarea1">Detailed description:</label>
+        <textarea type="text" class="form-control" rows="4" name="Detaileddescription"
+          id="detaileddescriptionField">{{values.detaileddescription}}</textarea> 
+      </div>
+      <div class="form-group col-md-12">
+        <label for="exampleFormControlTextarea2">Additional comments:</label>
+        <input type="text" class="form-control" rows="2" name="Comments" id="additionalcommentsField"
+          value="{{values.comments}}"></input>
+          <small id="datecreatedHelpBlock" class="form-text text-muted">
+            <strong>Do not include any personal information, contact information or any other sensitive information in the comments or any other section related to the work</strong>
+          </small>
+      </div>
+
+      <div class="d-flex justify-content-end mt-2">
+        <button type='button'  class="btn btn-outline-danger ml-2 quote-delete-button">Delete</button>
+
+      </div>
+
+    </form>
+  </div>
+  `
+
+  $('.quote_work_desc_main').append(htmlData)
+//          formSubmition()
+  formDeletion()
+
+  $('#main-form').submit((e)=>{
+      e.preventDefault()
+      console.log('main form submission')
+  })
+})
+
+
+// calling form submition button
+//formSubmition()
+formDeletion()
+
+        // calling form submition button
+       //formSubmition()
+       formDeletion()
+          
+
+
+
+       // **************************************************************
+       //                          Main Form Submission
+       // **************************************************************
+       // main form submission
+       function ProductMainForm(event) {
+         var formData = $('#main-form').serialize()
+         event.preventDefault();
+         $.ajaxSetup({
+           headers: {
+             "X-CSRFToken": '{{csrf_token}}'
+           }
+         });
+         console.log(formData)
+         var data = new FormData($('#main-form')[0]);
+         var form = $('#main-form');
+         var formdata = 'false';
+         formdata = new FormData(form[0]);
+ 
+         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+ 
+         formdata.append('Quoteid', "{{quote.Quote_id}}")
+
+         axios({
+             method: "POST",
+             url: '{% url "customer_quote__edit_json" values.id %}',
+             data: formdata,
+             headers: {
+               "Content-Type": "multipart/form-data",
+               'X-CSRFToken': csrftoken
+             }
+           }).then(function (data) {
+             console.log('created successfully') 
+             $('#quote-work-desc-main-form').submit()
+
+
+             // Additional forms
+             $(".quote-work-desc-main-form").each(function(){
+               // Test if the div element is empty
+               var data = new FormData($(this)[0]);
+               var formData = $(this).serialize()
+
+               var data = new FormData($(this)[0]);
+               var form = $(this);
+               var formdata = 'false';
+               formdata = new FormData(form[0]);
+       
+               const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+               console.log(formData)
+               var obj_id = $(this).attr('obj_id')
+               formdata.append('Quoteid', "{{values.Quoteid}}")  
+
+             
+               if (obj_id){
+                console.log('got object id',obj_id)
+                formdata.append('id',obj_id)
+                axios({
+                  method: "POST",
+                  url: `/CustomerQuoteWorkDescriptionUpdate/`,
+                  data: formdata,
+                  headers: {
+                    "Content-Type": "multipart/form-data",
+                    'X-CSRFToken': csrftoken
+                  }
+                }).then(function (data) {
+                  console.log('created successfully') 
+                })
+                .catch(function (error) {
+                  console.log("not submiited", error);
+                })
+              }
+
+              else{
+                axios({
+                  method: "POST",
+                  url: '{% url "customer_quote_work_description_create" %}',
+                  data: formdata,
+                  headers: {
+                    "Content-Type": "multipart/form-data",
+                    'X-CSRFToken': csrftoken
+                  }
+                }).then(function (data) {
+                  console.log('created successfully') 
+                })
+                .catch(function (error) {
+                  console.log("not submiited", error);
+                })
+
+              
+
+              }
+
+              window.location.href = '/customer-home/customer_quotes/manage_rfqs';
+                
+              });
+       
+           
+            })
+           .catch(function (error) {
+             console.log("not submiited", error);
+           })
+       
+     };
+
+
+
+function SaveSubForm(event) {
+       var formData = $('#customer_quote_work_description_create').serialize()
+       event.preventDefault();
+       $.ajaxSetup({
+         headers: {
+           "X-CSRFToken": '{{csrf_token}}'
+         }
+       });
+
+       var data = new FormData($('#customer_quote_work_description_create')[0]);
+       var form = $('#customer_quote_work_description_create');
+       var formdata = 'false';
+       formdata = new FormData(form[0]);
+
+       const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+       $('textarea#message').val()
+
+       formdata.append('Quoteid', "{{values.Quoteid}}")
+       console.log("{{values.Quoteid}}")
+       axios({
+           method: "POST",
+           url: '{% url "customer_quote_work_description_create" %}',
+           data: formdata,
+           headers: {
+             "Content-Type": "multipart/form-data",
+             'X-CSRFToken': csrftoken
+           }
+         }).then(function (data) {
+           console.log('created successfully') 
+         })
+         .catch(function (error) {
+           console.log("not submiited", error);
+         })
+     
+       };
+
+     
+       $('.main-form').click((e)=>{
+          e.preventDefault()
+         $('#main-form').submit()
+
+       })
+
+
+
+
+
+
+
+</script>
+</body>
+{% endblock %}
+</html>

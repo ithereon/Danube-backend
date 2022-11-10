@@ -23,7 +23,7 @@ DEBUG = os.environ.get("DEBUG", False)
 
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 ALLOWED_HOSTS = ["*"]
-SITE_URL = "https://live-production-backend.herokuapp.com"
+SITE_URL = "https://live-production-frontend.herokuapp.com"
 # Application definition
 
 INSTALLED_APPS = [

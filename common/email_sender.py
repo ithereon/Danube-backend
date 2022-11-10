@@ -29,7 +29,7 @@ def send_email(
     )
 
     mail.attach_alternative(body, "text/html")
-    if attachments:
-        for file, name in zip(attachments, attachment_names):
-            mail.attach(name, content=file)
+    # if attachments:
+    #     for file, name in zip(attachments, attachment_names):
+    #         mail.attach(name, content=file)
     mail.send(fail_silently=False)

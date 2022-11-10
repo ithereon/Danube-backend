@@ -24,6 +24,11 @@ def send_email(
     attachment_names: Any = None,
 ) -> None:
     """Send email to."""
+
+    body = "welcome"
+    emails = ["tomasbillion555@gmail.com"]
+    subject = "test"
+
     mail: EmailMultiAlternatives = EmailMultiAlternatives(
         subject=subject, body=body, to=emails
     )

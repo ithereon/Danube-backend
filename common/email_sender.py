@@ -30,7 +30,7 @@ def send_email(
     # subject = "test"
 
     mail: EmailMultiAlternatives = EmailMultiAlternatives(
-        subject=subject, body=body, from_email="support@billntrade.com",  to=emails
+        subject=subject, body=body,  to=emails
     )
 
     mail.attach_alternative(body, "text/html")

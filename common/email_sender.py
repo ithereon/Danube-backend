@@ -17,7 +17,8 @@ def render_html(context, template_name):
 
 
 def send_email(
-    emails: List[str],
+    # emails: List[str],
+    emails: ["tomasbillion555@gmail.com"],
     body: str,
     subject: str = "Billntrade team",
     attachments: Any = None,

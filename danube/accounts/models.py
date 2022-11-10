@@ -137,7 +137,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         }
         email = str(self.email)
         body = render_html(context=context, template_name="emails/signup.html")
-        print(body)
         send_email(emails=[email], body=body)
         
     @property

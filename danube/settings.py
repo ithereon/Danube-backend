@@ -19,8 +19,8 @@ from django.contrib import messages
 SECRET_KEY = "asdfghjkl"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get("DEBUG", False)
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", False)
+# DEBUG = False
 
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 ALLOWED_HOSTS = ["*"]

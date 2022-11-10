@@ -1,6 +1,6 @@
 from typing import List, Any
 
-from django.core.mail import EmailMultiAlternatives
+from django.core.mail import get_connection, EmailMultiAlternatives
 
 from danube import settings
 from django.template import Template
@@ -17,16 +17,19 @@ def render_html(context, template_name):
 
 
 def send_email(
-    # emails: List[str],
-    emails: ["tomasbillion555@gmail.com"],
+    emails: List[str],
+    # emails: ["tomasbillion555@gmail.com"],
     body: str,
     subject: str = "Billntrade team",
     attachments: Any = None,
     attachment_names: Any = None,
 ) -> None:
     """Send email to."""
-    mail: EmailMultiAlternatives = EmailMultiAlternatives(
-        subject=subject, body=body, to=emails
+    connection = get_connection() 
+    connection.open()
+
+    mail = EmailMultiAlternatives(
+        subject=subject, body=body, to=emails, connection=connection
     )
 
     mail.attach_alternative(body, "text/html")

@@ -16,7 +16,7 @@ from django.contrib import messages
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ["SECRET_KEY"]
-SECRET_KEY = "abcdefgh"
+SECRET_KEY = "sk_test_YBDR8NSb9g9zYpetqkJAzYMc00sUhVr00W"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False)

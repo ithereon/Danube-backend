@@ -251,7 +251,10 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=30),
 }
 
-FRONTEND_URL = os.environ.get("FRONTEND_URL")
+# FRONTEND_URL = os.environ.get("FRONTEND_URL")
+
+FRONTEND_URL="https://live-production-frontend.herokuapp.com"
+
 ASGI_APPLICATION = "danube.asgi.application"
 CHANNEL_LAYERS = {
     "default": {

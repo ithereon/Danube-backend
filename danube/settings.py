@@ -16,7 +16,7 @@ from django.contrib import messages
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ["SECRET_KEY"]
-SECRET_KEY = "asdfghjkl"
+SECRET_KEY = 'asdfghjkl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get("DEBUG", False)
@@ -24,7 +24,7 @@ DEBUG = False
 
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 ALLOWED_HOSTS = ["*"]
-SITE_URL = "https://live-production-frontend.herokuapp.com"
+SITE_URL = "https://live-production-backend.herokuapp.com"
 # Application definition
 
 INSTALLED_APPS = [

@@ -112,11 +112,18 @@ DATABASES = {
         # 'HOST': '127.0.0.1',
         # 'PORT': '5432',
 
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'dbrfuiafp9vn8c',
+        # 'USER': 'cfgetzqfccsfbg',
+        # 'PASSWORD': 'e3ecd0e5876d100a3e38192e8fd358d4d8dedc87e1c650fd92d9c7fd6829e040',
+        # 'HOST': 'ec2-3-209-39-2.compute-1.amazonaws.com',
+        # 'PORT': '5432',
+
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbrfuiafp9vn8c',
-        'USER': 'cfgetzqfccsfbg',
-        'PASSWORD': 'e3ecd0e5876d100a3e38192e8fd358d4d8dedc87e1c650fd92d9c7fd6829e040',
-        'HOST': 'ec2-3-209-39-2.compute-1.amazonaws.com',
+        'NAME': 'dccbv1gqjpulsf',
+        'USER': 'ktnqiccdifwsdw',
+        'PASSWORD': 'a77fd21dd6c08ead03b8b3339bd5f333ba5d62a2329a35945c843715c146d119',
+        'HOST': 'ec2-34-247-172-149.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }

@@ -255,7 +255,7 @@ SIMPLE_JWT = {
 
 # FRONTEND_URL = os.environ.get("FRONTEND_URL")
 
-FRONTEND_URL="https://live-production-frontend.herokuapp.com"
+FRONTEND_URL="https://live-production-backend.herokuapp.com"
 
 ASGI_APPLICATION = "danube.asgi.application"
 CHANNEL_LAYERS = {

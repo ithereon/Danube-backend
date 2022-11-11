@@ -36,11 +36,11 @@ class CreateCheckoutSessionView(CreateAPIView):
 
                     },
                     'quantity': 1,
-                },
+                }
             ],
             mode='subscription',
-            success_url=domain + '/success/',
-            cancel_url=domain + '/cancel/',
+            success_url='https://live-production-frontend.herokuapp.com/success/',
+            cancel_url='https://live-production-frontend.herokuapp.com/cancel/',
         )
         return JsonResponse({"url": checkout_session.url})
 

@@ -46,7 +46,7 @@ class RegisterView(CreateModelMixin, generics.GenericAPIView):
         Save serializer.
         """
         serializer.save(is_active=False)
-
+    
     def post(self, request, *args, **kwargs):
         """
         Register user with credentials.

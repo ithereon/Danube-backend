@@ -15,11 +15,13 @@ from django.contrib import messages
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 # SECRET_KEY = os.environ["SECRET_KEY"]
-SECRET_KEY = "abcdefgh"
+SECRET_KEY = 'asdfghjkl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", False)
+# DEBUG = os.environ.get("DEBUG", False)
+DEBUG = False
 
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 ALLOWED_HOSTS = ["*"]
@@ -179,7 +181,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.zoho.eu"
 EMAIL_HOST_USER = "support@billntrade.com"
 # EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-EMAIL_HOST_PASSWORD = "test@1234"
+EMAIL_HOST_PASSWORD = "kDJ6WMhZdCni"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

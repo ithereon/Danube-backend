@@ -18,7 +18,7 @@ from .serializers import ProductSerializer, PriceSerializer
 
 # stripe.api_key = settings.STRIPE_SECRET_KEY
 
-stripe.api_key = settings.STRIPE_PUBLIC_KEY
+stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
 
 
 

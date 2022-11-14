@@ -16,7 +16,7 @@ from django.core.mail import send_mail
 
 from .serializers import ProductSerializer, PriceSerializer
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
 
 
 class CreateCheckoutSessionView(CreateAPIView):

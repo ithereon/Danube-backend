@@ -1,5 +1,5 @@
 import os
-import environ
+# import environ
 from datetime import timedelta
 from pathlib import Path
 
@@ -7,8 +7,8 @@ from pathlib import Path
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
-env = environ.Env()
-environ.Env.read_env()
+# env = environ.Env()
+# environ.Env.read_env()
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
@@ -202,7 +202,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 STRIPE_TEST_PUBLIC_KEY = 'pk_test_HBCFcgwjSOhZlTyt3hGbIYu000R47fJFJP'
-STRIPE_TEST_SECRET_KEY = env("STRIPE_TEST_SECRET_KEY")
+STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY")
 
 DJSTRIPE_WEBHOOK_SECRET = 'whsec_1bgp8fuJz7kxzHNRgfiuLrobb68RWxO8'
 

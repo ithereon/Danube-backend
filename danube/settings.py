@@ -1,14 +1,10 @@
 import os
-# import environ
 from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-
-# env = environ.Env()
-# environ.Env.read_env()
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
@@ -201,12 +197,15 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # --
 
 
-STRIPE_TEST_PUBLIC_KEY = 'pk_test_HBCFcgwjSOhZlTyt3hGbIYu000R47fJFJP'
-STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_YBDR8NSb9g9zYpetqkJAzYMc00sUhVr00W")
+# STRIPE_TEST_PUBLIC_KEY = 'pk_test_HBCFcgwjSOhZlTyt3hGbIYu000R47fJFJP'
+# STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY")
+
+STRIPE_PUBLISHABLE_KEY = 'pk_live_51FYbtmJ6vXfsezRx5F7Az4fOk628W8MUPcHUce2whvQwedbBYYa3RwYrjNfPF1ODdfg0HThgP29FGfGk5BHaEQJF00NOeveJlq'
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 
 DJSTRIPE_WEBHOOK_SECRET = 'whsec_1bgp8fuJz7kxzHNRgfiuLrobb68RWxO8'
 
-STRIPE_LIVE_MODE = False  # Change to True in production
+STRIPE_LIVE_MODE = True  # Change to True in production
 DJSTRIPE_USE_NATIVE_JSONFIELD = True  # We recommend setting to True for new installations
 DJSTRIPE_FOREIGN_KEY_TO_FIELD = "id"  # Set to `"id"` for all new 2.4+ installations
 

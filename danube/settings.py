@@ -205,7 +205,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 STRIPE_PUBLIC_KEY = 'pk_live_51FYbtmJ6vXfsezRx5F7Az4fOk628W8MUPcHUce2whvQwedbBYYa3RwYrjNfPF1ODdfg0HThgP29FGfGk5BHaEQJF00NOeveJlq'
 STRIPE_SECRET_KEY = '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'
 
-DJSTRIPE_WEBHOOK_SECRET = 'whsec_1bgp8fuJz7kxzHNRgfiuLrobb68RWxO8'
+# DJSTRIPE_WEBHOOK_SECRET = 'whsec_1bgp8fuJz7kxzHNRgfiuLrobb68RWxO8'
+DJSTRIPE_WEBHOOK_SECRET = 'we_1Ig4cPJ6vXfsezRxmvLsyinR'
+
 STRIPE_LIVE_MODE = True  # Change to True in production
 DJSTRIPE_USE_NATIVE_JSONFIELD = True  # We recommend setting to True for new installations
 DJSTRIPE_FOREIGN_KEY_TO_FIELD = "id"  # Set to `"id"` for all new 2.4+ installations

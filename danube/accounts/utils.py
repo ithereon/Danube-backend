@@ -12,7 +12,6 @@ class EmailThread(threading.Thread):
     def run(self):
         self.email.send()
 
-
 class Util:
     @staticmethod
     def send_email(data):

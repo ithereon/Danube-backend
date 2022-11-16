@@ -59,7 +59,7 @@ urlpatterns = format_suffix_patterns(
             "work_items/",
             WorkItemViewSet.as_view({"post": "create"}),
             name="work_items-list",
-        ),
+        ), 
         path(
             "work_items/<int:pk>/",
             WorkItemViewSet.as_view(detail_dict),

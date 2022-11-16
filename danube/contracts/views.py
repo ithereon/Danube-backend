@@ -28,7 +28,7 @@ class ContractViewSet(viewsets.ModelViewSet):
     )
     queryset = Contract.objects.all()
     filter_backends = (
-        SearchFilter,
+        SearchFilter, 
     )
     search_fields = [
         "status",
